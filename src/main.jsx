@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import './index.css';
 import './smartCampusUI.css';
 import App from './App.jsx';
-import WelcomePage from './WelcomePage.jsx';
+import WelcomePage from './welcomePage.jsx';
 import Elearning from './Elearning.jsx';
 import PlanLekcji from './PlanLekcji.jsx';
 import NavBar from './NavBar.jsx';
@@ -12,11 +12,11 @@ import NavBar from './NavBar.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-    <NavBar />
+      <NavBar />
       <Routes>
         <Route path="/App" element={<App />} />
         <Route path="/Elearning" element={<Elearning />} />
-        <Route path="/PlanLekcji" element={<PlanLekcji />} /> 
+        <Route path="/PlanLekcji" element={<PlanLekcji />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
