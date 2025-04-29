@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
-function App() {
+function MapaKampusu() {
   return (
     <app class="app">
-      <h1>Panel</h1>
+      <h1>Mapa Kampusu</h1>
     </app>
   );
 }
 
-export default App;
+export default MapaKampusu;

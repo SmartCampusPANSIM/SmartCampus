@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 :root{
     scroll-behavior: smooth;
 }
@@ -26,7 +28,11 @@ body{
     height: 100px;
     width: 100%;
     background-color: #fff;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
 }
+
 
 .navbar_section nav{
     display: flex;
@@ -34,25 +40,71 @@ body{
     align-items: center;
     background-color: #183447;
     height: 60px;
-    width: max-content;
     border-radius: 20px;
     padding: 5px 10px; 
 }
 
 .navbar_button{
+    border-radius: 10px;
+    box-sizing: border-box;
     color: #fff;
-    padding: 10px 20px;
-    margin: 0px 4px;
+    padding: 10px 15px;
+    margin: 5px;
 }
 .navbar_button:hover{
     background-color: white;
-    border-radius: 10px;
     color: #183447;
     cursor: pointer;
 }
 .navbar_button--active{
-    background-color: white;
     border-radius: 10px;
+    background-color: white;
     color: #183447 !important;
-    padding: 10px 20px;
+    padding: 10px 15px;
+    margin: 5px;
+}
+
+.navbar_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    height: 60px;
+    width: max-content;
+    padding: 5px 15px;
+}
+.navbar_logo:hover{
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.navbar_logo_icon{
+    background-image: url('assets/Smart Campus - Logo --transparentne.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 57px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.navbar_logo_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: max-content;
+}
+
+.navbar_logo_wrapper_topText{
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    height: 24px;
+}
+
+.navbar_logo_wrapper_bottomText{
+    font-size: 20px;
+    font-weight: 400;
+    color: #183447;
+    height: 24px;
 }
