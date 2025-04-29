@@ -9,6 +9,7 @@ import Elearning from './Elearning.jsx';
 import PlanLekcji from './PlanLekcji.jsx';
 import Panel from './Panel.jsx';
 import NavBar from './NavBar.jsx';
+import MobileNavBar from './MobileNavBar.jsx';
 import MapaKampusu from './MapaKampusu.jsx';
 import Feed from './Feed.jsx';
 
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Feed" element={<Feed />} />
         <Route path="/PlanLekcji" element={<PlanLekcji />} />
       </Routes>
+      <MobileNavBar />
     </BrowserRouter>
   </StrictMode>
 );
