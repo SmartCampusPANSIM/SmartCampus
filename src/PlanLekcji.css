@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+.active {
+    display: flex;
+}
+
 p {
     margin: 0;
     padding: 0;
@@ -16,31 +20,46 @@ header {
     width: 95%;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 50px;
 }
 
     .majes_header_choose__div {
-        width: 250px;
+        width: 260px;
         height: 120px;
         display: flex;
         flex-direction: column;
     }
 
         .majes_header_choose {
-            height: 75px;
-            width: 250px;
+            height: 76px;
+            width: 260px;
             margin-top: 10px;
             border-radius: 25px;
             background-color: #183447;
             color: white;
             box-sizing: border-box;
-            
+            position: relative;
         }
+
+        .majes_header_list__div {
+            height: calc(4 * (76px + 20px));
+            width: 260px;
+            margin-top: 124px;
+            position: absolute;
+            border-radius: 25px;
+            background-color: aqua;
+            background-color: #18344737;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+
 
 
     .majes_header_choose_day__div {
         height: 120px;
-        width: calc(100% - 810px);
+        width: 700px;
+        margin-left: 200px;
     }
 
     .majes_header_choose_day__days {
@@ -53,8 +72,8 @@ header {
     }
 
         .majes_header_choose_day {
-            height: 75px;
-            width: 75px;
+            height: 76px;
+            width: 76px;
             border-radius: 25px;
             background-color: #EAEAEE;
         }
