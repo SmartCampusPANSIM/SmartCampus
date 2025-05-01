@@ -1,25 +1,55 @@
 import { Link } from "react-router-dom";
 import './PlanLekcji.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 function PlanLekcji() {
 
-    const [isActive1, setIsActive1] = useState(false);
-    const expandListKierunek = () => {
-      setIsActive1(prev => !prev);
+  // Wybór kierunku
+  const [isActive1, setIsActive1] = useState(false);
+  const kierunekRef = useRef(null);
+  const expandListKierunek = () => {
+    setIsActive1(prev => !prev);
+  };
+
+  // Wybór zjazdu
+  const [isActive2, setIsActive2] = useState(false);
+  const zjazdRef = useRef(null);
+  const expandListZjazd = () => {
+    setIsActive2(prev => !prev);
+  };
+  // Wybór miesiąca
+  const [isActive3, setIsActive3] = useState(false);
+  const miesiacRef = useRef(null);
+  const expandListMiesiac = () => {
+    setIsActive3(prev => !prev);
+  };
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (kierunekRef.current && !kierunekRef.current.contains(event.target)) {
+        setIsActive1(false);
+      }
+      if (zjazdRef.current && !zjazdRef.current.contains(event.target)) {
+        setIsActive2(false);
+      }
+      if (miesiacRef.current && !miesiacRef.current.contains(event.target)) {
+        setIsActive3(false);
+      }
     }
 
-    const [isActive2, setIsActive2] = useState(false);
-    const expandListCos = () => {
-      setIsActive2(prev => !prev);
-    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <app className="majes_plan_lekcji">
       <header>
 
         <section className="majes_header_choose__div">
           <p>Wyświetl plan dla:</p>
-          <div className="majes_header_choose" onClick={expandListKierunek}>
+          <div className="majes_header_choose" onClick={expandListKierunek} ref={kierunekRef}>
           </div>
           {isActive1 && (
           <div className="majes_header_list__div">
@@ -30,7 +60,7 @@ function PlanLekcji() {
 
         <section className="majes_header_choose__div">
           <p>Wybierz zjazd</p>
-          <div className="majes_header_choose" onClick={expandListCos}>
+          <div className="majes_header_choose" onClick={expandListZjazd} ref={zjazdRef}>
           </div>
           {isActive2 && (
           <div className="majes_header_list__div">
@@ -40,8 +70,13 @@ function PlanLekcji() {
 
         <section className="majes_header_choose__div">
           <p>Wybierz miesiąc</p>
-          <div className="majes_header_choose">
+          <div className="majes_header_choose" onClick={expandListMiesiac} ref={miesiacRef}>
           </div>
+          {isActive3 && (
+          <div className="majes_header_list__div">
+          </div>
+          )}
+          
         </section>
 
         <section className="majes_header_choose_day__div">
