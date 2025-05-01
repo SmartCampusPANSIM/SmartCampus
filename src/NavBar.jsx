@@ -88,7 +88,7 @@ function NavBar() {
             </div>
             <div
               className="navbar_userBar_profilePicture"
-              style={{ backgroundImage: `url(${user.photoURL})` }}
+              style={{ backgroundImage: `url('${user.photoURL}')` }}
             />
           </div>
 
