@@ -39,7 +39,16 @@ header {
             color: white;
             box-sizing: border-box;
             position: relative;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            user-select: none;
         }
+
+            .majes_header_choose-info {
+                height: 76px;
+                width: 210px;
+            }
 
         .majes_header_list__div {
             height: calc(4 * (76px + 20px));
@@ -51,10 +60,27 @@ header {
             background-color: #18344737;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            user-select: none;
         }
 
-
-
+            .majes_choice {
+                height: 60px;
+                width: 240px;
+                margin-top: 15px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                padding-left: 15px;
+                color:#183447;                
+            }
+                .majes_choice:hover {
+                    background-color: #183447;
+                    color: white;
+                }
 
     .majes_header_choose_day__div {
         height: 120px;

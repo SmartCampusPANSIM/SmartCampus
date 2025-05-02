@@ -5,35 +5,35 @@ import React, { useState, useEffect, useRef } from 'react';
 function PlanLekcji() {
 
   // Wybór kierunku
-  const [isActive1, setIsActive1] = useState(false);
+  const [Active1, setActive1] = useState(false);
   const kierunekRef = useRef(null);
   const expandListKierunek = () => {
-    setIsActive1(prev => !prev);
+    setActive1(prev => !prev);
   };
 
   // Wybór zjazdu
-  const [isActive2, setIsActive2] = useState(false);
+  const [Active2, setActive2] = useState(false);
   const zjazdRef = useRef(null);
-  const expandListZjazd = () => {
-    setIsActive2(prev => !prev);
+  const expandListZjazd = () => { 
+    setActive2(prev => !prev);
   };
   // Wybór miesiąca
-  const [isActive3, setIsActive3] = useState(false);
+  const [Active3, setActive3] = useState(false);
   const miesiacRef = useRef(null);
   const expandListMiesiac = () => {
-    setIsActive3(prev => !prev);
+    setActive3(prev => !prev);
   };
 
   useEffect(() => {
     function handleClickOutside(event) {
       if (kierunekRef.current && !kierunekRef.current.contains(event.target)) {
-        setIsActive1(false);
+        setActive1(false);
       }
       if (zjazdRef.current && !zjazdRef.current.contains(event.target)) {
-        setIsActive2(false);
+        setActive2(false);
       }
       if (miesiacRef.current && !miesiacRef.current.contains(event.target)) {
-        setIsActive3(false);
+        setActive3(false);
       }
     }
 
@@ -43,16 +43,26 @@ function PlanLekcji() {
     };
   }, []);
 
+
+  const alercik = () => {
+    alert('heuhue');
+  };
+
   return (
     <app className="majes_plan_lekcji">
       <header>
 
         <section className="majes_header_choose__div">
           <p>Wyświetl plan dla:</p>
-          <div className="majes_header_choose" onClick={expandListKierunek} ref={kierunekRef}>
+          <div className="majes_header_choose" onClick={expandListKierunek}>
+            <div className="majes_header_choose-info"></div>
+            <img src="./src/assets/arrow_down-white.svg"></img>
           </div>
-          {isActive1 && (
-          <div className="majes_header_list__div">
+          {Active1 && (
+          <div className="majes_header_list__div" ref={kierunekRef}>
+            <div className="majes_choice" onClick={alercik}>Zjazd 1</div>
+            <div className="majes_choice">Zjazd 2</div>
+            <div className="majes_choice">Zjazd 3</div>
           </div>
           )}
         </section>
@@ -60,20 +70,30 @@ function PlanLekcji() {
 
         <section className="majes_header_choose__div">
           <p>Wybierz zjazd</p>
-          <div className="majes_header_choose" onClick={expandListZjazd} ref={zjazdRef}>
+          <div className="majes_header_choose" onClick={expandListZjazd}>
+          <div className="majes_header_choose-info"></div>
+          <img src="./src/assets/arrow_down-white.svg"></img>
           </div>
-          {isActive2 && (
-          <div className="majes_header_list__div">
+          {Active2 && (
+          <div className="majes_header_list__div" ref={zjazdRef}>
+            <div className="majes_choice" onClick={alercik}>Zjazd 1</div>
+            <div className="majes_choice">Zjazd 2</div>
+            <div className="majes_choice">Zjazd 3</div>
           </div>
           )}
         </section>
 
         <section className="majes_header_choose__div">
           <p>Wybierz miesiąc</p>
-          <div className="majes_header_choose" onClick={expandListMiesiac} ref={miesiacRef}>
+          <div className="majes_header_choose" onClick={expandListMiesiac}>
+          <div className="majes_header_choose-info"></div>
+          <img src="./src/assets/arrow_down-white.svg"></img>
           </div>
-          {isActive3 && (
-          <div className="majes_header_list__div">
+          {Active3 && (
+          <div className="majes_header_list__div" ref={miesiacRef}>
+            <div className="majes_choice" onClick={alercik}>Zjazd 1</div>
+            <div className="majes_choice">Zjazd 2</div>
+            <div className="majes_choice">Zjazd 3</div>
           </div>
           )}
           
@@ -90,11 +110,7 @@ function PlanLekcji() {
             <div className="majes_header_choose_day"></div>
             <div className="majes_header_choose_day"></div>
             <div className="majes_header_choose_day"></div>
-
             <img src="./src/assets/arrowRight-blue.svg"></img>
-
-
-
           </div>
         </section>
 
