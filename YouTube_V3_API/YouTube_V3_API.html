@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>daj api</h1>
+    <script>
+        console.log("Hello, World!");
+        const videoId = '0KrFXTDbb_g';
+const apiKey = 'AIzaSyBJEoOlEnKZ60zkyds1Wrh_EVBhRvFrvzQ';
+
+fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${apiKey}`)
+  .then(res => res.json())
+  .then(data => {
+    const snippet = data.items[0].snippet;
+    console.log('Tytuł:', snippet.title);
+    console.log('Opis:', snippet.description);
+    console.log('Miniaturka:', snippet.thumbnails.high.url);
+  })
+  .catch(err => console.error('Błąd:', err));
+
+    </script>
+</body>
+</html>

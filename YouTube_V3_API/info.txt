@@ -1,0 +1,2 @@
+Strona demonstruje działanie YouTube API V3 w Google Cloud.
+Aby zobaczyć rezultat należy włączyć stronę oraz wejść w jej konsolę (F12).
