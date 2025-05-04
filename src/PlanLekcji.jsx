@@ -60,7 +60,7 @@ function PlanLekcji() {
       const onWheel = (event) => {
         event.preventDefault();
         if (event.deltaY === 0) return;
-        scroll.scrollLeft += event.deltaY * 0.1;
+        scroll.scrollLeft += event.deltaY * 0.3;
       };
 
       scroll.addEventListener("wheel", onWheel, { passive: false });
@@ -78,7 +78,7 @@ function PlanLekcji() {
 
         {/* Wybór kierunku */}
         <section className="majes_header_choose__div">
-          <p>Wyświetl plan dla:</p>
+          <p>Wybierz kierunek</p>
           <div className="majes_header_choose" onClick={() => setActive1(prev => !prev)} ref={kierunekButtonRef}>
             <div className="majes_header_choose-chosen">
             <p>Informatyka NS</p>
@@ -161,14 +161,614 @@ function PlanLekcji() {
 
       </header>
 
-      <main class="majes_main">
+      <main>
         <section className="majes_main_top">
-        <p>Zajęcia w dniu [data]</p>
+          <p>Zajęcia w dniu [data]</p>
         </section>
-        <section className="majes_main_bottom">
+        <section className="majes_main">
 
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          {/* BLok lekcji */}
+          <div className="majes_lesson__block">
+
+            <div className="majes_lesson_name">
+              <p>Matlab</p>
+              <p>ćwiczenia</p>
+            </div>
+
+            <div className="majes_lesson_timeleft">
+            <img src="./src/assets/hourglass-blue.svg"></img>
+              <p>00:59:00</p>
+            </div>
+
+            <div className="majes_lesson_teacher">
+            <img src="./src/assets/student-blue.svg"></img>
+              <p>Dr. Imię Nazwisko</p>
+            </div>
+
+            <div className="majes_lesson_place">
+            <img src="./src/assets/doors-blue.svg"></img>
+              <p>Budynek</p>
+              <img src="./src/assets/dot-blue.svg"></img>
+              <p>202A</p>
+            </div>
+
+            <div className="majes_lesson_hour">
+              <img src="./src/assets/clock-blue.svg"></img>
+              <p>10:00</p>
+              <img src="./src/assets/arrowRightFull-blue.svg"></img>
+              <p>11:30</p>
+            </div>
+          </div>
+          {/* Koniec bloku lekcji */}
+          
         </section>
       </main>
+
+
+
+
+
     </app>
   );
 }

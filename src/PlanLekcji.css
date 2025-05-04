@@ -152,7 +152,100 @@ header {
         }
 
 main {
-    height: 300px;
+    height: auto;
     width: 95%;
-    background-color: rgb(237, 214, 214);
 }
+
+.majes_main_top {
+    height: 50px;
+}
+
+.majes_main {
+    height: 600px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    flex-wrap: wrap;
+
+}
+    .majes_main::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .majes_lesson__block {
+        height: 180px;
+        width: 300px;
+        border-radius: 20px;
+        background-color: #EAEAEE;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 10px 20px 10px 20px;
+        font-size: 14px;
+    }
+    .majes_lesson__block img {
+        height: 12px;
+    }
+
+        .majes_lesson_name {
+            height: 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly; 
+        }
+
+        .majes_lesson_name p:nth-of-type(1) {
+            font-size: 18px;
+            font-weight: 500;
+            height: 20px;
+        }
+        .majes_lesson_name p:nth-of-type(2) {
+            font-size: 14px;
+            font-weight: 300;
+            height: 22px;
+        }
+
+        .majes_lesson_timeleft {
+            height: 50px;
+            gap: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+            .majes_lesson_timeleft img {
+                height: 18px;
+            }
+
+        .majes_lesson_teacher {
+            height: 24px;
+            gap: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .majes_lesson_place {
+            height: 24px;
+            gap: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+            .majes_lesson_place img:nth-of-type(2) {
+                height: 4px;
+            }
+
+        .majes_lesson_hour {
+            height: 24px;
+            gap: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
