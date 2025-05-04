@@ -28,6 +28,7 @@ header {
         height: 120px;
         display: flex;
         flex-direction: column;
+        position: relative;
     }
 
         .majes_header_choose {
@@ -41,22 +42,30 @@ header {
             position: relative;
             display: flex;
             flex-direction: row;
-            gap: 20px;
+            gap: 10px;
             user-select: none;
         }
 
-            .majes_header_choose-info {
+            .majes_header_choose-chosen {
                 height: 76px;
                 width: 210px;
+                display: flex;
+                align-items: center;
+                margin-left: 10px;
             }
 
-        .majes_header_list__div {
-            height: calc(4 * (76px + 20px));
-            width: 260px;
-            margin-top: 124px;
+        .majes_header_list {
             position: absolute;
+            top: 100%;
+            height: auto;
+            max-height: 450px;
+            padding-bottom: 15px;
+            width: 260px;
             border-radius: 25px;
-            background-color: aqua;
+
+            overflow-y: auto;
+            overflow-anchor: none;
+            
             background-color: #18344737;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -66,10 +75,17 @@ header {
             user-select: none;
             animation: expandList 0.2s ease-in-out;
         }
-        @keyframes expandList {
-            from{opacity: 0; transform: translateY(-20px);}
-            to{opacity: 1; transform: translateY(0px);}
-         }
+
+            .majes_header_list::-webkit-scrollbar {
+                width: 0px;
+            }
+
+            @keyframes expandList {
+                from{opacity: 0; transform: translateY(-20px);}
+                to{opacity: 1; transform: translateY(0px);}
+            }
+
+
 
             .majes_choice {
                 height: 60px;
@@ -80,6 +96,7 @@ header {
                 align-items: center;
                 box-sizing: border-box;
                 padding-left: 15px;
+                flex-shrink: 0;
                 color:#183447;                
             }
                 .majes_choice:hover {
@@ -91,10 +108,12 @@ header {
         height: 120px;
         width: 700px;
         margin-left: 200px;
+        display: flex;
+        flex-direction: column;
     }
 
-    .majes_header_choose_day__days {
-        width: 100%;
+    .majes_header_choose_day__bottom {
+        width: 700px;
         margin-top: 10px;
         display: flex;
         flex-direction: row;
@@ -102,11 +121,34 @@ header {
         align-items: center;
     }
 
+    .majes_header_choose_day__days {
+        width: 622px;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+        overflow-x: auto;
+    }
+
+    .majes_header_choose_day__days::-webkit-scrollbar {
+        height: 0;
+    }
+
         .majes_header_choose_day {
             height: 76px;
             width: 76px;
             border-radius: 25px;
             background-color: #EAEAEE;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        .majes_header_choose_day p:nth-of-type(2) {
+            font-weight: 450;
+            
         }
 
 main {
