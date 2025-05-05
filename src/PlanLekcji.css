@@ -1,0 +1,112 @@
+
+.zjazd-container {
+    display: flex;
+  justify-content: space-between;
+  width: 546.08px;
+  height: 100px;
+    background-color: #CCCCCF;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid #CCCCCF;
+    transition: background-color 0.3s ease;
+    margin-left: 190px; 
+    color: #183447;
+    margin-top: 20px;   
+}
+.row{
+    color: #183447;
+    display: flex;
+    flex-direction: column;
+    
+}
+.zjazd-tytul{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.zjazd-rok{
+  color: #183447;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.daty{
+  color: #183447;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.zjazd-za{
+  color: #000000;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+.zjazd-container2 {
+  display: flex;
+justify-content: space-between;
+width: 546.08px;
+height: 100px;
+  background-color: #EAEAEE;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #000000;
+  transition: background-color 0.3s ease;
+  margin-left: 190px; 
+  color: #183447; ;
+  margin-top: 20px; 
+}
+.zjazd-container3 {
+  display: flex;
+justify-content: space-between;
+width: 546.08px;
+height: 100px;
+  background-color: #EAEAEE;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #EAEAEE;
+  transition: background-color 0.3s ease;
+  margin-left: 190px; 
+  color: #183447; ;
+  margin-top: 20px; 
+}
+.zjazd-container4 {
+  display: flex;
+justify-content: space-between;
+width: 546.08px;
+height: 100px;
+  background-color: #EAEAEE;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #EAEAEE;
+  transition: background-color 0.3s ease;
+  margin-left: 190px; 
+  color: #183447; ;
+  margin-top: 20px; 
+}
+.zjazd-container5 {
+  display: flex;
+justify-content: space-between;
+width: 546.08px;
+height: 100px;
+  background-color: #EAEAEE;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #EAEAEE;
+  transition: background-color 0.3s ease;
+  margin-left: 190px; 
+  color: #183447; ;
+  margin-top: 20px; 
+}
+.miesiąc{
+  color: #183447;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-left: 200px;
+}
