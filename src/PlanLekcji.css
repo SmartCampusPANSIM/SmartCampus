@@ -1,0 +1,263 @@
+.majes_plan_lekcji {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.active {
+    display: flex;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 140px;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.majes_header_choose__div {
+    width: 260px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.majes_header_choose {
+    height: 76px;
+    width: 260px;
+    margin-top: 10px;
+    border-radius: 25px;
+    background-color: #183447;
+    color: white;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    user-select: none;
+}
+
+.majes_header_choose-chosen {
+    height: 76px;
+    width: 210px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.majes_header_list {
+    position: absolute;
+    top: 100%;
+    height: auto;
+    max-height: 450px;
+    padding-bottom: 15px;
+    width: 260px;
+    border-radius: 25px;
+
+    overflow-y: auto;
+    overflow-anchor: none;
+
+    background-color: #18344737;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+    animation: expandList 0.2s ease-in-out;
+}
+
+.majes_header_list::-webkit-scrollbar {
+    width: 0px;
+}
+
+@keyframes expandList {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+
+.majes_choice {
+    height: 60px;
+    width: 240px;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 15px;
+    flex-shrink: 0;
+    color: #183447;
+}
+
+.majes_choice:hover {
+    background-color: #183447;
+    color: white;
+}
+
+.majes_header_choose_day__div {
+    height: 120px;
+    width: 700px;
+    margin-left: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.majes_header_choose_day__bottom {
+    width: 700px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.majes_header_choose_day__days {
+    width: 622px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.majes_header_choose_day__days::-webkit-scrollbar {
+    height: 0;
+}
+
+.majes_header_choose_day {
+    height: 76px;
+    width: 76px;
+    border-radius: 25px;
+    background-color: #EAEAEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.majes_header_choose_day p:nth-of-type(2) {
+    font-weight: 450;
+
+}
+
+main {
+    height: auto;
+    width: 95%;
+}
+
+.majes_main_top {
+    height: 50px;
+}
+
+.majes_main {
+    height: 600px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    flex-wrap: wrap;
+
+}
+
+.majes_main::-webkit-scrollbar {
+    width: 0;
+}
+
+.majes_lesson__block {
+    height: 180px;
+    width: 300px;
+    border-radius: 20px;
+    background-color: #EAEAEE;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 10px 20px 10px 20px;
+    font-size: 14px;
+}
+
+.majes_lesson__block img {
+    height: 12px;
+}
+
+.majes_lesson_name {
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.majes_lesson_name p:nth-of-type(1) {
+    font-size: 18px;
+    font-weight: 500;
+    height: 20px;
+}
+
+.majes_lesson_name p:nth-of-type(2) {
+    font-size: 14px;
+    font-weight: 300;
+    height: 22px;
+}
+
+.majes_lesson_timeleft {
+    height: 50px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.majes_lesson_timeleft img {
+    height: 18px;
+}
+
+.majes_lesson_teacher {
+    height: 24px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.majes_lesson_place {
+    height: 24px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.majes_lesson_place img:nth-of-type(2) {
+    height: 4px;
+}
+
+.majes_lesson_hour {
+    height: 24px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

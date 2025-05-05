@@ -1,0 +1,89 @@
+
+/* Polecany film */
+.recommended_12692{
+    margin: 0 0 0 30px;
+    padding: 0;
+    width: 500px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+
+}
+.title_recommended_12692 {
+    margin: 0;
+    padding: 0 10px;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center; 
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.p_title_recommended_12692{
+    font-size: 16px;
+    color: rgba(24, 52, 71, 1);
+    font-weight: 500;
+}
+.video_recommended_12692{
+    margin: 10px 0 0 0;
+    padding: 0;
+    width: 500px;
+    height: 270px;
+    border-radius: 20px;
+}
+.iframe_video_recommended_12692 {
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 120px rgba(0, 0, 0, 0.5);
+    border: 0;
+}
+.content_recommended_12692 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+
+}
+.left_content_recommended_12692 {
+    width: 70px; 
+    height: 50px; 
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+.right_content_recommended_12692 {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.up_right_content_recommended_12692 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 65%;
+}
+.down_right_content_recommended_12692 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 35%;
+}
+.p_up_right_content_recommended_12692 {
+    margin: 0;
+    padding: 0;
+}
+.p_down_right_content_recommended_12692 {
+    margin: 0;
+    padding: 0;
+}
