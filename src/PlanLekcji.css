@@ -54,6 +54,19 @@ header {
     margin-left: 10px;
 }
 
+    .majes_header_choose-chosen-info {
+        height: 76px;
+        width: 210px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .majes_header_choose-chosen-info_separate {
+        display: flex;
+        flex-direction: row;
+    }
+
 .majes_header_list {
     position: absolute;
     top: 100%;

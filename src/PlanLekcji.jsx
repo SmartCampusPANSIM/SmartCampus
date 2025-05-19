@@ -81,7 +81,12 @@ function PlanLekcji() {
           <p>Wybierz kierunek</p>
           <div className="majes_header_choose" onClick={() => setActive1(prev => !prev)} ref={kierunekButtonRef}>
             <div className="majes_header_choose-chosen">
-            <p>Informatyka NS</p>
+              <div className="majes_header_choose-chosen-info">
+                <p>Informatyka NS</p>
+                <div className="majes_header_choose-chosen-info_separate">
+                  <p>2 rok</p><img src="./src/assets/dot-blue.svg"></img><p>Semestr 4</p>
+                </div>
+              </div>
             </div>
             <img src="./src/assets/arrow_down-white.svg"></img>
           </div>
