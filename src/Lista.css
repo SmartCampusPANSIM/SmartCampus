@@ -93,11 +93,3 @@
     background-color: #183447;
     color: white;
 }
-
-.list_choose_day__div {
-    height: 120px;
-    width: 700px;
-    margin-left: 200px;
-    display: flex;
-    flex-direction: column;
-}

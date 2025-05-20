@@ -31,7 +31,13 @@ header {
     position: relative;
 }
 
-
+.majes_header_choose_day__div {
+    height: 120px;
+    width: 700px;
+    margin-left: 200px;
+    display: flex;
+    flex-direction: column;
+}
 
 .majes_header_choose_day__bottom {
     width: 700px;
