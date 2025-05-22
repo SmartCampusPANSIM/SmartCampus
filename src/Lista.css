@@ -38,16 +38,14 @@
 
 .list_list {
     position: absolute;
-    top: 100%;
+    margin-top: 10px;
     height: auto;
     max-height: 450px;
     padding-bottom: 15px;
     width: 260px;
     border-radius: 25px;
-
     overflow-y: auto;
     overflow-anchor: none;
-
     background-color: #18344737;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -73,8 +71,6 @@
         transform: translateY(0px);
     }
 }
-
-
 
 .list_choice {
     height: 60px;
