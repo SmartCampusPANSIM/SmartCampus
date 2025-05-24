@@ -1,0 +1,69 @@
+.campusMap{ 
+    background-color: black;
+    height: calc(100vh - 100px);
+    display: flex;
+}
+
+.campusMap_leftSection{
+    background-color: red;
+    height: 100%;
+    width: 340px;
+}
+
+.campusMap_leftRight{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    background-color: greenyellow;
+    height: 100%;
+    width: 100%;
+}
+
+.campusView{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EFF6FF;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.svgCanvas{
+   
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(24, 52, 71, 0.2);
+    color: #183447;
+    backdrop-filter: blur(80px);
+    font-weight: 800;
+    padding: 100px 80px;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    pointer-events: none;
+    display: none;
+}
+
+.room {
+    transition: transform 0.2s ease-out, fill 0.2s ease-out, box-shadow 0.2s ease-out;
+    transform-box: fill-box;   
+    transform-origin: center center;
+}
+
+.room:hover {
+    box-shadow: 0px 4px 60.4px 0px #183447;
+    fill: #183447;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+g:hover {
+    box-shadow: 0px 4px 60.4px 0px #183447;
+    background-color: #183447 !important;
+    fill: #183447;
+    cursor: pointer;
+}

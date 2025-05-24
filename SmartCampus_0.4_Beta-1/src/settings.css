@@ -1,0 +1,35 @@
+/* ProfileForm.css */
+
+/* Tło i centrowanie formularza */
+.min-h-screen {
+  min-height: 100vh;
+}
+.bg-cover {
+  background-size: cover;
+}
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+}
+.p-4 {
+  padding: 1rem;
+}
+
+/* Card */
+.bg-white\/90 {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.p-8 {
+  padding: 2rem;
+}
+.rounded-2xl {
+  border-radius: 1rem;
+}
+.shadow-xl {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.max-w-md {
+  max-width: 28rem
+}
+.space-y-4{
+    color: black;
+}

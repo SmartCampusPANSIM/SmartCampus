@@ -1,0 +1,183 @@
+/* elearning.css */
+
+/* ---------------------------
+   Ogólne style aplikacji
+   --------------------------- */
+.app {
+  padding: 20px;
+  background-color: #f5f7fa;
+}
+
+/* ---------------------------
+   Polecany film
+   --------------------------- */
+.recommended_12692 {
+  margin: 0 0 0 30px;
+  padding: 0;
+  width: 500px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title_recommended_12692 {
+  margin: 0;
+  padding: 0 10px;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.p_title_recommended_12692 {
+  font-size: 16px;
+  color: rgba(24, 52, 71, 1);
+  font-weight: 500;
+}
+
+.video_recommended_12692 {
+  margin: 10px 0 0 0;
+  padding: 0;
+  width: 500px;
+  height: 270px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.iframe_video_recommended_12692 {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 20px 20px 120px rgba(0, 0, 0, 0.5);
+  border: 0;
+}
+
+.content_recommended_12692 {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+}
+
+.left_content_recommended_12692 {
+  width: 70px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right_content_recommended_12692 {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.p_up_right_content_recommended_12692 {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* ---------------------------
+   Style dla tagów pod filmami
+   --------------------------- */
+.video-tags {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.video-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Kolory dla konkretnych tagów */
+.video-tag-programowanie         { background-color: #28a745; } /* zielony */
+.video-tag-ai                    { background-color: #007bff; } /* niebieski */
+.video-tag-sieci                 { background-color: #fd7e14; } /* pomarańcz */
+.video-tag-bazy-danych           { background-color: #6f42c1; } /* fiolet */
+.video-tag-devops                { background-color: #20c997; } /* mięta */
+.video-tag-cyberbezpieczeństwo   { background-color: #dc3545; } /* czerwony */
+.video-tag-frontend              { background-color: #17a2b8; } /* turkus */
+.video-tag-backend               { background-color: #343a40; } /* grafit */
+.video-tag-chmura                { background-color: #6610f2; } /* fiolet ciemny */
+.video-tag-mobilne               { background-color: #e83e8c; } /* różowy */
+.video-tag-data-science          { background-color: #20c997; } /* mięta */
+.video-tag-big-data              { background-color: #fd7e14; } /* pomarańcz */
+.video-tag-machine-learning      { background-color: #6f42c1; } /* fiolet */
+.video-tag-blockchain            { background-color: #ffc107; } /* żółty */
+.video-tag-iot                   { background-color: #fd7e14; } /* pomarańcz */
+.video-tag-testowanie            { background-color: #007bff; } /* niebieski */
+.video-tag-ui-ux                 { background-color: #6610f2; } /* fiolet */
+.video-tag-podstawy              { background-color: #6c757d; } /* szary */
+.video-tag-zaawansowane          { background-color: #343a40; } /* grafit */
+.video-tag-projekt               { background-color: #28a745; } /* zielony */
+
+/* ---------------------------
+   Sekcje posegregowane po tagach
+   --------------------------- */
+.category-section {
+  margin: 40px 30px;
+}
+
+.category-title {
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+/* Kolory nagłówków kategorii */
+.category-programowanie .category-title         { background-color: #28a745; }
+.category-ai .category-title                   { background-color: #007bff; }
+.category-sieci .category-title                { background-color: #fd7e14; }
+.category-bazy-danych .category-title          { background-color: #6f42c1; }
+.category-devops .category-title               { background-color: #20c997; }
+.category-cyberbezpieczeństwo .category-title  { background-color: #dc3545; }
+.category-frontend .category-title             { background-color: #17a2b8; }
+.category-backend .category-title              { background-color: #343a40; }
+.category-chmura .category-title               { background-color: #6610f2; }
+.category-mobilne .category-title              { background-color: #e83e8c; }
+.category-data-science .category-title         { background-color: #20c997; }
+.category-big-data .category-title             { background-color: #fd7e14; }
+.category-machine-learning .category-title     { background-color: #6f42c1; }
+.category-blockchain .category-title           { background-color: #ffc107; }
+.category-iot .category-title                  { background-color: #fd7e14; }
+.category-testowanie .category-title           { background-color: #007bff; }
+.category-ui-ux .category-title                { background-color: #6610f2; }
+.category-podstawy .category-title             { background-color: #6c757d; }
+.category-zaawansowane .category-title         { background-color: #343a40; }
+.category-projekt .category-title              { background-color: #28a745; }
+
+.category-videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.video-card {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
