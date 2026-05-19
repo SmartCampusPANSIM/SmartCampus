@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/SmartCampusLogo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="public/Smart Campus - Logo --transparentne.svg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/708edc060a.js" crossorigin="anonymous"></script>
+    <title>Smart Campus</title>
+    <script>
+      (function() {
+        const theme = localStorage.getItem('colorScheme') || 'light';
+        document.documentElement.style.setProperty('color-scheme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <div id="dropdown-root"></div> <!-- TO JEST PORTAL DO MENU NIE TRACIĆ MI!!!! -->
+  </body>
+</html>

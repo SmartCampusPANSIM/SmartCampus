@@ -1,0 +1,29 @@
+:root {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  color: light-dark(#000, #fff);
+  width: 100%;
+  min-height: calc(100vh - 80px); 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}

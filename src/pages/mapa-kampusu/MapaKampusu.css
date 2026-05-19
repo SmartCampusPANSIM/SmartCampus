@@ -1,0 +1,125 @@
+.campusMap {
+    background-color: black;
+    height: calc(100vh - 100px);
+    display: flex;
+}
+
+.campusMap_leftSection {
+    background-color: white;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.campusMap_leftRight {
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    background-color: greenyellow;
+    height: 100%;
+    width: 100%;
+}
+
+.campusView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EFF6FF;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.svgCanvas {}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(24, 52, 71, 0.2);
+    color: #183447;
+    backdrop-filter: blur(80px);
+    font-weight: 800;
+    padding: 100px 80px;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    display: none;
+}
+
+.room {
+    transition: transform 0.2s ease-out, fill 0.2s ease-out, box-shadow 0.2s ease-out;
+    transform-box: fill-box;
+    transform-origin: center center;
+}
+
+.room:hover {
+    box-shadow: 0px 4px 60.4px 0px #183447;
+    fill: #183447;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+g:hover {
+    box-shadow: 0px 4px 60.4px 0px #183447;
+    background-color: #183447 !important;
+    fill: #183447;
+    cursor: pointer;
+}
+
+.roomList {
+    overflow-y: scroll;
+    box-sizing: border-box;
+    height: 500px;
+}
+
+.roomButton {
+    background-color: #EAEAEE;
+    border-radius: 20px;
+    height: 60px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+.roomButton:hover {
+    background-color: #183447;
+    color: white;
+    cursor: pointer;
+}
+
+.roomButton_topText {}
+
+.roomButton_bottomText {}
+
+.campusNavSection {
+    background-color: orange;
+    box-sizing: border-box;
+    padding: 30px;
+    height: 44px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.campusNav {
+    display: flex;
+    background-color: #D7D7D7;
+    border-radius: 100px;
+}
+
+.campusNav_option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 50px;
+    width: fit-content;
+    background-color: #183447;
+    border-radius: 1000px;
+}
