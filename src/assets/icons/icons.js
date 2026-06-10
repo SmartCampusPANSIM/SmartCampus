@@ -8,7 +8,7 @@ import {
   faLaptop
 } from '@fortawesome/free-solid-svg-icons'
 
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 import SmartCampusLogo from './SmartCampusLogo.svg'
 
@@ -21,5 +21,6 @@ export {
   faCalendarDays,
   faMap,
   faPhotoFilm,
-  faLaptop
+  faLaptop,
+  faGoogle
 }

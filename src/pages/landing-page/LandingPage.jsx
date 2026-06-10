@@ -1,6 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext.jsx";
+import GoogleButton from '@components/Buttons/GoogleButton/GoogleButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import * as Icons from '@icons/icons'
 
 const LandingPage = () => {
   const { user, isAuthLoading } = useAuth();
@@ -17,8 +20,8 @@ const LandingPage = () => {
       {!user ? (
         <div>
           <p>Zaloguj się lub zarejestruj, aby korzystać z aplikacji:</p>
-          <button onClick={() => navigate("/Logowanie")}>Zaloguj</button>
-          <button onClick={() => navigate("/Logowanie")}>Zarejestruj</button>
+          <GoogleButton onClick={() => navigate("/Logowanie")}>
+          </GoogleButton>
         </div>
       ) : (
         <div>
