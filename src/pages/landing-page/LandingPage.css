@@ -1,0 +1,274 @@
+main {
+    display: flex;
+    flex-direction: column;
+    color: #183447;
+}
+
+.login_section {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 100px 1fr 70px 920px 220px;
+    grid-template-rows: 150px 270px 230px 1fr 150px;
+    background-color: #ECECEC;
+}
+
+    .banner {
+        grid-row-start: 1;
+        width: 1880px;
+        height: 80px;
+        border-radius: 100px;
+        background-color: white;
+        margin: 20px;
+        z-index: 2;    
+        display: grid;
+        align-items: center;
+        grid-template-columns: 200px 1fr 120px 120px 120px 120px 75px;
+        grid-template-rows: 1fr;
+        flex-direction: row;
+    }
+
+        .logo {
+            grid-column-start: 1;
+            margin-left: 20px;
+        }
+        .option1 {
+            grid-column-start: 3; 
+        }
+        .option2 {
+            grid-column-start: 4;
+        }
+        .option3 {
+            grid-column-start: 5;
+        }
+        .button1 {
+            width: 114px;
+            background-color: black;
+            justify-content: start;
+        }
+        .button2 {
+            width: 44px;
+        }
+
+    .field1 {
+        font-size: 54px;
+        grid-row-start: 2;
+        grid-column-start: 2;
+        z-index: 2;    
+        position: relative;
+    }
+    .field1::before {
+        position: absolute;
+        content: "";
+        display: block;
+        height: 200px;
+        width: 150px;
+        left: -20px;
+        background-image: url("src/pages/landing-page/arrows_up.png");
+        background-repeat: no-repeat;
+    }
+    .field2 {
+        font-size: 34px;
+        grid-row-start: 3;
+        grid-column-start: 2;
+        z-index: 2;    
+    }
+    .login {
+        grid-row-start: 4;
+        grid-column-start: 2;
+        width: 283px;
+        height: 70px;
+        z-index: 2;   
+        position: relative; 
+    }
+    .login::after {
+        position: absolute;
+        content: "";
+        display: block;
+        height: 200px;
+        width: 150px;
+        right: -180px;
+        top: 0px;
+        background-image: url("src/pages/landing-page/arrows_left.png");
+        background-repeat: no-repeat;
+    }
+    .pansim {
+        grid-row-start: 5;
+        grid-column-start: 2;
+        margin-top: 40px;
+        user-select: none;
+    }
+    .field_img {
+        height: 700px;
+        grid-row-start: 2;
+        grid-column-start: 4; 
+        z-index: 2;
+        user-select: none;
+    }
+
+    .dots0 {
+        grid-row-start: 2;
+        grid-column-start: 3;
+        height: 105px;
+        margin-bottom: ;
+        z-index: 1;
+    }
+
+    .dots1 {
+        grid-row-start: 5;
+        grid-column-start: 4;
+        margin-left: 10px;
+        z-index: 1;
+    }
+    .dots2 {
+        grid-row-start: 5;
+        grid-column-start: 5;
+        z-index: 1;
+    }
+.info_section {
+    display: grid;
+    width: 100vw;
+    height: 120vh;
+    background-color: #183447;
+    grid-template-columns:
+        100px
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        100px;
+    grid-template-rows:         
+        120px
+        minmax(0, 1fr)
+        10px
+        minmax(0, 1fr)
+        100px;
+}
+
+    .square1 {
+        grid-row: 2/3;
+        grid-column: 2/4;
+        height: 324px;
+        width: 432px;
+        justify-self: center;
+        align-self: center;
+        font-size: 52px;
+        text-align: center;
+        margin-top: 100px;
+        color: white;
+        z-index: 2;
+    }
+    .logo_background{
+        grid-row: 2/3;
+        grid-column: 2/4;        
+        justify-self: center;
+        align-self: center;
+        z-index: 1;
+    }
+    .square2 {
+        grid-row: 2/3;
+        grid-column: 4/6;
+        height: 400px;
+        width: 800px;
+        border-radius: 20px;   
+        background-color: #E0E3E5;
+        justify-self: center;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 30px;
+        position: relative;
+    }
+    .sqtext1 {
+        font-size: 32px;
+        font-weight: 500;
+    }
+    .sqtext2 {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    .sq2bottom {
+        height: 80px;
+        margin-top: auto;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+    .sq2bottom::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        top: -10px;
+        left: 0;
+    }
+        .sq2bottom_half {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        .sq2bottom_half2{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .technology_button {
+            background-color: #0D5295;
+            width: 100px;
+            height: 35px;
+        }
+        .dots3 {
+            position: absolute;
+            right: 30px;
+            height: 105px;
+            width: 105px;
+        }
+    .square3 {
+        grid-row: 4/5;
+        grid-column: 2/3;
+        height: 400px;
+        width: 400px;
+        border-radius: 20px;
+        background-color: #E0E3E5;
+        justify-self: center;
+        align-self: center;       
+    }
+    .square4 {
+        grid-row: 4/5;
+        grid-column: 3/5;
+        height: 400px;
+        width: 800px;
+        border-radius: 20px;   
+        background-color: #E0E3E5; 
+        justify-self: center;
+        align-self: center;
+    }
+    .square5 {
+        grid-row: 4/5;
+        grid-column: 5/6;
+        height: 400px;
+        width: 400px;
+        border-radius: 20px;   
+        background-color: #E0E3E5;     
+        justify-self: center;
+        align-self: center;  
+    }
+
+
+.numbers_section {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(56, 182, 30);
+}
+
+.footer {
+    display: flex;
+    width: 100vw;
+    height: 424px;
+    background-color: rgb(34, 65, 204);
+}

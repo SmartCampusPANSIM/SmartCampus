@@ -3,11 +3,13 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 5px;
+    cursor: pointer;
 }
 .primary {
     height: 44px;
     width: 150px;
-
+    font-size: 16px;
     background-color: #183447;
     border-radius: 100px;
     border: none;
@@ -49,16 +51,6 @@
     width: 88px;
     font-size: 16px;
     background-color: #4F6267;
-    border-radius: 100px;
-    color: white;
-    border: none;
-}
-
-.google {
-    height: 70px;
-    width: 283px;
-    font-size: 16px;
-    background-color: #183447;
     border-radius: 100px;
     color: white;
     border: none;

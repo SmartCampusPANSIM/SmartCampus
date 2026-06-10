@@ -12,6 +12,7 @@
     border-radius: 100px;
     color: white;
     border: none;
+    cursor: pointer;
 }
 .google_text {
     display: flex;
