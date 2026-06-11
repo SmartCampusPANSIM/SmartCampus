@@ -7,7 +7,6 @@
     padding-left: 10px;
     height: 70px;
     width: 283px;
-    font-size: 16px;
     background-color: #183447;
     border-radius: 100px;
     color: white;
@@ -28,7 +27,7 @@
     align-items: end;
     justify-content: left;
     height: 50%;
-    font-size: 16px;
+    font-size: clamp(0.8rem, 1.2vw, 1.5rem);
     font-weight: 600;
 }
 
@@ -37,5 +36,10 @@
     align-items: start;
     justify-content: left;
     height: 50%;
-    font-size: 14px;
+    font-size: clamp(0.6rem, 1vw, 0.8rem);
+}
+
+img {
+    height: 80%;
+    width: auto;
 }

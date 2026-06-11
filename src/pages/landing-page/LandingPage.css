@@ -8,22 +8,25 @@ main {
     display: grid;
     width: 100vw;
     height: 100vh;
-    grid-template-columns: 100px 1fr 70px 920px 220px;
-    grid-template-rows: 150px 270px 230px 1fr 150px;
+    min-width: 1000px;
+    min-height: 500px;
+    grid-template-columns: 5% 40% 5% 40% 5%;
+    grid-template-rows: 20% 25% 20% 15% 20%;
     background-color: #ECECEC;
 }
 
     .banner {
         grid-row-start: 1;
-        width: 1880px;
+        width: 98vw;
+        min-width: 750px;
         height: 80px;
         border-radius: 100px;
         background-color: white;
-        margin: 20px;
+        margin: 1vw;
         z-index: 2;    
         display: grid;
         align-items: center;
-        grid-template-columns: 200px 1fr 120px 120px 120px 120px 75px;
+        grid-template-columns: 15% 1fr 120px 120px 120px 120px 75px;
         grid-template-rows: 1fr;
         flex-direction: row;
     }
@@ -51,24 +54,17 @@ main {
         }
 
     .field1 {
-        font-size: 54px;
+        font-size: clamp(2rem, 2.7vw, 3rem);
         grid-row-start: 2;
         grid-column-start: 2;
+        min-width: 400px;
         z-index: 2;    
         position: relative;
     }
-    .field1::before {
-        position: absolute;
-        content: "";
-        display: block;
-        height: 200px;
-        width: 150px;
-        left: -20px;
-        background-image: url("src/pages/landing-page/arrows_up.png");
-        background-repeat: no-repeat;
-    }
+
     .field2 {
-        font-size: 34px;
+        font-size: clamp(1rem, 1.6vw, 1.5rem);
+        min-width: 400px;
         grid-row-start: 3;
         grid-column-start: 2;
         z-index: 2;    
@@ -76,100 +72,129 @@ main {
     .login {
         grid-row-start: 4;
         grid-column-start: 2;
+        align-self: center;
         width: 283px;
         height: 70px;
         z-index: 2;   
         position: relative; 
     }
-    .login::after {
-        position: absolute;
-        content: "";
-        display: block;
-        height: 200px;
-        width: 150px;
-        right: -180px;
-        top: 0px;
-        background-image: url("src/pages/landing-page/arrows_left.png");
-        background-repeat: no-repeat;
+    .google {
+        width: 18vw;
+        height: 10vh;
+        min-width: 200px;
+        min-height: 50px;
     }
     .pansim {
         grid-row-start: 5;
         grid-column-start: 2;
-        margin-top: 40px;
+        margin-top: 5vh;
+        height: auto;
+        width: 20vw;
+        min-width: 250px;
         user-select: none;
     }
     .field_img {
-        height: 700px;
+        height: 69vh;
+        width: auto;
+        min-height: 350px;
+        margin-top: 5vh;
         grid-row-start: 2;
         grid-column-start: 4; 
         z-index: 2;
         user-select: none;
     }
-
+    .arrows_up {
+        grid-row-start: 2;
+        grid-column-start: 2;
+        height: 150px;
+        z-index: 1;
+    }
+    .arrows_left {
+        grid-row-start: 4;
+        grid-column-start: 2;
+        justify-self: center;
+        margin-left: 8vw;
+        align-self: center;
+        height: 80px;
+        z-index: 1;
+    }
     .dots0 {
         grid-row-start: 2;
         grid-column-start: 3;
-        height: 105px;
-        margin-bottom: ;
+        height: 100px;
+        min-height: 100px;
         z-index: 1;
     }
 
     .dots1 {
+        height: 130px;
+        width: auto;
         grid-row-start: 5;
         grid-column-start: 4;
-        margin-left: 10px;
         z-index: 1;
     }
     .dots2 {
+        height: 130px;
+        width: auto;
         grid-row-start: 5;
         grid-column-start: 5;
         z-index: 1;
     }
+
+
 .info_section {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
-    height: 120vh;
+    height: 300vh;
+    max-height: fit-content;
+    min-height: 100vh;
     background-color: #183447;
-    grid-template-columns:
-        100px
-        minmax(0, 1fr)
-        minmax(0, 1fr)
-        minmax(0, 1fr)
-        minmax(0, 1fr)
-        100px;
-    grid-template-rows:         
-        120px
-        minmax(0, 1fr)
-        10px
-        minmax(0, 1fr)
-        100px;
 }
 
+    .info_section_half {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        padding: 2vh 10vw 2vh 10vw;
+        width: 100vw;
+        max-height: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 4vh;
+    }
+
     .square1 {
-        grid-row: 2/3;
-        grid-column: 2/4;
-        height: 324px;
-        width: 432px;
-        justify-self: center;
-        align-self: center;
-        font-size: 52px;
+        height: 40vh;
+        width: 80vh;
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: clamp(1.6rem, 4vw, 3rem);
         text-align: center;
-        margin-top: 100px;
         color: white;
         z-index: 2;
+        position: relative;
+        order: 1;
     }
-    .logo_background{
-        grid-row: 2/3;
-        grid-column: 2/4;        
-        justify-self: center;
-        align-self: center;
-        z-index: 1;
+    .logo_background {
+        position: absolute;
+        height: 40vh;
+        min-height: 200px;
+        width: auto;
+        z-index: -1;
     }
     .square2 {
-        grid-row: 2/3;
-        grid-column: 4/6;
-        height: 400px;
-        width: 800px;
+        height: 40vh;
+        width: 80vh;
+        min-height: 200px;
+        min-width: 380px;
         border-radius: 20px;   
         background-color: #E0E3E5;
         justify-self: center;
@@ -178,19 +203,21 @@ main {
         flex-direction: column;
         box-sizing: border-box;
         padding: 30px;
+        z-index: 2;
         position: relative;
+        order: 2;
     }
     .sqtext1 {
-        font-size: 32px;
+        font-size: clamp(0.8rem, 1.3vw, 2rem);
         font-weight: 500;
     }
     .sqtext2 {
-        font-size: 16px;
-        margin-top: 20px;
+        font-size: clamp(0.5rem, 0.8vw, 0.8rem);
+        margin-top: 2vh;
     }
     .sq2bottom {
         height: 80px;
-        margin-top: auto;
+        margin-top: 3vh;
         position: relative;
         display: flex;
         flex-direction: row;
@@ -206,6 +233,7 @@ main {
     }
         .sq2bottom_half {
             width: 50%;
+            font-size: clamp(0.6rem, 1vw, 2rem);
             display: flex;
             flex-direction: column;
         }
@@ -214,48 +242,54 @@ main {
             flex-wrap: wrap;
             flex-direction: row;
             gap: 10px;
-            margin-top: 20px;
+            margin-top: 2vh;
         }
         .technology_button {
             background-color: #0D5295;
-            width: 100px;
-            height: 35px;
+            width: 6vw;
+            height: 5vh;
+            min-width: 60px;
+            min-height: 20px;
+            font-size: clamp(0.7rem, 1vw, 2rem);
         }
         .dots3 {
             position: absolute;
             right: 30px;
-            height: 105px;
-            width: 105px;
+            height: 6vw;
+            min-height: 50px;
+            width: auto;
         }
     .square3 {
-        grid-row: 4/5;
-        grid-column: 2/3;
-        height: 400px;
-        width: 400px;
+        height: 40vh;
+        width: 40vh;
+        min-width: 200px;
+        min-height: 200px;
         border-radius: 20px;
         background-color: #E0E3E5;
-        justify-self: center;
-        align-self: center;       
+        justify-self: start;
+        align-self: center;   
+        order: 1;    
     }
     .square4 {
-        grid-row: 4/5;
-        grid-column: 3/5;
-        height: 400px;
-        width: 800px;
+        height: 40vh;
+        width: 80vh;
+        min-height: 200px;
+        min-width: 380px;
         border-radius: 20px;   
-        background-color: #E0E3E5; 
         justify-self: center;
         align-self: center;
+        order: 2;
     }
     .square5 {
-        grid-row: 4/5;
-        grid-column: 5/6;
-        height: 400px;
-        width: 400px;
+        height: 40vh;
+        width: 40vh;
+        min-width: 200px;
+        min-height: 200px;
         border-radius: 20px;   
         background-color: #E0E3E5;     
-        justify-self: center;
+        justify-self: end;
         align-self: center;  
+        order: 3;
     }
 
 

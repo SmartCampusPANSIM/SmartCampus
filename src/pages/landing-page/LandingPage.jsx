@@ -40,6 +40,8 @@ const LandingPage = () => {
 
         <img className="pansim" src="src\pages\landing-page\pansim.png"></img>
         <img className="field_img" src="src\pages\landing-page\building.png"></img>
+        <img className="arrows_up" src="src/pages/landing-page/arrows_up.png"></img>
+        <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
         <img className="dots0" src="src\pages\landing-page\dots.png"></img>
         <img className="dots1" src="src\pages\landing-page\dots.png"></img>
         <img className="dots2" src="src\pages\landing-page\dots.png"></img>
@@ -58,42 +60,46 @@ const LandingPage = () => {
       </section>
 
       <section className="info_section">
-        <div className="square1">
-          <b>Czym jest?</b><br></br>Smart Campus
-        </div>
-        <img className="logo_background" src="src\pages\landing-page\logo.svg"></img>
 
-        <div className="square2">
-          <img className="dots3" src="src\pages\landing-page\dots.png"></img>
-          <div className="sqtext1">Projekt Koła Naukowego Informatyki<br></br> Stosowanej</div>
-          <div className="sqtext2">
-            Smart Campus to platforma, która łączy wszystko, czego
-            <br></br> potrzebuje student - plan zajęć, mapę kampusu i aktualności -
-            <br></br> w jednym, intuicyjnym miejscu.
+        <div className="info_section_half">
+          <div className="square1">
+            <b>Czym jest?</b>Smart Campus
+            <img className="logo_background" src="src\pages\landing-page\logo.svg"></img>
           </div>
-          <div className="sq2bottom">
-            <div className="sq2bottom_half">
-              Zespół Smart Campus:<br></br>
-              <div className="sq2bottom_half2">
-                <FontAwesomeIcon icon={Icons.faUser}/>
-                <FontAwesomeIcon icon={Icons.faUser}/>
-                <FontAwesomeIcon icon={Icons.faUser}/>
-              </div>
+          
+
+          <div className="square2">
+            <img className="dots3" src="src\pages\landing-page\dots.png"></img>
+            <div className="sqtext1">Projekt Koła Naukowego Informatyki<br></br> Stosowanej</div>
+            <div className="sqtext2">
+              Smart Campus to platforma, która łączy wszystko, czego
+              <br></br> potrzebuje student - plan zajęć, mapę kampusu i aktualności -
+              <br></br> w jednym, intuicyjnym miejscu.
             </div>
-            <div className="sq2bottom_half">
-              Technologie:
-              <div className="sq2bottom_half2">
-                <MainButton className="technology_button" type="primary" text="react" onClick={() => window.open('https://react.dev/', '_blank')}/>
-                <MainButton className="technology_button" type="primary" text="Firebase" onClick={() => window.open('https://firebase.google.com/', '_blank')}/>
+            <div className="sq2bottom">
+              <div className="sq2bottom_half">
+                Zespół Smart Campus:<br></br>
+                <div className="sq2bottom_half2">
+                  <FontAwesomeIcon icon={Icons.faUser}/>
+                  <FontAwesomeIcon icon={Icons.faUser}/>
+                  <FontAwesomeIcon icon={Icons.faUser}/>
+                </div>
               </div>
-              </div>
+              <div className="sq2bottom_half">
+                Technologie:
+                <div className="sq2bottom_half2">
+                  <MainButton className="technology_button" type="primary" text="react" onClick={() => window.open('https://react.dev/', '_blank')}/>
+                  <MainButton className="technology_button" type="primary" text="Firebase" onClick={() => window.open('https://firebase.google.com/', '_blank')}/>
+                </div>
+                </div>
+            </div>
           </div>
         </div>
-
-        <div className="square3"></div>
-        <div className="square4"><img src="src\pages\landing-page\building2.png"></img></div>
-        <div className="square5"></div>
-
+        <div className="info_section_half">
+          <div className="square3"></div>
+          <img className="square4"src="src\pages\landing-page\building2.png"></img>
+          <div className="square5"></div>
+        </div>
       </section>
 
       <section className="numbers_section"></section>
