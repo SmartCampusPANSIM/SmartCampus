@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext.jsx";
 import GoogleButton from '@components/Buttons/GoogleButton/GoogleButton';
 import MainButton from '@components/Buttons/MainButton/MainButton';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import * as Icons from '@icons/icons'
-import './LandingPage.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as Icons from '@icons/icons';
+import './LandingPage.css';
+import Lekcja from "../plan-lekcji/Lekcja";
+import { color, scale } from "framer-motion";
 
 const LandingPage = () => {
   const { user, isAuthLoading } = useAuth();
@@ -96,13 +98,52 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="info_section_half">
-          <div className="square3"></div>
+          <div className="square3">
+            <div className="circle"><FontAwesomeIcon icon={Icons.faCalendarDays} color="white" size="xl"/></div>
+            <div className="sqtext3">Plan zajęć</div>
+            <div className="sqtext2">Wygodny, dynamiczny plan zajęć oraz<br></br>
+              czytelny terminarz zjazdów. Od teraz<br></br>
+              niczego nie przegapisz!
+            </div>
+            <img className="lekcja" src="src\pages\landing-page\lekcja.png"></img>
+          </div>
           <img className="square4"src="src\pages\landing-page\building2.png"></img>
-          <div className="square5"></div>
+          <div className="square5">
+            <div className="circle"><FontAwesomeIcon icon={Icons.faMap} color="white" size="xl"/></div>
+            <div className="sqtext3">Plan zajęć</div>
+            <div className="sqtext2">Wygodny, dynamiczny plan zajęć oraz<br></br>
+              czytelny terminarz zjazdów. Od teraz<br></br>
+              niczego nie przegapisz!
+            </div>
+            <img className="lekcja" src="src\pages\landing-page\map.png"></img>
+          </div>
         </div>
       </section>
 
-      <section className="numbers_section"></section>
+      <section className="numbers_section">
+        <div className="numbers_section_title">Smart Campus w liczbach</div>
+        <div className="numbers_section_bottom">
+
+          <div className="numbers">
+            <div className="nr_top"><FontAwesomeIcon icon={Icons.faUser}/></div>
+            <div className="nr_bot_txt1">2</div>
+            <div className="nr_bot_txt2">Użytkowników platformy</div>
+          </div>
+
+          <div className="numbers">
+          <div className="nr_modules">
+            <div className="nr_bot_txt1 modules_txt_adjust">5</div>
+            <div className="nr_bot_txt2 modules_txt_adjust">Smart modułów</div>
+          </div>
+          </div>
+
+          <div className="numbers">
+            <img className="nr_top" src="src\pages\landing-page\building3.png"></img>
+            <div className="nr_bot_txt1">2</div>
+            <div className="nr_bot_txt2">Budynki objęte projektem</div>
+          </div>
+        </div>
+      </section>
 
       <section className="footer"></section>
 

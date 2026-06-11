@@ -10,7 +10,7 @@ main {
     height: 100vh;
     min-width: 1000px;
     min-height: 500px;
-    grid-template-columns: 5% 40% 5% 40% 5%;
+    grid-template-columns: 5% 40% 3% 40% 5%;
     grid-template-rows: 20% 25% 20% 15% 20%;
     background-color: #ECECEC;
 }
@@ -94,10 +94,10 @@ main {
         user-select: none;
     }
     .field_img {
-        height: 69vh;
-        width: auto;
-        min-height: 350px;
-        margin-top: 5vh;
+        height: auto;
+        width: 46vw;
+        min-width: 350px;
+        margin-top: 2vh;
         grid-row-start: 2;
         grid-column-start: 4; 
         z-index: 2;
@@ -194,11 +194,9 @@ main {
         height: 40vh;
         width: 80vh;
         min-height: 200px;
-        min-width: 380px;
+        min-width: 420px;
         border-radius: 20px;   
         background-color: #E0E3E5;
-        justify-self: center;
-        align-self: center;
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
@@ -208,16 +206,22 @@ main {
         order: 2;
     }
     .sqtext1 {
-        font-size: clamp(0.8rem, 1.3vw, 2rem);
+        font-size: clamp(1rem, 1.4vw, 2rem);
         font-weight: 500;
     }
     .sqtext2 {
-        font-size: clamp(0.5rem, 0.8vw, 0.8rem);
+        font-size: clamp(0.6rem, 0.8vw, 2rem);
         margin-top: 2vh;
     }
+    .sqtext3 {
+    font-size: clamp(0.7rem, 1vw, 2rem);
+    font-weight: 500;
+    margin-top: 1vh;
+    }
+
     .sq2bottom {
-        height: 80px;
-        margin-top: 3vh;
+        height: 32vh;
+        margin-top: 6vh;
         position: relative;
         display: flex;
         flex-direction: row;
@@ -259,25 +263,41 @@ main {
             min-height: 50px;
             width: auto;
         }
-    .square3 {
+    .square3, .square5 {
         height: 40vh;
         width: 40vh;
         min-width: 200px;
         min-height: 200px;
         border-radius: 20px;
         background-color: #E0E3E5;
-        justify-self: start;
-        align-self: center;   
         order: 1;    
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 2vh;
     }
+
+        .circle {
+            height: 44px;
+            width: 44px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #183447;
+        }
+        
+        .lekcja {
+            height: auto;
+            margin-top: 2vh;
+
+        }
     .square4 {
         height: 40vh;
         width: 80vh;
         min-height: 200px;
         min-width: 380px;
         border-radius: 20px;   
-        justify-self: center;
-        align-self: center;
         order: 2;
     }
     .square5 {
@@ -287,18 +307,85 @@ main {
         min-height: 200px;
         border-radius: 20px;   
         background-color: #E0E3E5;     
-        justify-self: end;
-        align-self: center;  
         order: 3;
     }
 
 
 .numbers_section {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
-    height: 100vh;
-    background-color: rgb(56, 182, 30);
+    height: 300vh;
+    max-height: fit-content;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 10vh;
+    background-color: #ECECEC;
 }
+    .numbers_section_title {
+        height: 10vh;
+        font-size: clamp(1.5rem, 2vw, 4rem);
+    }
+    .numbers_section_bottom {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        height: fit-content;
+        width: 90vw;
+    }
+    .numbers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        height: 700px;
+        width: 300px;
+
+    }
+    .nr_top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        height: 75%;
+        width: 100%;
+        background-color: white;
+    }
+
+    .nr_bot_txt1 {
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        height: 15%;
+        font-size: 4rem;
+        font-weight: 800;
+    }
+    .nr_bot_txt2 {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        height: 10%;
+    }
+
+    .nr_modules {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+        width: 100%;
+        border-radius: 30px;
+        background-color: #183447;
+        margin-bottom: 50%;
+    }
+    .modules_txt_adjust {
+        height: 20%;
+        color: white;
+    }
 
 .footer {
     display: flex;
