@@ -8,6 +8,7 @@ import * as Icons from '@icons/icons';
 import './LandingPage.css';
 import Lekcja from "../plan-lekcji/Lekcja";
 import { color, scale } from "framer-motion";
+import LogoFull from "../../components/Logo/LogoFull";
 
 const LandingPage = () => {
   const { user, isAuthLoading } = useAuth();
@@ -21,44 +22,50 @@ const LandingPage = () => {
     <main>
       <section className="login_section">
         <div className="banner">
-          <div className="logo"><FontAwesomeIcon icon={Icons.SmartCampusLogo} /><b>Smart</b><br></br>Campus</div>
+          <div className="logo">
+            <LogoFull/>
+          </div>
           <div className="option1">O projekcie</div>
           <div className="option2">Lista zmian</div>
           <div className="option3">Nasz zespół</div>
           <MainButton className="button1" type="unique" iconLeft={Icons.faGithub} iconSize="2xl" text="GitHub" ></MainButton>
           <MainButton className="button2" type="primary" iconLeft={Icons.faMoon} iconSize="xl"></MainButton>
         </div>
+        <div className="login_section_bottom"> 
+          <div className="login_section_half">
+            <div className="field1">
+              Wejdź na wyższy<br></br>
+              <b>level</b> studiowania
+            </div>
+            <div className="field2">
+              <b>Smart Campus</b> to innowacyjna<br></br>
+              platforma usprawniająca życie<br></br>
+              akademickie ;)
+            </div>
 
-        <div className="field1">
-          Wejdź na wyższy<br></br>
-          <b>level</b> studiowania
-        </div>
-        <div className="field2">
-          <b>Smart Campus</b> to innowacyjna<br></br>
-          platforma usprawniająca życie<br></br>
-          akademickie ;)
-        </div>
-
-
-        <img className="pansim" src="src\pages\landing-page\pansim.png"></img>
-        <img className="field_img" src="src\pages\landing-page\building.png"></img>
-        <img className="arrows_up" src="src/pages/landing-page/arrows_up.png"></img>
-        <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
-        <img className="dots0" src="src\pages\landing-page\dots.png"></img>
-        <img className="dots1" src="src\pages\landing-page\dots.png"></img>
-        <img className="dots2" src="src\pages\landing-page\dots.png"></img>
-        {/* Przycisk logowania */}
-        {!user ? (
-          <div className="login">
-            <GoogleButton onClick={() => navigate("/Logowanie")}>
-            </GoogleButton>
+            {/* Przycisk logowania */}
+            {!user ? (
+              <div className="login">
+                <GoogleButton onClick={() => navigate("/Logowanie")}>
+                </GoogleButton>
+              </div>
+            ) : (
+              <div>
+                <p>Jesteś zalogowany jako: {user.displayName || user.email}</p>
+              </div>
+            )}
+            {/* /Przycisk logowania */}
           </div>
-        ) : (
-          <div>
-            <p>Jesteś zalogowany jako: {user.displayName || user.email}</p>
+          <div className="login_section_half">
+            <img className="pansim" src="src\pages\landing-page\pansim.png"></img>
+            <img className="field_img" src="src\pages\landing-page\building.png"></img>
+            <img className="arrows_up" src="src/pages/landing-page/arrows_up.png"></img>
+            <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
+            <img className="dots0" src="src\pages\landing-page\dots.png"></img>
+            <img className="dots1" src="src\pages\landing-page\dots.png"></img>
+            <img className="dots2" src="src\pages\landing-page\dots.png"></img>
           </div>
-        )}
-        {/* /Przycisk logowania */}
+        </div>
       </section>
 
       <section className="info_section">
@@ -145,7 +152,27 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="footer"></section>
+      <section className="footer">
+        <div className="footer_part">
+          <div className="footer_logo_part"><LogoFull colorReverse="reverse"/><p className="beta">BETA</p></div><p>Wersja 1.0</p>
+        </div>
+        <div className="footer_part">
+          <div><p>Skontaktuj się z nami po więcej</p><p>informacji.</p></div>
+          <div className="footer_contact">
+            <div><p><b>Kontakt</b></p><p><u>smartcampuspansim@gmail.com</u></p></div>
+            <div><p><b>Zgłoś błąd</b></p><p>SmartCampusWeb.netlify.app/zglosblad</p></div>
+          </div>
+        </div>
+        <div className="footer_part footer_line">
+          <div>
+            <p>KNIS 2025-2026 Wszelkie prawa zastrzeżone</p>
+          </div>
+          <div className="text_flex">
+            <p>Informacje o plikach cookie</p>
+            <p>Polityka prywatności</p>
+          </div>
+        </div>
+      </section>
 
     </main>
   );

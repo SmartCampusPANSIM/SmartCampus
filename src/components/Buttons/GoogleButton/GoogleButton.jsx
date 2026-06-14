@@ -2,7 +2,7 @@ import React from 'react';
 import './GoogleButton.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icons from '@icons/icons'
-const GoogleButton = ({ onClick }) => {
+function GoogleButton({ onClick }) {
 
   return (
     <button onClick={onClick} className="google">
