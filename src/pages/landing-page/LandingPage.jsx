@@ -26,20 +26,22 @@ const LandingPage = () => {
       </section>
 
       <section className="login_section">
-        <div className="login_section_half">
+        <div className="login_section_half1">
           <div className="field1">
+            <img className="arrows_up" src="src/pages/landing-page/arrows_up.png"></img>
             <p>Wejdź na wyższy</p>
             <p><span className="text_fat">level</span> studiowania</p>
           </div>
           <div className="field2">
-            <b>Smart Campus</b> to innowacyjna<br></br>
-            platforma usprawniająca życie<br></br>
-            akademickie ;)
+            <p><span className="text_fat">Smart Campus</span> to innowacyjna</p>
+            <p>platforma usprawniająca życie</p>
+            <p>akademickie ;)</p>
           </div>
 
           {/* Przycisk logowania */}
           {!user ? (
-            <div className="login">
+            <div className="field3">
+              <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
               <GoogleButton onClick={() => navigate("/Logowanie")}>
               </GoogleButton>
             </div>
@@ -49,13 +51,12 @@ const LandingPage = () => {
             </div>
           )}
           {/* /Przycisk logowania */}
-          <img className="pansimxkolo" src="src\pages\landing-page\pansim.png"></img>
+          <img className="field4" src="src\pages\landing-page\pansim.png"></img>
         </div>
-        <div className="login_section_half">
-          
-          <img className="field_img" src="src\pages\landing-page\building.png"></img>
-          <img className="arrows_up" src="src/pages/landing-page/arrows_up.png"></img>
-          <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
+        <div className="login_section_half2">
+          <div className="field5">
+            <img className="field5_img" src="src\pages\landing-page\building.png"></img>
+          </div>
           <img className="dots0" src="src\pages\landing-page\dots.png"></img>
           <img className="dots1" src="src\pages\landing-page\dots.png"></img>
           <img className="dots2" src="src\pages\landing-page\dots.png"></img>

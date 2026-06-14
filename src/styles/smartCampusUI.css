@@ -169,10 +169,6 @@ body {
     width: 50px;
     height: 57px;
     background-color: light-dark(#183447, #ffffff);
-    mask: url('../assets/icons/SmartCampusLogo.svg') no-repeat center;
-    -webkit-mask: url('../assets/icons/SmartCampusLogo.svg') no-repeat center;
-    mask-size: contain;
-    -webkit-mask-size: contain;
 }
 
 .navbar_logo_wrapper {
