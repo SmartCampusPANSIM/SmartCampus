@@ -56,10 +56,10 @@ const LandingPage = () => {
         <div className="login_section_half2">
           <div className="field5">
             <img className="field5_img" src="src\pages\landing-page\building.png"></img>
+            <img className="dots0" src="src\pages\landing-page\dots.png"></img>
+            <img className="dots1" src="src\pages\landing-page\dots.png"></img>
+            <img className="dots2" src="src\pages\landing-page\dots.png"></img>
           </div>
-          <img className="dots0" src="src\pages\landing-page\dots.png"></img>
-          <img className="dots1" src="src\pages\landing-page\dots.png"></img>
-          <img className="dots2" src="src\pages\landing-page\dots.png"></img>
         </div>
       </section>
 

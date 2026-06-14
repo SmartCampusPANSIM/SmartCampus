@@ -15,13 +15,14 @@ main {
 .login_section{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 100vw;
     height: 85vh;
     min-width: 1000px;
     min-height: 500px;
     background-color: #ECECEC;
     box-sizing: border-box;
-    padding: 40px;
+    padding: 40px 100px 40px 100px;
 }
 
 .login_section_half1 {
@@ -29,8 +30,6 @@ main {
     flex-direction: column;
     height: 100%;
     width: 30%;
-    box-sizing: border-box;
-    padding-left: 60px;
 }
 
 .login_section_half2 {
@@ -38,10 +37,7 @@ main {
     align-items: start;
     justify-content: end;
     height: 100%;
-    width: 70%;
-    box-sizing: border-box;
-    padding-right: 60px;
-    position: relative;
+    width: 60%;
 }
 
     .field1 {
@@ -126,22 +122,25 @@ main {
             position: absolute;
             height: 100px;
             width: auto;
-            left: 260px;
+            left: -70px;
             top: -30px;
+            z-index: -1;
         }
         .dots1 {
             position: absolute;
             height: 130px;
             width: auto;
-            left: 350px;
-            bottom: -5px;
+            left: 30px;
+            bottom: -65px;
+            z-index: -1;
         }
         .dots2 {
             position: absolute;
             height: 130px;
             width: auto;
-            right: 40px;
-            bottom: -5px;
+            right: -20px;
+            bottom: -65px;
+            z-index: -1;
         }
 
 .info_section {
