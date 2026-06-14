@@ -5,12 +5,12 @@ import * as Icons from '@icons/icons'
 function GoogleButton({ onClick }) {
 
   return (
-    <button onClick={onClick} className="google">
+    <button onClick={onClick} className="googleButton">
       {/* <FontAwesomeIcon icon={Icons.faGoogle} size='2xl'/> */}
-      <img src=".\src\components\Buttons\GoogleButton\google.png"/>
-      <section className='google_text'>
-        <div className='google_text1'>Zaloguj się</div>
-        <div className='google_text2'>Uczelnianym kontem google</div>
+      <img className='googleButton-googleIcon' src=".\src\components\Buttons\GoogleButton\google.png"/>
+      <section className='googleButton-textWrapper'>
+        <div className='googleButton-textWrapper-mainText'>Zaloguj się</div>
+        <div className='googleButton-textWrapper-bottomText'>Uczelnianym kontem google</div>
       </section>
     </button>
   );

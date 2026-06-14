@@ -1,28 +1,40 @@
-.google {
+.googleButton {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: left;
+    justify-self: center;
     box-sizing: border-box;
-    padding-left: 10px;
+    padding: 10px;
     height: 70px;
-    width: 283px;
+    width: 280px;
     background-color: #183447;
     border-radius: 100px;
     color: white;
     border: none;
-    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    backface-visibility: hidden;           
+    -webkit-font-smoothing: antialiased;    
+    transform: translateZ(0);
 }
-.google_text {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: fit-content;
-    gap: 5px;
-    margin-left: 10px;
+.googleButton:hover{
+    cursor: pointer;
+    background-color: #20435b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.01) translateZ(0);
+}
+.googleButton:active {
+    background-color: #132a3a; 
+    transform: scale(0.98) translateZ(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
-.google_text1 {
+.googleButton-textWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.googleButton-textWrapper-mainText {
     display: flex;
     align-items: end;
     justify-content: left;
@@ -31,7 +43,7 @@
     font-weight: 600;
 }
 
-.google_text2 {
+.googleButton-textWrapper-bottomText {
     display: flex;
     align-items: start;
     justify-content: left;
@@ -39,7 +51,8 @@
     font-size: 14px;
 }
 
-img {
-    height: 80%;
-    width: auto;
+.googleButton-googleIcon {
+    height: 44px;
+    width: 44px;
+    margin-right: 10px;
 }
