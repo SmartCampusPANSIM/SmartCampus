@@ -20,6 +20,10 @@ a:visited {
     color: white;
 }
 
+.text_fat {
+    font-weight: 600;
+}
+
 .defaultButton {
     background-color: #183447;
     font-weight: 400;

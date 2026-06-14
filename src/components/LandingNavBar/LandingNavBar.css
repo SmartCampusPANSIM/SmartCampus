@@ -1,0 +1,62 @@
+.titleBar{
+    box-sizing: border-box;
+    height: 80px;
+    width: calc(100% - 40px);
+    background-color: light-dark(rgba(255, 255, 255, 0.60), rgba(24, 52, 71, 0.60));
+    color: light-dark(#183447, #fff);
+    border-radius: 100px;
+    position: fixed;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+}
+
+.SC_logo{
+    background-image: url('Assets/SC_logo.png');
+    height: 40px;
+    width: 130px;
+    background-position: center;
+    background-size: cover;
+}
+@media (prefers-color-scheme: dark) {
+    .SC_logo {
+        background-image: url("Assets/SC_logo-light.png");
+    }
+}
+
+.titleBar-RightSection{
+    display: flex;
+    align-items: center;
+}
+
+.titleBar-RightSection_linkWrapper{
+    display: flex;
+    margin-right: 10px;
+}
+
+.titleBar-RightSection_linkWrapper p{
+    margin-right: 30px;
+}
+.titleBar-RightSection_linkWrapper p:hover{
+    cursor: pointer;
+    text-decoration: underline
+}
+
+.github_button {
+    width: 114px;
+    background-color: black;
+    justify-content: start;
+    margin-right: 10px;
+}
+
+.night_button {
+    width: 44px;
+}
+
+.toogleTheme_button{
+    background-color: light-dark(#183447, #fff);
+}

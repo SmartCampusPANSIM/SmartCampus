@@ -9,6 +9,7 @@ import './LandingPage.css';
 import Lekcja from "../plan-lekcji/Lekcja";
 import { color, scale } from "framer-motion";
 import LogoFull from "../../components/Logo/LogoFull";
+import LandingNavBar from "../../components/LandingNavBar/LandingNavBar";
 
 const LandingPage = () => {
   const { user, isAuthLoading } = useAuth();
@@ -20,51 +21,44 @@ const LandingPage = () => {
 
   return (
     <main>
-      <section className="login_section">
-        <div className="banner">
-          <div className="logo">
-            <LogoFull/>
-          </div>
-          <div className="option1">O projekcie</div>
-          <div className="option2">Lista zmian</div>
-          <div className="option3">Nasz zespół</div>
-          <MainButton className="button1" type="unique" iconLeft={Icons.faGithub} iconSize="2xl" text="GitHub" ></MainButton>
-          <MainButton className="button2" type="primary" iconLeft={Icons.faMoon} iconSize="xl"></MainButton>
-        </div>
-        <div className="login_section_bottom"> 
-          <div className="login_section_half">
-            <div className="field1">
-              Wejdź na wyższy<br></br>
-              <b>level</b> studiowania
-            </div>
-            <div className="field2">
-              <b>Smart Campus</b> to innowacyjna<br></br>
-              platforma usprawniająca życie<br></br>
-              akademickie ;)
-            </div>
+      <section className="banner_section">
+        <LandingNavBar/>
+      </section>
 
-            {/* Przycisk logowania */}
-            {!user ? (
-              <div className="login">
-                <GoogleButton onClick={() => navigate("/Logowanie")}>
-                </GoogleButton>
-              </div>
-            ) : (
-              <div>
-                <p>Jesteś zalogowany jako: {user.displayName || user.email}</p>
-              </div>
-            )}
-            {/* /Przycisk logowania */}
+      <section className="login_section">
+        <div className="login_section_half">
+          <div className="field1">
+            <p>Wejdź na wyższy</p>
+            <p><span className="text_fat">level</span> studiowania</p>
           </div>
-          <div className="login_section_half">
-            <img className="pansim" src="src\pages\landing-page\pansim.png"></img>
-            <img className="field_img" src="src\pages\landing-page\building.png"></img>
-            <img className="arrows_up" src="src/pages/landing-page/arrows_up.png"></img>
-            <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
-            <img className="dots0" src="src\pages\landing-page\dots.png"></img>
-            <img className="dots1" src="src\pages\landing-page\dots.png"></img>
-            <img className="dots2" src="src\pages\landing-page\dots.png"></img>
+          <div className="field2">
+            <b>Smart Campus</b> to innowacyjna<br></br>
+            platforma usprawniająca życie<br></br>
+            akademickie ;)
           </div>
+
+          {/* Przycisk logowania */}
+          {!user ? (
+            <div className="login">
+              <GoogleButton onClick={() => navigate("/Logowanie")}>
+              </GoogleButton>
+            </div>
+          ) : (
+            <div>
+              <p>Jesteś zalogowany jako: {user.displayName || user.email}</p>
+            </div>
+          )}
+          {/* /Przycisk logowania */}
+          <img className="pansimxkolo" src="src\pages\landing-page\pansim.png"></img>
+        </div>
+        <div className="login_section_half">
+          
+          <img className="field_img" src="src\pages\landing-page\building.png"></img>
+          <img className="arrows_up" src="src/pages/landing-page/arrows_up.png"></img>
+          <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
+          <img className="dots0" src="src\pages\landing-page\dots.png"></img>
+          <img className="dots1" src="src\pages\landing-page\dots.png"></img>
+          <img className="dots2" src="src\pages\landing-page\dots.png"></img>
         </div>
       </section>
 
