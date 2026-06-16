@@ -4,6 +4,9 @@ import { useAuth } from "@/context/AuthContext.jsx";
 import './LoginPage.css';
 import LogoFull from "../../components/Logo/LogoFull";
 import GoogleButton from '@components/Buttons/GoogleButton/GoogleButton';
+import ContinueButton from '@components/Buttons/ContinueButton/ContinueButton';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 export function LoginPage() {
   const { login, user } = useAuth();
@@ -28,22 +31,26 @@ export function LoginPage() {
     }
   };
 
-  React.useEffect(() => {
-    if (user) {
-      navigate(from, { replace: true });
-    }
-  }, [user, navigate, from]);
 
   return (
     <div className="LoginPage">
       <div className="LoginPage_leftSection">
-        <LogoFull/>
+        <LogoFull />
         <div className="LoginPage_leftSection-wrapper">
           <div className="LoginPage_leftSection-wrapperContent">
             <div className="LoginPage_leftSection-titleText">Logowanie</div>
             <div className="LoginPage_leftSection-descriptionText">Zaloguj się za pomocą <br /> uczelnianego konta google</div>
-            {error && <div className="LoginPage_loginError">{error}</div>}
-            <GoogleButton onClick={handleLogin} />
+            {error && (
+              <div className="LoginPage_loginError">
+                <FontAwesomeIcon icon={faTriangleExclamation} className="LoginPage_loginError-icon" />
+                <span className="LoginPage_loginError-text">{error}</span>
+              </div>
+            )}
+            {!user ? (
+              <GoogleButton onClick={handleLogin} />
+            ) : (
+              <ContinueButton onClick={() => navigate(from, { replace: true })} />
+            )}
           </div>
         </div>
       </div>

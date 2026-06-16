@@ -1,17 +1,14 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext.jsx";
+import LoadingSpinner from "./LoadingSpinner/LoadingSpinner";
 
 export function ProtectedRoute({ children }) {
   const { user, isAuthLoading } = useAuth();
   const location = useLocation();
 
   if (isAuthLoading) {
-    return (
-      <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
-        Ładowanie...
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   if (!user) {
