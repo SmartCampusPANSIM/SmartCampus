@@ -79,9 +79,7 @@ main {
         display: flex;
         align-items: center;
         height: 20%;
-        width: 100%;
-        grid-row-start: 4;
-        grid-column-start: 2;
+        width: 400px;
         position: relative;
         z-index: 1;
         
@@ -89,7 +87,7 @@ main {
         .arrows_left {
             position: absolute;
             height: 80px;
-            right: 80px;
+            right: 0;
         }
 
     .field4 {
@@ -149,9 +147,9 @@ main {
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 300vh;
-    max-height: fit-content;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: fit-content;
+    padding: 40px 0 40px 0;
     background-color: #183447;
 }
 
@@ -159,43 +157,45 @@ main {
         display: flex;
         flex-wrap: wrap;
         box-sizing: border-box;
-        padding: 2vh 10vw 2vh 10vw;
-        width: 100vw;
+        margin-top: 40px;
+        width: 100%;
         max-height: fit-content;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 4vh;
+        gap: 40px;
+        
+        &:nth-of-type(1) {
+            gap: 80px;
+        }
     }
 
     .square1 {
-        height: 40vh;
-        width: 80vh;
-        min-height: 300px;
+        height: 360px;
+        width: 720px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        font-size: clamp(1.6rem, 4vw, 3rem);
+        font-size: 50px;
         text-align: center;
         color: white;
         z-index: 2;
         position: relative;
         order: 1;
+
     }
     .logo_background {
         position: absolute;
-        height: 40vh;
+        height: 320px;
         min-height: 200px;
         width: auto;
         z-index: -1;
     }
     .square2 {
-        height: 40vh;
-        width: 80vh;
-        min-height: 200px;
-        min-width: 420px;
+        height: 360px;
+        width: 720px;
         border-radius: 20px;   
         background-color: #E0E3E5;
         display: flex;
@@ -204,25 +204,23 @@ main {
         padding: 30px;
         z-index: 2;
         position: relative;
+        gap: 10px;
         order: 2;
     }
     .sqtext1 {
-        font-size: clamp(1rem, 1.4vw, 2rem);
+        font-size: 26px;
         font-weight: 500;
     }
     .sqtext2 {
-        font-size: clamp(0.6rem, 0.8vw, 2rem);
-        margin-top: 2vh;
+        font-size: 16px;
     }
     .sqtext3 {
-    font-size: clamp(0.7rem, 1vw, 2rem);
+    font-size: 20px;
     font-weight: 500;
-    margin-top: 1vh;
     }
 
     .sq2bottom {
-        height: 32vh;
-        margin-top: 6vh;
+        margin-top: auto;
         position: relative;
         display: flex;
         flex-direction: row;
@@ -238,7 +236,7 @@ main {
     }
         .sq2bottom_half {
             width: 50%;
-            font-size: clamp(0.6rem, 1vw, 2rem);
+            font-size: 18px;
             display: flex;
             flex-direction: column;
         }
@@ -247,35 +245,35 @@ main {
             flex-wrap: wrap;
             flex-direction: row;
             gap: 10px;
-            margin-top: 2vh;
+            margin-top: 20px;
         }
         .technology_button {
             background-color: #0D5295;
-            width: 6vw;
-            height: 5vh;
-            min-width: 60px;
-            min-height: 20px;
-            font-size: clamp(0.7rem, 1vw, 2rem);
+            width: 100px;
+            height: 44px;
+            font-size: 18px;
         }
         .dots3 {
             position: absolute;
             right: 30px;
-            height: 6vw;
+            height: 100px;
             min-height: 50px;
             width: auto;
         }
     .square3, .square5 {
-        height: 40vh;
-        width: 40vh;
-        min-width: 200px;
-        min-height: 200px;
+        height: 360px;
+        width: 360px;
         border-radius: 20px;
-        background-color: #E0E3E5;
-        order: 1;    
+        gap: 10px;
+        background-color: #E0E3E5; 
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
-        padding: 2vh;
+        padding: 20px;
+    }
+
+    .square3 {
+        order: 1;
     }
 
         .circle {
@@ -290,27 +288,20 @@ main {
         
         .lekcja {
             height: auto;
-            margin-top: 2vh;
 
         }
     .square4 {
-        height: 40vh;
-        width: 80vh;
+        height: 360px;
+        width: 720px;
         min-height: 200px;
         min-width: 380px;
         border-radius: 20px;   
         order: 2;
     }
-    .square5 {
-        height: 40vh;
-        width: 40vh;
-        min-width: 200px;
-        min-height: 200px;
-        border-radius: 20px;   
-        background-color: #E0E3E5;     
+    
+    .square5 { 
         order: 3;
     }
-
 
 .numbers_section {
     display: flex;
@@ -318,31 +309,36 @@ main {
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 300vh;
-    max-height: fit-content;
-    min-height: 100vh;
+    height: 100vh;
+    padding-top: 40px;
+    min-height: fit-content;
     box-sizing: border-box;
-    padding: 10vh;
     background-color: #ECECEC;
 }
     .numbers_section_title {
-        height: 10vh;
-        font-size: clamp(1.5rem, 2vw, 4rem);
+        height: 100px;
+        display: flex;
+        align-items: center;
+        font-size: 44px;
+        font-weight: 600;
     }
+
     .numbers_section_bottom {
         display: flex;
+        align-items: center;
+        justify-content: center;
         flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-around;
+        min-height: fit-content;
         height: fit-content;
-        width: 90vw;
+        gap: 100px;
     }
+    
     .numbers {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 40px;
         height: 700px;
         width: 300px;
 
@@ -362,7 +358,7 @@ main {
         align-items: end;
         justify-content: center;
         height: 15%;
-        font-size: 4rem;
+        font-size: 54px;
         font-weight: 800;
     }
     .nr_bot_txt2 {
@@ -377,16 +373,18 @@ main {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 50%;
+        height: 360px;
         width: 100%;
         border-radius: 30px;
         background-color: #183447;
-        margin-bottom: 50%;
+
     }
     .modules_txt_adjust {
         height: 20%;
         color: white;
     }
+
+
 
 .footer {
     display: flex;
@@ -410,13 +408,12 @@ main {
         width: 100%;
         position: relative;
     }
-    .footer_contacts {
+    .footer_contact {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        width: 50%;
-
+        gap: 100px;
     }
 
     .footer_logo_part {
@@ -438,7 +435,6 @@ main {
     }
     .text_flex {
         display: flex;
-        flex-direction: row;
         align-items: center;
         gap: 30px;
     }
@@ -451,4 +447,82 @@ main {
         height: 2px;
         width: 100%;
     }
+
+@media (max-width: 1700px) {
+    .field1{
+        font-size: 40px;
+    }
+    .field2 {
+        font-size: 20px;
+    }
+    .field5_img {
+        height: 550px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .login_section_half1 {
+        width: 40%;
+    }
+    .login_section_half1 {
+        width: 60%;
+    }
+    .field5_img {
+        height: 450px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .field5_img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .footer {
+        font-size: 14px;
+    }
+    .footer_contact{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .square2, .square4 {
+        width: 600px;
+    }
+    .dots3 {
+        height: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    .square2, .square4 {
+        width: 450px;
+        height: 300px;
+    }
+    .sqtext1 {
+        font-size: 18px;
+    }
+    .sqtext2 {
+        font-size: 13px;
+    }
+    .sq2bottom p{
+        font-size: 16px;
+    }
+    .sq2bottom_half2 {
+        margin-top: 10px;
+    }
+    .technology_button {
+        height: 26px;
+        width: 70px;
+        font-size: 14px;
+    }
+    .numbers_section_title {
+        font-size: 30px;
+    }
+    .numbers:nth-of-type(2){
+        height: 350px;
+    }
+}
 

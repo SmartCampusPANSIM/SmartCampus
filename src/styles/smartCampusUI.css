@@ -24,6 +24,10 @@ a:visited {
     font-weight: 600;
 }
 
+.text_underline {
+    text-decoration: underline;
+}
+
 .defaultButton {
     background-color: #183447;
     font-weight: 400;

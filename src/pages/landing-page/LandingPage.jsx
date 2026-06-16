@@ -67,22 +67,25 @@ const LandingPage = () => {
 
         <div className="info_section_half">
           <div className="square1">
-            <b>Czym jest?</b>Smart Campus
+            <span className="fat_text">Czym jest?</span>Smart Campus
             <img className="logo_background" src="src\pages\landing-page\logo.svg"></img>
           </div>
           
 
           <div className="square2">
             <img className="dots3" src="src\pages\landing-page\dots.png"></img>
-            <div className="sqtext1">Projekt Koła Naukowego Informatyki<br></br> Stosowanej</div>
+            <div className="sqtext1">
+              <p>Projekt Koła Naukowego Informatyki</p>
+              <p>Stosowanej</p>
+            </div>
             <div className="sqtext2">
-              Smart Campus to platforma, która łączy wszystko, czego
-              <br></br> potrzebuje student - plan zajęć, mapę kampusu i aktualności -
-              <br></br> w jednym, intuicyjnym miejscu.
+              <p>Smart Campus to platforma, która łączy wszystko, czego</p>
+              <p>potrzebuje student - plan zajęć, mapę kampusu i aktualności -</p>
+              <p>w jednym, intuicyjnym miejscu.</p>
             </div>
             <div className="sq2bottom">
               <div className="sq2bottom_half">
-                Zespół Smart Campus:<br></br>
+                <p>Zespół Smart Campus:</p>
                 <div className="sq2bottom_half2">
                   <FontAwesomeIcon icon={Icons.faUser}/>
                   <FontAwesomeIcon icon={Icons.faUser}/>
@@ -90,9 +93,9 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="sq2bottom_half">
-                Technologie:
+                <p>Technologie:</p>
                 <div className="sq2bottom_half2">
-                  <MainButton className="technology_button" type="primary" text="react" onClick={() => window.open('https://react.dev/', '_blank')}/>
+                  <MainButton className="technology_button" type="primary" text="React" onClick={() => window.open('https://react.dev/', '_blank')}/>
                   <MainButton className="technology_button" type="primary" text="Firebase" onClick={() => window.open('https://firebase.google.com/', '_blank')}/>
                 </div>
                 </div>
@@ -101,21 +104,23 @@ const LandingPage = () => {
         </div>
         <div className="info_section_half">
           <div className="square3">
-            <div className="circle"><FontAwesomeIcon icon={Icons.faCalendarDays} color="white" size="xl"/></div>
+            <div><div className="circle"><FontAwesomeIcon icon={Icons.faCalendarDays} color="white" size="xl"/></div></div>
             <div className="sqtext3">Plan zajęć</div>
-            <div className="sqtext2">Wygodny, dynamiczny plan zajęć oraz<br></br>
-              czytelny terminarz zjazdów. Od teraz<br></br>
-              niczego nie przegapisz!
+            <div className="sqtext2">
+              <p>Wygodny, dynamiczny plan zajęć oraz</p>
+              <p>czytelny terminarz zjazdów. Od teraz</p>
+              <p>niczego nie przegapisz!</p>
             </div>
             <img className="lekcja" src="src\pages\landing-page\lekcja.png"></img>
           </div>
           <img className="square4"src="src\pages\landing-page\building2.png"></img>
           <div className="square5">
-            <div className="circle"><FontAwesomeIcon icon={Icons.faMap} color="white" size="xl"/></div>
+            <div><div className="circle"><FontAwesomeIcon icon={Icons.faMap} color="white" size="xl"/></div></div>
             <div className="sqtext3">Plan zajęć</div>
-            <div className="sqtext2">Wygodny, dynamiczny plan zajęć oraz<br></br>
-              czytelny terminarz zjazdów. Od teraz<br></br>
-              niczego nie przegapisz!
+            <div className="sqtext2">
+              <p>Wygodny, dynamiczny plan zajęć oraz</p>
+              <p>czytelny terminarz zjazdów. Od teraz</p>
+              <p>niczego nie przegapisz!</p>
             </div>
             <img className="lekcja" src="src\pages\landing-page\map.png"></img>
           </div>
@@ -123,26 +128,26 @@ const LandingPage = () => {
       </section>
 
       <section className="numbers_section">
-        <div className="numbers_section_title">Smart Campus w liczbach</div>
+        <div className="numbers_section_title"><p>Smart Campus w liczbach</p></div>
         <div className="numbers_section_bottom">
 
           <div className="numbers">
             <div className="nr_top"><FontAwesomeIcon icon={Icons.faUser}/></div>
-            <div className="nr_bot_txt1">2</div>
-            <div className="nr_bot_txt2">Użytkowników platformy</div>
+            <div className="nr_bot_txt1"><p>2</p></div>
+            <div className="nr_bot_txt2"><p>Użytkowników platformy</p></div>
           </div>
 
           <div className="numbers">
-          <div className="nr_modules">
-            <div className="nr_bot_txt1 modules_txt_adjust">5</div>
-            <div className="nr_bot_txt2 modules_txt_adjust">Smart modułów</div>
-          </div>
+            <div className="nr_modules">
+              <div className="nr_bot_txt1 modules_txt_adjust"><p>5</p></div>
+              <div className="nr_bot_txt2 modules_txt_adjust"><p>Smart modułów</p></div>
+            </div>
           </div>
 
           <div className="numbers">
             <img className="nr_top" src="src\pages\landing-page\building3.png"></img>
-            <div className="nr_bot_txt1">2</div>
-            <div className="nr_bot_txt2">Budynki objęte projektem</div>
+            <div className="nr_bot_txt1"><p>2</p></div>
+            <div className="nr_bot_txt2"><p>Budynki objęte projektem</p></div>
           </div>
         </div>
       </section>
@@ -154,8 +159,13 @@ const LandingPage = () => {
         <div className="footer_part">
           <div><p>Skontaktuj się z nami po więcej</p><p>informacji.</p></div>
           <div className="footer_contact">
-            <div><p><b>Kontakt</b></p><p><u>smartcampuspansim@gmail.com</u></p></div>
-            <div><p><b>Zgłoś błąd</b></p><p>SmartCampusWeb.netlify.app/zglosblad</p></div>
+            <div>
+              <p><span className="text_fat">Kontakt</span></p>
+              <p><span className="text_underline">smartcampuspansim@gmail.com</span></p></div>
+            <div>
+              <p><span className="text_fat">Zgłoś błąd</span></p>
+              <p>SmartCampusWeb.netlify.app/zglosblad</p>
+            </div>
           </div>
         </div>
         <div className="footer_part footer_line">
