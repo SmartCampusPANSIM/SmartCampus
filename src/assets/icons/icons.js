@@ -5,10 +5,11 @@ import {
   faCalendarDays,
   faMap,
   faPhotoFilm,
-  faLaptop
+  faLaptop,
+  faMoon
 } from '@fortawesome/free-solid-svg-icons'
 
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter, faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 import SmartCampusLogo from './SmartCampusLogo.svg'
 
@@ -21,5 +22,8 @@ export {
   faCalendarDays,
   faMap,
   faPhotoFilm,
-  faLaptop
+  faLaptop,
+  faGoogle,
+  faGithub,
+  faMoon
 }

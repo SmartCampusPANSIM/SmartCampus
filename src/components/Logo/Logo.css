@@ -1,0 +1,46 @@
+.navbar_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    height: 60px;
+    width: max-content;
+    padding: 5px 10px;
+}
+
+.navbar_logo_icon {
+    width: 50px;
+    height: 57px;
+    background-color: light-dark(#183447, #ffffff);
+    mask: url('../../assets/icons/SmartCampusLogo.svg') no-repeat center;
+    -webkit-mask: url('../../assets/icons/SmartCampusLogo.svg') no-repeat center;
+    mask-size: contain;
+    -wekit-mask-size: contain;
+}
+
+.navbar_logo_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: max-content;
+    margin-left: 5px;
+}
+
+.navbar_logo_wrapper_topText {
+    font-size: 16px;
+    font-weight: 600;
+    color: light-dark(#183447, #ffffff);
+    height: 20px;
+}
+
+.navbar_logo_wrapper_bottomText {
+    font-size: 16px;
+    font-weight: 400;
+    color: light-dark(#183447, #ffffff);
+    height: 20px;
+}
+
+.reverse {
+    color: light-dark(#ffffff, #183447);
+}
