@@ -2,7 +2,6 @@
 
 :root {
     scroll-behavior: smooth;
-    color-scheme: light dark;
 }
 
 ::-webkit-scrollbar { width: 6px;}
