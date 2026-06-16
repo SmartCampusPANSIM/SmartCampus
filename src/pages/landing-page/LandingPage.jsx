@@ -7,6 +7,16 @@ import MainButton from '@components/Buttons/MainButton/MainButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as Icons from '@icons/icons';
 import './LandingPage.css';
+import arrowsUp from './arrows_up.png';
+import arrowsLeft from './arrows_left.png';
+import pansim from './pansim.png';
+import building from './building.png';
+import dots from './dots.png';
+import logoBackground from './logo.svg';
+import lekcja from './lekcja.png';
+import building2 from './building2.png';
+import building3 from './building3.png';
+import mapImg from './map.png';
 import Lekcja from "../plan-lekcji/Lekcja";
 import { color, scale } from "framer-motion";
 import LogoFull from "../../components/Logo/LogoFull";
@@ -30,7 +40,7 @@ const LandingPage = () => {
       <section className="login_section">
         <div className="login_section_half1">
           <div className="field1">
-            <img className="arrows_up" src="src/pages/landing-page/arrows_up.png"></img>
+            <img className="arrows_up" src={arrowsUp} alt="arrows up" />
             <p>Wejdź na wyższy</p>
             <p><span className="text_fat">level</span> studiowania</p>
           </div>
@@ -42,25 +52,25 @@ const LandingPage = () => {
 
           {!user ? (
             <div className="field3">
-              <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
+              <img className="arrows_left" src={arrowsLeft} alt="arrows left" />
               <GoogleButton onClick={() => navigate("/Logowanie")}>
               </GoogleButton>
             </div>
           ) : (
             <div className="field3">
-              <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
+              <img className="arrows_left" src={arrowsLeft} alt="arrows left" />
               <ContinueButton onClick={() => navigate("/Panel")}>
               </ContinueButton>
             </div>
           )}
-          <img className="field4" src="src\pages\landing-page\pansim.png"></img>
+          <img className="field4" src={pansim} alt="pansim" />
         </div>
         <div className="login_section_half2">
           <div className="field5">
-            <img className="field5_img" src="src\pages\landing-page\building.png"></img>
-            <img className="dots0" src="src\pages\landing-page\dots.png"></img>
-            <img className="dots1" src="src\pages\landing-page\dots.png"></img>
-            <img className="dots2" src="src\pages\landing-page\dots.png"></img>
+            <img className="field5_img" src={building} alt="building" />
+            <img className="dots0" src={dots} alt="dots" />
+            <img className="dots1" src={dots} alt="dots" />
+            <img className="dots2" src={dots} alt="dots" />
           </div>
         </div>
       </section>
@@ -70,12 +80,12 @@ const LandingPage = () => {
         <div className="info_section_half">
           <div className="square1">
             <span className="fat_text">Czym jest?</span>Smart Campus
-            <img className="logo_background" src="src\pages\landing-page\logo.svg"></img>
+            <img className="logo_background" src={logoBackground} alt="logo background" />
           </div>
 
 
           <div className="square2">
-            <img className="dots3" src="src\pages\landing-page\dots.png"></img>
+            <img className="dots3" src={dots} alt="dots" />
             <div className="sqtext1">
               <p>Projekt Koła Naukowego Informatyki</p>
               <p>Stosowanej</p>
@@ -97,34 +107,34 @@ const LandingPage = () => {
               <div className="sq2bottom_half">
                 <p>Technologie:</p>
                 <div className="sq2bottom_half2">
-                  <MainButton className="technology_button" type="primary" text="React" onClick={() => window.open('https://react.dev/', '_blank')}/>
-                  <MainButton className="technology_button" type="primary" text="Firebase" onClick={() => window.open('https://firebase.google.com/', '_blank')}/>
-                </div>
+                  <MainButton className="technology_button" type="primary" text="React" onClick={() => window.open('https://react.dev/', '_blank')} />
+                  <MainButton className="technology_button" type="primary" text="Firebase" onClick={() => window.open('https://firebase.google.com/', '_blank')} />
                 </div>
               </div>
             </div>
           </div>
+        </div>
         <div className="info_section_half">
           <div className="square3">
-            <div><div className="circle"><FontAwesomeIcon icon={Icons.faCalendarDays} color="white" size="xl"/></div></div>
+            <div><div className="circle"><FontAwesomeIcon icon={Icons.faCalendarDays} color="white" size="xl" /></div></div>
             <div className="sqtext3">Plan zajęć</div>
             <div className="sqtext2">
               <p>Wygodny, dynamiczny plan zajęć oraz</p>
               <p>czytelny terminarz zjazdów. Od teraz</p>
               <p>niczego nie przegapisz!</p>
             </div>
-            <img className="lekcja" src="src\pages\landing-page\lekcja.png"></img>
+            <img className="lekcja" src={lekcja} alt="lekcja" />
           </div>
-          <img className="square4" src="src\pages\landing-page\building2.png"></img>
+          <img className="square4" src={building2} alt="building 2" />
           <div className="square5">
-            <div><div className="circle"><FontAwesomeIcon icon={Icons.faMap} color="white" size="xl"/></div></div>
+            <div><div className="circle"><FontAwesomeIcon icon={Icons.faMap} color="white" size="xl" /></div></div>
             <div className="sqtext3">Plan zajęć</div>
             <div className="sqtext2">
               <p>Wygodny, dynamiczny plan zajęć oraz</p>
               <p>czytelny terminarz zjazdów. Od teraz</p>
               <p>niczego nie przegapisz!</p>
             </div>
-            <img className="lekcja" src="src\pages\landing-page\map.png"></img>
+            <img className="lekcja" src={mapImg} alt="map" />
           </div>
         </div>
       </section>
@@ -134,7 +144,7 @@ const LandingPage = () => {
         <div className="numbers_section_bottom">
 
           <div className="numbers">
-            <div className="nr_top"><FontAwesomeIcon icon={Icons.faUser}/></div>
+            <div className="nr_top"><FontAwesomeIcon icon={Icons.faUser} /></div>
             <div className="nr_bot_txt1"><p>2</p></div>
             <div className="nr_bot_txt2"><p>Użytkowników platformy</p></div>
           </div>
@@ -147,7 +157,7 @@ const LandingPage = () => {
           </div>
 
           <div className="numbers">
-            <img className="nr_top" src="src\pages\landing-page\building3.png"></img>
+            <img className="nr_top" src={building3} alt="building 3" />
             <div className="nr_bot_txt1"><p>2</p></div>
             <div className="nr_bot_txt2"><p>Budynki objęte projektem</p></div>
           </div>
