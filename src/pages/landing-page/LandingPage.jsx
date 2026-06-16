@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext.jsx";
 import GoogleButton from '@components/Buttons/GoogleButton/GoogleButton';
+import ContinueButton from '@components/Buttons/ContinueButton/ContinueButton';
 import MainButton from '@components/Buttons/MainButton/MainButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as Icons from '@icons/icons';
@@ -10,19 +11,20 @@ import Lekcja from "../plan-lekcji/Lekcja";
 import { color, scale } from "framer-motion";
 import LogoFull from "../../components/Logo/LogoFull";
 import LandingNavBar from "../../components/LandingNavBar/LandingNavBar";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 
 const LandingPage = () => {
   const { user, isAuthLoading } = useAuth();
   const navigate = useNavigate();
 
   if (isAuthLoading) {
-    return <div>Ładowanie...</div>;
+    return <LoadingSpinner />;
   }
 
   return (
     <main>
       <section className="banner_section">
-        <LandingNavBar/>
+        <LandingNavBar />
       </section>
 
       <section className="login_section">
@@ -35,10 +37,9 @@ const LandingPage = () => {
           <div className="field2">
             <p><span className="text_fat">Smart Campus</span> to innowacyjna</p>
             <p>platforma usprawniająca życie</p>
-            <p>akademickie ;)</p>
+            <p>akademickie!</p>
           </div>
 
-          {/* Przycisk logowania */}
           {!user ? (
             <div className="field3">
               <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
@@ -46,11 +47,12 @@ const LandingPage = () => {
               </GoogleButton>
             </div>
           ) : (
-            <div>
-              <p>Jesteś zalogowany jako: {user.displayName || user.email}</p>
+            <div className="field3">
+              <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
+              <ContinueButton onClick={() => navigate("/Panel")}>
+              </ContinueButton>
             </div>
           )}
-          {/* /Przycisk logowania */}
           <img className="field4" src="src\pages\landing-page\pansim.png"></img>
         </div>
         <div className="login_section_half2">
@@ -70,7 +72,7 @@ const LandingPage = () => {
             <span className="fat_text">Czym jest?</span>Smart Campus
             <img className="logo_background" src="src\pages\landing-page\logo.svg"></img>
           </div>
-          
+
 
           <div className="square2">
             <img className="dots3" src="src\pages\landing-page\dots.png"></img>
@@ -87,9 +89,9 @@ const LandingPage = () => {
               <div className="sq2bottom_half">
                 <p>Zespół Smart Campus:</p>
                 <div className="sq2bottom_half2">
-                  <FontAwesomeIcon icon={Icons.faUser}/>
-                  <FontAwesomeIcon icon={Icons.faUser}/>
-                  <FontAwesomeIcon icon={Icons.faUser}/>
+                  <FontAwesomeIcon icon={Icons.faUser} />
+                  <FontAwesomeIcon icon={Icons.faUser} />
+                  <FontAwesomeIcon icon={Icons.faUser} />
                 </div>
               </div>
               <div className="sq2bottom_half">
@@ -99,6 +101,7 @@ const LandingPage = () => {
                   <MainButton className="technology_button" type="primary" text="Firebase" onClick={() => window.open('https://firebase.google.com/', '_blank')}/>
                 </div>
                 </div>
+              </div>
             </div>
           </div>
         </div>
@@ -113,7 +116,7 @@ const LandingPage = () => {
             </div>
             <img className="lekcja" src="src\pages\landing-page\lekcja.png"></img>
           </div>
-          <img className="square4"src="src\pages\landing-page\building2.png"></img>
+          <img className="square4" src="src\pages\landing-page\building2.png"></img>
           <div className="square5">
             <div><div className="circle"><FontAwesomeIcon icon={Icons.faMap} color="white" size="xl"/></div></div>
             <div className="sqtext3">Plan zajęć</div>
@@ -154,7 +157,7 @@ const LandingPage = () => {
 
       <section className="footer">
         <div className="footer_part">
-          <div className="footer_logo_part"><LogoFull colorReverse="reverse"/><p className="beta">BETA</p></div><p>Wersja 1.0</p>
+          <div className="footer_logo_part"><LogoFull colorReverse="reverse" /><p className="beta">BETA</p></div><p>Wersja 1.0</p>
         </div>
         <div className="footer_part">
           <div><p>Skontaktuj się z nami po więcej</p><p>informacji.</p></div>

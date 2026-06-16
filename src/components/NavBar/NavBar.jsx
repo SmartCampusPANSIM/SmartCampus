@@ -39,8 +39,8 @@ function NavBar() {
 
   const handleLogout = async () => {
     try {
+      navigate("/LandingPage", { replace: true });
       await logout();
-      navigate("/LandingPage");
     } catch (error) {
       console.error("Błąd wylogowania:", error);
     }
@@ -125,7 +125,7 @@ function NavBar() {
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
-    setActiveView('profile'); // Resetuj widok przy otwieraniu/zamykaniu
+    setActiveView('profile'); 
   };
 
   const trimUsername = (user) =>
@@ -354,6 +354,9 @@ function NavBar() {
                           />
                         </div>
                       </div>
+                      <Link to="/LandingPage" onClick={() => setIsMenuOpen(false)}>
+                        <button className="navbar_userMenu_button">Strona startowa Smart Campus</button>
+                      </Link>
                       <a href="https://pansim.edu.pl/" target="_blank"><button className="navbar_userMenu_button">Strona Pansim</button></a>
                       <a href="https://moodle.pansim.edu.pl/" target="_blank"><button className="navbar_userMenu_button">Moodle</button></a>
 

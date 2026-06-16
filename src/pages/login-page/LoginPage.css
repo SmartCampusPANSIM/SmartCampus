@@ -1,0 +1,136 @@
+body {
+    min-height: 100dvh;
+    box-sizing: border-box;
+    background-color: light-dark(#fff, #141414);
+}
+
+.LoginPage {
+    overflow: hidden;
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.LoginPage_leftSection {
+    box-sizing: border-box;
+    height: 100dvh;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.LoginPage_leftSection-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginPage_leftSection-wrapperContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 250px;
+    color: light-dark(#183447, #fff);
+}
+
+.LoginPage_leftSection-titleText {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.LoginPage_leftSection-descriptionText {
+    text-align: center;
+}
+
+.LoginPage_loginError {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-sizing: border-box;
+    padding: 12px 18px;
+    text-align: left;
+    border-radius: 12px;
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    color: #ef4444;
+    margin: 24px 0;
+    max-width: 420px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: shakeAndFadeIn 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.LoginPage_loginError-icon {
+    font-size: 16px;
+    color: #ef4444;
+    flex-shrink: 0;
+}
+
+.LoginPage_loginError-text {
+    font-weight: 500;
+}
+
+@keyframes shakeAndFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(5px);
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    20%, 80% {
+        transform: translateX(-4px);
+    }
+    40%, 60% {
+        transform: translateX(4px);
+    }
+    30%, 50%, 70% {
+        transform: translateX(-2px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.LoginPage_rightSection {
+    box-sizing: border-box;
+    height: 100dvh;
+    width: 100%;
+    padding: 20px;
+}
+
+.LoginPage_rightSection-img {
+    background-image: url('../../assets/img/PANSIM_WIIE_Front.png');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+@media (max-width: 750px) {
+
+    .LoginPage_leftSection {
+        width: 100%;
+    }
+
+    .LoginPage_leftSection-wrapperContent {
+        height: 300px;
+    }
+
+    .LoginPage_leftSection {
+        align-items: center;
+    }
+
+    .LoginPage_rightSection {
+        display: none;
+    }
+}

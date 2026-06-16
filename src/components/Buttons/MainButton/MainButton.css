@@ -1,11 +1,31 @@
 .default {
+    box-sizing: border-box;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    cursor: pointer;
+    height: 44px;
+    width: max-content;
+    border: none;
+    outline: none;
+    border-radius: 1000px;
+    font-size: 16px;
+    background-color: #183447;
+    padding: 0px 8px;
+    margin: 0;
+
+    &:hover{
+        cursor: pointer;
+    }
+
 }
+
+.default svg {
+    padding: 0;
+    margin: 0;
+    height: 28px;
+    width: 28px;
+}
+
 .primary {
     height: 44px;
     width: 150px;
@@ -47,11 +67,27 @@
 }
 
 .unique {
-    height: 44px;
-    width: 88px;
-    font-size: 16px;
     background-color: #4F6267;
     border-radius: 100px;
     color: white;
     border: none;
+}
+
+.github {
+    background-color: black;
+    color: #fff;
+    gap: 10px;
+}
+
+.github svg {
+    color: #fff;
+}
+
+.toogleTheme {
+    background-color: light-dark(#183447, #fff);
+    width: 44px;
+}
+
+.toogleTheme svg {
+    color: light-dark(#fff, #183447);
 }

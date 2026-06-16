@@ -7,6 +7,9 @@ import PlanLekcji from '@pages/plan-lekcji/PlanLekcji.jsx';
 import MapaKampusu from '@pages/mapa-kampusu/MapaKampusu.jsx';
 import Feed from '@pages/feed/Feed.jsx';
 import Ustawienia from '@pages/ustawienia/Ustawienia.jsx';
+import OProjekcie from '@pages/o-projekcie/OProjekcie.jsx';
+import ListaZmian from '@pages/lista-zmian/ListaZmian.jsx';
+import NaszZespol from '@pages/nasz-zespol/NaszZespol.jsx';
 import ProtectedRoute from '@components/ProtectedRoute.jsx';
 import { useAuth } from '@/context/AuthContext.jsx';
 
@@ -22,7 +25,9 @@ const AppRoutes = () => {
       <Route path="/" element={<RootRedirect />} />
       <Route path="/LandingPage" element={<LandingPage />} />
       <Route path="/Logowanie" element={<LoginPage />} />
-
+      <Route path="/OProjekcie" element={<OProjekcie />} />
+      <Route path="/ListaZmian" element={<ListaZmian />} />
+      <Route path="/NaszZespol" element={<NaszZespol />} />
       <Route path="/Panel" element={<ProtectedRoute><Panel /></ProtectedRoute>} />
       <Route path="/MapaKampusu" element={<ProtectedRoute><MapaKampusu /></ProtectedRoute>} />
       <Route path="/Elearning" element={<ProtectedRoute><Elearning /></ProtectedRoute>} />

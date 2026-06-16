@@ -15,17 +15,9 @@
     z-index: 100;
 }
 
-.SC_logo{
-    background-image: url('Assets/SC_logo.png');
-    height: 40px;
-    width: 130px;
-    background-position: center;
-    background-size: cover;
-}
-@media (prefers-color-scheme: dark) {
-    .SC_logo {
-        background-image: url("Assets/SC_logo-light.png");
-    }
+.LandingPageNavBar-links{
+    color: light-dark(#183447, #fff) !important;
+    margin-right: 10px;
 }
 
 .titleBar-RightSection{
@@ -46,17 +38,82 @@
     text-decoration: underline
 }
 
-.github_button {
-    width: 114px;
-    background-color: black;
-    justify-content: start;
+.github{
     margin-right: 10px;
 }
 
-.night_button {
-    width: 44px;
+.titleBar_mobileMenuToggle {
+    display: none;
 }
 
-.toogleTheme_button{
-    background-color: light-dark(#183447, #fff);
+@media (max-width: 750px) {
+    .titleBar-RightSection_linkWrapper{
+        display: none;
+    }
+
+    .titleBar .github{
+        display: none;
+    }
+
+    .titleBar_mobileMenuToggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        background-color: light-dark(#fff, rgba(255, 255, 255, 0.15));
+        color: light-dark(#183447, #fff);
+        margin-left: 10px;
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .titleBar_mobileMenuToggle:active {
+        transform: scale(0.95);
+    }
+}
+
+.titleBar_mobileMenu {
+    position: fixed;
+    top: 110px;
+    left: 20px;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+    background-color: light-dark(rgba(255, 255, 255, 0.60), rgba(24, 52, 71, 0.60));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 26px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 99;
+    animation: expandList 0.2s ease-in-out;
+}
+
+.titleBar_mobileMenu_link {
+    color: light-dark(#183447, #fff) !important;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    padding: 8px 0;
+    transition: opacity 0.2s ease;
+}
+
+.titleBar_mobileMenu_link:hover {
+    opacity: 0.8;
+}
+
+.titleBar_mobileMenu_github {
+    width: 100% !important;
+    justify-content: center !important;
+    background-color: black !important;
+    color: white !important;
+    border-radius: 100px;
+    gap: 10px;
 }
