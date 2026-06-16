@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext.jsx";
+import { version } from "../../../package.json";
 import GoogleButton from '@components/Buttons/GoogleButton/GoogleButton';
 import ContinueButton from '@components/Buttons/ContinueButton/ContinueButton';
 import MainButton from '@components/Buttons/MainButton/MainButton';
@@ -26,6 +27,8 @@ import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 const LandingPage = () => {
   const { user, isAuthLoading } = useAuth();
   const navigate = useNavigate();
+
+  const isBetaDomain = window.location.hostname === "smartcampusweb-beta.netlify.app";
 
   if (isAuthLoading) {
     return <LoadingSpinner />;
@@ -166,7 +169,7 @@ const LandingPage = () => {
 
       <section className="footer">
         <div className="footer_part">
-          <div className="footer_logo_part"><LogoFull colorReverse="reverse" /><p className="beta">BETA</p></div><p>Wersja 1.0</p>
+          <div className="footer_logo_part"><LogoFull colorReverse="reverse" />{isBetaDomain && <p className="beta">BETA</p>}</div><p>Wersja: {version}</p>
         </div>
         <div className="footer_part">
           <div><p>Skontaktuj się z nami po więcej</p><p>informacji.</p></div>
