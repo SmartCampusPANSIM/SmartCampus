@@ -125,7 +125,7 @@ function NavBar() {
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
-    setActiveView('profile'); 
+    setActiveView('profile');
   };
 
   const trimUsername = (user) =>
@@ -287,7 +287,7 @@ function NavBar() {
                 initial={{ opacity: 0, scale: 0.95, y: -20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                transition={{ 
+                transition={{
                   layout: { type: "spring", stiffness: 500, damping: 40, mass: 1 },
                   opacity: { duration: 0.2 },
                   scale: { duration: 0.2 },
@@ -306,14 +306,14 @@ function NavBar() {
                     </div>
                   </div>
                   <div className="navbar_userMenu_topSection_right">
-                    <button 
+                    <button
                       className={`navbar_userMenu_topSection_button ${activeView === 'notifications' ? 'active' : ''}`}
                       onClick={() => setActiveView(activeView === 'notifications' ? 'profile' : 'notifications')}
                     >
-                      <i className="fa-solid fa-bell"></i>
+                      <FontAwesomeIcon icon={Icons.faBell} />
                     </button>
-                    <Link to="/Ustawienia" onClick={() => setIsMenuOpen(false)}><button className="navbar_userMenu_topSection_button"><i className="fa-solid fa-gear"></i></button></Link>
-                    <button className="navbar_userMenu_topSection_button" onClick={handleLogout}><i className="fa-solid fa-right-from-bracket"></i></button>
+                    <Link to="/Ustawienia" onClick={() => setIsMenuOpen(false)}><button className="navbar_userMenu_topSection_button"><FontAwesomeIcon icon={Icons.faGear} /></button></Link>
+                    <button className="navbar_userMenu_topSection_button" onClick={handleLogout}><FontAwesomeIcon icon={Icons.faRightFromBracket} /></button>
                   </div>
                 </motion.section>
                 <AnimatePresence mode="popLayout">
@@ -330,41 +330,41 @@ function NavBar() {
                       <section className="navbar_userMenu_userInfoSection">
                         <img
                           className="navbar_userMenu_userInfoSection_profilePicture"
-                        src={user.photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.displayName || '')}&background=183447&color=fff`}
-                        alt="Avatar"
-                        referrerPolicy="no-referrer"
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(user.displayName || '')}&background=183447&color=fff`;
-                        }}
-                        style={{ objectFit: 'cover' }}
-                      />
-                      <div className="navbar_userMenu_userInfoSection_name">{user.displayName}</div>
-                      <div className="navbar_userMenu_userInfoSection_mail">{user.email}</div>
-                      <div className="navbar_userMenu_userInfoSection_indexNumber">{getEmailPrefix(user)}</div>
-                    </section>
-                    <section className="navbar_userMenu_settingsSection">
-                      <div className="navbar_userMenu_toogleButton">
-                        <div className="navbar_userMenu_toogleButton_title">Ciemny motyw</div>
-                        <div className="navbar_userMenu_toogleButton_switch">
-                          <ToggleSwitch
-                            id="darkMode"
-                            defaultState={isDark}
-                            onToggle={toggleTheme}
-                          />
+                          src={user.photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.displayName || '')}&background=183447&color=fff`}
+                          alt="Avatar"
+                          referrerPolicy="no-referrer"
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(user.displayName || '')}&background=183447&color=fff`;
+                          }}
+                          style={{ objectFit: 'cover' }}
+                        />
+                        <div className="navbar_userMenu_userInfoSection_name">{user.displayName}</div>
+                        <div className="navbar_userMenu_userInfoSection_mail">{user.email}</div>
+                        <div className="navbar_userMenu_userInfoSection_indexNumber">{getEmailPrefix(user)}</div>
+                      </section>
+                      <section className="navbar_userMenu_settingsSection">
+                        <div className="navbar_userMenu_toogleButton">
+                          <div className="navbar_userMenu_toogleButton_title">Ciemny motyw</div>
+                          <div className="navbar_userMenu_toogleButton_switch">
+                            <ToggleSwitch
+                              id="darkMode"
+                              defaultState={isDark}
+                              onToggle={toggleTheme}
+                            />
+                          </div>
                         </div>
-                      </div>
-                      <Link to="/LandingPage" onClick={() => setIsMenuOpen(false)}>
-                        <button className="navbar_userMenu_button">Strona startowa Smart Campus</button>
-                      </Link>
-                      <a href="https://pansim.edu.pl/" target="_blank"><button className="navbar_userMenu_button">Strona Pansim</button></a>
-                      <a href="https://moodle.pansim.edu.pl/" target="_blank"><button className="navbar_userMenu_button">Moodle</button></a>
+                        <Link to="/LandingPage" onClick={() => setIsMenuOpen(false)}>
+                          <button className="navbar_userMenu_button">Strona startowa Smart Campus</button>
+                        </Link>
+                        <a href="https://pansim.edu.pl/" target="_blank"><button className="navbar_userMenu_button">Strona Pansim</button></a>
+                        <a href="https://moodle.pansim.edu.pl/" target="_blank"><button className="navbar_userMenu_button">Moodle</button></a>
 
-                    </section>
-                    <section className="navbar_userMenu_bottomSection">
-                      <a href="https://wu.pansim.edu.pl/wu/start?&locale=pl" target="_blank"><button className="navbar_userMenu_bottomSection_WUbutton">Wirtualna Uczelnia</button></a>
-                      <button className="navbar_userMenu_bottomSection_Legitymacja"><i className="fa-solid fa-id-card"></i></button>
-                    </section>
+                      </section>
+                      <section className="navbar_userMenu_bottomSection">
+                        <a href="https://wu.pansim.edu.pl/wu/start?&locale=pl" target="_blank"><button className="navbar_userMenu_bottomSection_WUbutton">Wirtualna Uczelnia</button></a>
+                        <button className="navbar_userMenu_bottomSection_Legitymacja"><FontAwesomeIcon icon={Icons.faIdCard} /></button>
+                      </section>
                     </motion.div>
                   ) : (
                     <motion.div
@@ -376,17 +376,17 @@ function NavBar() {
                       exit={{ opacity: 0, filter: "blur(10px)", y: -5 }}
                       transition={{ duration: 0.15 }}
                     >
-                    <section className="navbar_userMenu_notificationsView">
-                      <div className="navbar_userMenu_notificationsView_content">
-                        <i className="fa-solid fa-bell"></i>
-                        <p>Brak powiadomień</p>
-                        <button onClick={() => setActiveView('profile')}>Wstecz</button>
-                      </div>
-                    </section>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>,
+                      <section className="navbar_userMenu_notificationsView">
+                        <div className="navbar_userMenu_notificationsView_content">
+                          <FontAwesomeIcon icon={Icons.faBell} />
+                          <p>Brak powiadomień</p>
+                          <button onClick={() => setActiveView('profile')}>Wstecz</button>
+                        </div>
+                      </section>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>,
               document.getElementById("dropdown-root")
             )}
         </>

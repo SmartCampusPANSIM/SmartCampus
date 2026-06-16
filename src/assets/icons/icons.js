@@ -6,7 +6,11 @@ import {
   faMap,
   faPhotoFilm,
   faLaptop,
-  faMoon
+  faMoon,
+  faBell,
+  faGear,
+  faRightFromBracket,
+  faIdCard
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faTwitter, faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -25,5 +29,9 @@ export {
   faLaptop,
   faGoogle,
   faGithub,
-  faMoon
+  faMoon,
+  faBell,
+  faGear,
+  faRightFromBracket,
+  faIdCard
 }
