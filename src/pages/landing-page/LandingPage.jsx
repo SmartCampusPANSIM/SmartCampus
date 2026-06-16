@@ -104,7 +104,6 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-        </div>
         <div className="info_section_half">
           <div className="square3">
             <div><div className="circle"><FontAwesomeIcon icon={Icons.faCalendarDays} color="white" size="xl"/></div></div>
