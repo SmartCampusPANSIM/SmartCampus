@@ -31,10 +31,10 @@ const LandingPage = () => {
         <div className="field1">
           <img className="arrows_up" src="src/pages/landing-page/arrows_up.png"></img>
           <p>Wejdź na wyższy</p>
-          <p><span className="text_fat">level</span> studiowania</p>
+          <p><span className="text_fat text_highlight">level</span> studiowania</p>
         </div>
         <div className="field2">
-          <p><span className="text_fat">Smart Campus</span> to innowacyjna</p>
+          <p><span className="text_fat text_highlight">Smart Campus</span> to innowacyjna</p>
           <p>platforma usprawniająca życie</p>
           <p>akademickie!</p>
         </div>
