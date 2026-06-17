@@ -81,12 +81,19 @@ main {
 
     .field4 {
         display: flex;
+        align-items: center;
+        color: light-dark(black, white);
+        font-size: 20px;
+        gap: 20px;
         height: 80px;
         width: 40%;
         user-select: none;
         position: relative;
         z-index: 1;
         order: 4;
+    }
+    .text_x{
+        font-size: 36px;
     }
 
     .field5 {
@@ -710,8 +717,11 @@ main {
     .field3 {
         width: 80%;
     }
+    .field4 {
+        font-size: 14px;
+    }
     .field4 img {
-        width: 300px;
+        width: 70px;
     }
     .field5 {
         height: 250px;

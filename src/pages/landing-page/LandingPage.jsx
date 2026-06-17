@@ -54,6 +54,11 @@ const LandingPage = () => {
         )}
         <div className="field4">
           <img src="src\pages\landing-page\pansim.png"></img>
+          <p className="text_x">X</p>
+          <div>
+            <p>Koło naukowe</p>
+            <p>informatyki stosowanej</p>
+          </div>
         </div>
         <div className="field5">
           <img className="field5_img" src="src\pages\landing-page\building.png"></img>
