@@ -137,30 +137,36 @@ const LandingPage = () => {
 
           <div className="numbers">
             <div className="nr_top"><FontAwesomeIcon icon={Icons.faUser}/></div>
-            <div className="nr_bot_txt1"><p>2</p></div>
-            <div className="nr_bot_txt2"><p>Użytkowników platformy</p></div>
+            <div className="numbers_wrapper">
+              <div className="nr_bot_txt1"><p>2</p></div>
+              <div className="nr_bot_txt2"><p>Użytkowników platformy</p></div>
+            </div>
           </div>
 
           <div className="numbers">
             <div className="nr_modules">
-              <div className="nr_bot_txt1 modules_txt_adjust"><p>5</p></div>
-              <div className="nr_bot_txt2 modules_txt_adjust"><p>Smart modułów</p></div>
+              <div className="numbers_wrapper">
+                <div className="nr_bot_txt1 modules_txt_adjust"><p>5</p></div>
+                <div className="nr_bot_txt2 modules_txt_adjust"><p>Smart modułów</p></div>
+              </div>
             </div>
           </div>
 
           <div className="numbers">
             <img className="nr_top" src="src\pages\landing-page\building3.png"></img>
-            <div className="nr_bot_txt1"><p>2</p></div>
-            <div className="nr_bot_txt2"><p>Budynki objęte projektem</p></div>
+            <div className="numbers_wrapper">
+              <div className="nr_bot_txt1"><p>2</p></div>
+              <div className="nr_bot_txt2"><p>Budynki objęte projektem</p></div>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="footer">
-        <div className="footer_part">
+        <div className="footer_part1">
           <div className="footer_logo_part"><LogoFull colorReverse="reverse" /><p className="beta">BETA</p></div><p>Wersja 1.0</p>
         </div>
-        <div className="footer_part">
+        <div className="footer_part2">
           <div><p>Skontaktuj się z nami po więcej</p><p>informacji.</p></div>
           <div className="footer_contact">
             <div>
@@ -172,7 +178,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="footer_part footer_line">
+        <div className="footer_part3 footer_line">
           <div>
             <p>KNIS 2025-2026 Wszelkie prawa zastrzeżone</p>
           </div>
