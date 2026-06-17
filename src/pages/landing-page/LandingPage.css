@@ -122,7 +122,7 @@ main {
             position: absolute;
             height: 130px;
             width: auto;
-            right: -30px;
+            left: 84%;
             bottom: -20px;
             z-index: -1;
         }
@@ -150,7 +150,6 @@ main {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 40px;
         
         &:nth-of-type(1) {
             gap: 80px;
@@ -247,6 +246,15 @@ main {
             width: auto;
         }
     .square3, .square5 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .square_wrapper {
+        display: flex;
+        justify-content: center;
         height: 360px;
         width: 360px;
         border-radius: 20px;
@@ -274,15 +282,24 @@ main {
         
         .lekcja {
             height: auto;
-            width: 320px;
+            width: 100%;
+        }
+        .lekcja img {
+            width: 100%;
         }
     .square4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 360px;
         width: 720px;
         min-height: 200px;
         min-width: 380px;
         border-radius: 20px;   
         order: 2;
+    }
+    .square4 img {
+        width: 100%;
     }
     
     .square5 { 
@@ -440,10 +457,26 @@ main {
         height: 600px;
     }
     .square1, .square2, .square3, .square4, .square5 {
-        width: 80%;
         height: 400px;
         padding: 20px;
-
+    }
+    .square1 {
+        width: 800px;
+    }
+    .square2 {
+        width: 800px;       
+    }
+    .square3 {
+        width: 400px;   
+        order: 1;
+    }
+    .square4 {
+        width: 800px;  
+        order: 3;
+    }
+    .square5 {
+        width: 400px;
+        order: 2;  
     }
 }
 @media (max-width: 1600px) {
@@ -464,12 +497,6 @@ main {
     }
     .field5_img {
         height: 480px;
-    }
-    .dots1 {
-        bottom: 30px;
-    }
-    .dots2 {
-        bottom: 30px;
     }
 }
 
@@ -496,12 +523,6 @@ main {
     }
     .field5_img {
         height: 400px;
-    }
-    .dots1 {
-        bottom: -30px;
-    }
-    .dots2 {
-        bottom: -30px;
     }
     .arrows_left {
         display: none;
@@ -536,14 +557,35 @@ main {
     .dots3 {
         display: none;
     }
+    .square1, .square2, .square4, .square_wrapper {
+        width: 600px;
+    }
+    .lekcja {
+        display: flex;
+        justify-content: center;    
+    }
+    .square3, .square5 {
+        width: 100%;
+    }
+    .square_wrapper img {
+        height: auto;
+        width: 360px;
+    }
+    .square3 {
+        order: 1;
+    }
+    .square4 {
+        order: 2;
+        height: auto;
+    }
+    .square5 {
+        order: 3;  
+    }
 }
 
 @media (max-width: 800px) {
-    .sqtext1 {
-        font-size: 18px;
-    }
-    .sqtext2 {
-        font-size: 13px;
+    .square1, .square2, .square4, .square_wrapper {
+        width: 500px;
     }
     .sq2bottom p{
         font-size: 16px;
@@ -576,6 +618,16 @@ main {
     .dots1, .dots2 {
         height: 100px;
     }
+    .square1, .square2, .square4, .square_wrapper {
+        width: 400px;
+        font-size: 44px;
+    }
+    .square1 {
+        height: 200px;
+    }
+    .square1 img {
+        height: 260px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -586,22 +638,52 @@ main {
         font-size: 30px;
     }
     .field2, .field3, .field4 {
+        font-size: 18px;
+        width: 300px;
+        align-items: center;
         margin-top: 40px;
+    }
+    .field3 {
+        width: 80%;
+    }
+    .field4 img {
+        width: 300px;
     }
     .field5 {
         height: 250px;
+        width: 350px;
     }
     .field5_img {
         height: 220px;
     }
-    .dots0 {
-        top: 30px;
-        left: -40px;
+    .square_wrapper{
+        justify-content: space-between;
     }
-    .dots1 {
-        bottom: 30px;
+    .sqtext1 {
+        font-size: 18px;
     }
-    .dots2 {
-        bottom: 30px;
+    .sqtext2 {
+        font-size: 13px;
+    }
+    .info_section_half {
+        margin: 0;
+        gap: 0;
+    }
+    .square1, .square2, .square4, .square_wrapper {
+        width: 320px;
+        font-size: 36px;
+    }
+    .square1 {
+        height: 140px;
+    }
+    .square1 img {
+        height: 140px;
+    }
+    .square4 img {
+        width: 320px;     
+    }
+    .square_wrapper img {
+        height: auto;
+        width: 260px;
     }
 }

@@ -104,25 +104,29 @@ const LandingPage = () => {
           </div>
         <div className="info_section_half">
           <div className="square3">
-            <div><div className="circle"><FontAwesomeIcon icon={Icons.faCalendarDays} color="white" size="xl"/></div></div>
-            <div className="sqtext3">Plan zajęć</div>
-            <div className="sqtext2">
-              <p>Wygodny, dynamiczny plan zajęć oraz</p>
-              <p>czytelny terminarz zjazdów. Od teraz</p>
-              <p>niczego nie przegapisz!</p>
+            <div className="square_wrapper">
+              <div><div className="circle"><FontAwesomeIcon icon={Icons.faCalendarDays} color="white" size="xl"/></div></div>
+              <div className="sqtext3">Plan zajęć</div>
+              <div className="sqtext2">
+                <p>Wygodny, dynamiczny plan zajęć oraz</p>
+                <p>czytelny terminarz zjazdów. Od teraz</p>
+                <p>niczego nie przegapisz!</p>
+              </div>
+              <div className="lekcja"><img src="src\pages\landing-page\lekcja.png"></img></div>
             </div>
-            <img className="lekcja" src="src\pages\landing-page\lekcja.png"></img>
           </div>
-          <img className="square4" src="src\pages\landing-page\building2.png"></img>
+          <div className="square4"><img src="src\pages\landing-page\building2.png"></img></div>
           <div className="square5">
-            <div><div className="circle"><FontAwesomeIcon icon={Icons.faMap} color="white" size="xl"/></div></div>
-            <div className="sqtext3">Mapa kampusu</div>
-            <div className="sqtext2">
-              <p>Łatwa, przejrzysta i wygodna, </p>
-              <p>pomoże Ci poruszać się po kampusie</p>
-              <p> oraz najbliżeszej okolicy.</p>
+            <div className="square_wrapper">
+              <div><div className="circle"><FontAwesomeIcon icon={Icons.faMap} color="white" size="xl"/></div></div>
+              <div className="sqtext3">Mapa kampusu</div>
+              <div className="sqtext2">
+                <p>Łatwa, przejrzysta i wygodna, </p>
+                <p>pomoże Ci poruszać się po kampusie</p>
+                <p> oraz najbliżeszej okolicy.</p>
+              </div>
+              <div className="lekcja"><img src="src\pages\landing-page\map.png"></img></div>
             </div>
-            <img className="lekcja" src="src\pages\landing-page\map.png"></img>
           </div>
         </div>
       </section>
