@@ -28,40 +28,38 @@ const LandingPage = () => {
       </section>
 
       <section className="login_section">
-        <div className="login_section_half1">
-          <div className="field1">
-            <img className="arrows_up" src="src/pages/landing-page/arrows_up.png"></img>
-            <p>Wejdź na wyższy</p>
-            <p><span className="text_fat">level</span> studiowania</p>
-          </div>
-          <div className="field2">
-            <p><span className="text_fat">Smart Campus</span> to innowacyjna</p>
-            <p>platforma usprawniająca życie</p>
-            <p>akademickie!</p>
-          </div>
-
-          {!user ? (
-            <div className="field3">
-              <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
-              <GoogleButton onClick={() => navigate("/Logowanie")}>
-              </GoogleButton>
-            </div>
-          ) : (
-            <div className="field3">
-              <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
-              <ContinueButton onClick={() => navigate("/Panel")}>
-              </ContinueButton>
-            </div>
-          )}
-          <img className="field4" src="src\pages\landing-page\pansim.png"></img>
+        <div className="field1">
+          <img className="arrows_up" src="src/pages/landing-page/arrows_up.png"></img>
+          <p>Wejdź na wyższy</p>
+          <p><span className="text_fat">level</span> studiowania</p>
         </div>
-        <div className="login_section_half2">
-          <div className="field5">
-            <img className="field5_img" src="src\pages\landing-page\building.png"></img>
-            <img className="dots0" src="src\pages\landing-page\dots.png"></img>
-            <img className="dots1" src="src\pages\landing-page\dots.png"></img>
-            <img className="dots2" src="src\pages\landing-page\dots.png"></img>
-          </div>
+        <div className="field2">
+          <p><span className="text_fat">Smart Campus</span> to innowacyjna</p>
+          <p>platforma usprawniająca życie</p>
+          <p>akademickie!</p>
+        </div>
+
+        {!user ? (
+        <div className="field3">
+          <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
+          <GoogleButton onClick={() => navigate("/Logowanie")}>
+          </GoogleButton>
+        </div>
+        ) : (
+        <div className="field3">
+          <img className="arrows_left" src="src\pages\landing-page\arrows_left.png"></img>
+          <ContinueButton onClick={() => navigate("/Panel")}>
+          </ContinueButton>
+        </div>
+        )}
+        <div className="field4">
+          <img src="src\pages\landing-page\pansim.png"></img>
+        </div>
+        <div className="field5">
+          <img className="field5_img" src="src\pages\landing-page\building.png"></img>
+          <img className="dots0" src="src\pages\landing-page\dots.png"></img>
+          <img className="dots1" src="src\pages\landing-page\dots.png"></img>
+          <img className="dots2" src="src\pages\landing-page\dots.png"></img>
         </div>
       </section>
 
@@ -118,11 +116,11 @@ const LandingPage = () => {
           <img className="square4" src="src\pages\landing-page\building2.png"></img>
           <div className="square5">
             <div><div className="circle"><FontAwesomeIcon icon={Icons.faMap} color="white" size="xl"/></div></div>
-            <div className="sqtext3">Plan zajęć</div>
+            <div className="sqtext3">Mapa kampusu</div>
             <div className="sqtext2">
-              <p>Wygodny, dynamiczny plan zajęć oraz</p>
-              <p>czytelny terminarz zjazdów. Od teraz</p>
-              <p>niczego nie przegapisz!</p>
+              <p>Łatwa, przejrzysta i wygodna, </p>
+              <p>pomoże Ci poruszać się po kampusie</p>
+              <p> oraz najbliżeszej okolicy.</p>
             </div>
             <img className="lekcja" src="src\pages\landing-page\map.png"></img>
           </div>

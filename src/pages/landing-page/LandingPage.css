@@ -14,30 +14,16 @@ main {
 
 .login_section{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     width: 100vw;
     height: 85vh;
-    min-width: 1000px;
     min-height: 500px;
     background-color: #ECECEC;
     box-sizing: border-box;
     padding: 40px 100px 40px 100px;
-}
-
-.login_section_half1 {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 30%;
-}
-
-.login_section_half2 {
-    display: flex;
-    align-items: start;
-    justify-content: end;
-    height: 100%;
-    width: 60%;
 }
 
     .field1 {
@@ -45,21 +31,23 @@ main {
         flex-direction: column;
         align-items: start;
         justify-content: start;
-        height: 30%;
-        width: 100%;
+        height: 20%;
+        width: 40%;
         font-size: 48px;   
         position: relative;
         z-index: 1;
+        order: 1;
     }
 
     .field2 {
         display: flex;
         flex-direction: column;
-        height: 25%;
-        width: 100%;
+        height: 20%;
+        width: 40%;
         font-size: 28px;
         position: relative;
         z-index: 1;
+        order: 2;
     }
         .arrows_up {
             position: absolute;
@@ -79,41 +67,39 @@ main {
         display: flex;
         align-items: center;
         height: 20%;
-        width: 400px;
+        width: 40%;
         position: relative;
         z-index: 1;
-        
+        order: 3;
     }
         .arrows_left {
             position: absolute;
             height: 80px;
-            right: 0;
+            left: 300px;
         }
 
     .field4 {
-        margin-top: 10%;
-        height: auto;
-        width: 380px;
+        display: flex;
+        height: 80px;
+        width: 40%;
         user-select: none;
         position: relative;
         z-index: 1;
+        order: 4;
     }
 
     .field5 {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 600px;
+        width: 60%;
+        height: 100%;
         user-select: none;
         position: relative;
         z-index: 1;
+        order: 5;
     }
 
     .field5_img {
-        height: 600px;
-        width: 100%;
-        background-position: center;
-        background-size: cover;
+        height: 650px;
     }
 
         .dots0 {
@@ -129,15 +115,15 @@ main {
             height: 130px;
             width: auto;
             left: 30px;
-            bottom: -65px;
+            bottom: -20px;
             z-index: -1;
         }
         .dots2 {
             position: absolute;
             height: 130px;
             width: auto;
-            right: -20px;
-            bottom: -65px;
+            right: -30px;
+            bottom: -20px;
             z-index: -1;
         }
 
@@ -288,7 +274,7 @@ main {
         
         .lekcja {
             height: auto;
-
+            width: 320px;
         }
     .square4 {
         height: 360px;
@@ -384,8 +370,6 @@ main {
         color: white;
     }
 
-
-
 .footer {
     display: flex;
     flex-direction: column;
@@ -449,11 +433,22 @@ main {
     }
 
 @media (max-width: 1700px) {
-    .field1{
-        font-size: 40px;
+    .field5 {
+        height: 600px;
     }
-    .field2 {
-        font-size: 20px;
+    .field5_img {
+        height: 600px;
+    }
+    .square1, .square2, .square3, .square4, .square5 {
+        width: 80%;
+        height: 400px;
+        padding: 20px;
+
+    }
+}
+@media (max-width: 1600px) {
+    .field5 {
+        height: 550px;
     }
     .field5_img {
         height: 550px;
@@ -461,24 +456,71 @@ main {
 }
 
 @media (max-width: 1400px) {
-    .login_section_half1 {
-        width: 40%;
+    .field1{
+        font-size: 44px;
     }
-    .login_section_half1 {
-        width: 60%;
+    .field2 {
+        font-size: 26px;
     }
     .field5_img {
-        height: 450px;
+        height: 480px;
+    }
+    .dots1 {
+        bottom: 30px;
+    }
+    .dots2 {
+        bottom: 30px;
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
+    .login_section {
+        height: fit-content;
+        min-height: fit-content;
+        gap: 40px;
+    }
+    .field1, .field2, .field3, .field5 {
+        width: 500px;
+        justify-content: center;
+        align-items: center;
+    }
+    .googleButton {
+        height: 80px;
+        width: 100%;
+        padding: 20px;
+    }
+    .field5 {
+        height: 400px;
+        width: 600px;
+        order: 1;
+    }
     .field5_img {
-        height: 350px;
+        height: 400px;
+    }
+    .dots1 {
+        bottom: -30px;
+    }
+    .dots2 {
+        bottom: -30px;
+    }
+    .arrows_left {
+        display: none;
     }
 }
 
 @media (max-width: 1050px) {
+    .login_section {
+        padding: 0 0 20px 0;
+    }
+    .field1, .field2, .field3, .field4, .field5 {
+        width: auto;
+    }
+    .field3 {
+        width: 90%;
+    }
+    .field5 {
+        height: 350px;
+    }
     .footer {
         font-size: 14px;
     }
@@ -488,19 +530,15 @@ main {
 }
 
 @media (max-width: 900px) {
-    .square2, .square4 {
-        width: 600px;
+    .field5_img {
+        height: 360px;
     }
     .dots3 {
-        height: 10px;
+        display: none;
     }
 }
 
 @media (max-width: 800px) {
-    .square2, .square4 {
-        width: 450px;
-        height: 300px;
-    }
     .sqtext1 {
         font-size: 18px;
     }
@@ -525,4 +563,45 @@ main {
         height: 350px;
     }
 }
+@media (max-width: 650px) {
+    .field5 {
+        height: 300px;
+    }
+    .field5_img {
+        height: 300px;
+    }
+    .dots0 {
+        height: 80px;
+    }
+    .dots1, .dots2 {
+        height: 100px;
+    }
+}
 
+@media (max-width: 500px) {
+    .login_section {
+        gap: 0px;
+    }
+    .field1 {
+        font-size: 30px;
+    }
+    .field2, .field3, .field4 {
+        margin-top: 40px;
+    }
+    .field5 {
+        height: 250px;
+    }
+    .field5_img {
+        height: 220px;
+    }
+    .dots0 {
+        top: 30px;
+        left: -40px;
+    }
+    .dots1 {
+        bottom: 30px;
+    }
+    .dots2 {
+        bottom: 30px;
+    }
+}
