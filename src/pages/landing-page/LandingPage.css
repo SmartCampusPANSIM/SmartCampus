@@ -620,9 +620,9 @@ main {
     }
     .square1, .square2, .square4, .square_wrapper {
         width: 400px;
-        font-size: 44px;
     }
     .square1 {
+        font-size: 44px;
         height: 200px;
     }
     .square1 img {
@@ -671,10 +671,10 @@ main {
     }
     .square1, .square2, .square4, .square_wrapper {
         width: 320px;
-        font-size: 36px;
     }
     .square1 {
         height: 140px;
+        font-size: 36px;
     }
     .square1 img {
         height: 140px;
