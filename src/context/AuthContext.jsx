@@ -3,7 +3,8 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   onAuthStateChanged,
-  signOut
+  signOut,
+  deleteUser
 } from "firebase/auth";
 import { auth } from "@services/firebase.js";
 
@@ -25,7 +26,7 @@ export function AuthProvider({ children }) {
         allowedEmails.includes(email);
 
       if (!isAllowed) {
-        await signOut(auth);
+        await deleteUser(result.user);
         throw new Error("restricted-domain");
       }
     } catch (error) {
