@@ -8,6 +8,7 @@ export const useTheme = () => {
   useEffect(() => {
     const root = document.documentElement;
     root.style.setProperty('color-scheme', theme);
+    root.setAttribute('data-theme', theme);
     localStorage.setItem('colorScheme', theme);
   }, [theme]);
 
