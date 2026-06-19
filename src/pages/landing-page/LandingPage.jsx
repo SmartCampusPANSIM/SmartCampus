@@ -155,6 +155,7 @@ const LandingPage = () => {
                 <div className="nr_bot_txt2 modules_txt_adjust"><p>Smart modułów</p></div>
               </div>
             </div>
+            <div className="numbers_wrapper empety_wrapper"></div>
           </div>
 
           <div className="numbers">

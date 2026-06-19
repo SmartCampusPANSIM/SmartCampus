@@ -152,6 +152,7 @@ main {
         flex-wrap: wrap;
         box-sizing: border-box;
         margin-top: 40px;
+        gap: 40px;
         width: 100%;
         max-height: fit-content;
         display: flex;
@@ -354,18 +355,20 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: end;
         margin-top: 40px;
         height: 700px;
         width: 300px;
-
+        &:nth-of-type(2) {
+        justify-content: end;
+    }
     }
     .nr_top {
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 30px;
-        height: 75%;
+        height: 480px;
         width: 100%;
         font-size: 100px;
         background-color: light-dark(white, #172834);
@@ -399,6 +402,7 @@ main {
         background-color: #183447;
 
     }
+
     .modules_txt_adjust {
         height: 20%;
         color: white;
@@ -495,6 +499,9 @@ main {
         width: 400px;
         order: 2;  
     }
+    .info_section_half {
+        gap: 0px;
+    }
 }
 @media (max-width: 1600px) {
     .field5 {
@@ -570,6 +577,7 @@ main {
 
     .nr_top {
         width: 200px;
+        height: 140px;
     }
     .numbers_wrapper {
         display: flex;
@@ -587,6 +595,9 @@ main {
         width: 400px;
         height: 200px;
         margin: 0;
+    }
+    .empety_wrapper {
+        display: none;
     }
     .footer {
         font-size: 14px;
