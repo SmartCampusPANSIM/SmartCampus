@@ -1,12 +1,23 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext.jsx";
+import { version } from "../../../package.json";
 import GoogleButton from '@components/Buttons/GoogleButton/GoogleButton';
 import ContinueButton from '@components/Buttons/ContinueButton/ContinueButton';
 import MainButton from '@components/Buttons/MainButton/MainButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as Icons from '@icons/icons';
 import './LandingPage.css';
+import arrowsUp from './arrows_up.png';
+import arrowsLeft from './arrows_left.png';
+import pansim from './pansim.png';
+import building from './building.png';
+import dots from './dots.png';
+import logoBackground from './logo.svg';
+import lekcja from './lekcja.png';
+import building2 from './building2.png';
+import building3 from './building3.png';
+import mapImg from './map.png';
 import Lekcja from "../plan-lekcji/Lekcja";
 import { color, scale } from "framer-motion";
 import LogoFull from "../../components/Logo/LogoFull";
@@ -16,6 +27,8 @@ import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 const LandingPage = () => {
   const { user, isAuthLoading } = useAuth();
   const navigate = useNavigate();
+
+  const isBetaDomain = window.location.hostname === "smartcampusweb-beta.netlify.app";
 
   if (isAuthLoading) {
     return <LoadingSpinner />;
@@ -73,7 +86,7 @@ const LandingPage = () => {
         <div className="LandingPageInfo__half">
           <div className="LandingPageInfo__questionSquare">
             <span className="fat_text">Czym jest?</span>Smart Campus
-            <img className="logo_background" src="src\pages\landing-page\logo.svg"></img>
+            <img className="logo_background" src={logoBackground} alt="logo background" />
           </div>
 
 
