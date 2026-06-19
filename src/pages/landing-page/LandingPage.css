@@ -423,7 +423,7 @@ main {
         text-align: center;
     }
 
-    .nr_modules {
+    .LandingNumbers__modulesBlock {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -642,7 +642,7 @@ main {
         height: 200px;
     }
 
-    .nr_modules {
+    .LandingNumbers__modulesBlock {
         height: 200px;
     }
 
@@ -873,6 +873,10 @@ main {
         width: 260px;
     }
 
+    .LandingNumbers {
+        height: 180px;
+    }
+
     .LandingNumbers--title {
         width: 320px;
         font-size: 24px;
@@ -881,17 +885,20 @@ main {
     .LandingNumbers--bottom {
         width: 320px;
     }
+    
+    .LandingNumbers__block {
+        width: 300px;
+    }
 
-    .numbers {
-        width: 320px;
-        height: 180px;
+    .LandingNumbers__block--top {
+        width: 160px;
     }
 
     .LandingNumbers__block--bottom {
         width: 160px;
     }
-    
-    .nr_modules {
+
+    .LandingNumbers__modulesBlock {
         height: 160px;
     }
 }

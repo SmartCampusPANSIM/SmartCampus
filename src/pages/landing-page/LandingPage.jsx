@@ -149,7 +149,7 @@ const LandingPage = () => {
           </div>
 
           <div className="LandingNumbers__block">
-            <div className="nr_modules">
+            <div className="LandingNumbers__modulesBlock">
               <div className="LandingNumbers__block--bottom">
                 <div className="LandingNumbers__blockBottomText1 LandingNumbers__modulesBlockTextAdjustment"><p>5</p></div>
                 <div className="LandingNumbers__blockBottomText2 LandingNumbers__modulesBlockTextAdjustment"><p>Smart modułów</p></div>
