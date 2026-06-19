@@ -44,3 +44,7 @@
 .reverse {
     color: light-dark(#ffffff, #183447);
 }
+
+.navbar_logo_icon.reverse {
+    background-color: light-dark(#ffffff, #183447);
+}
