@@ -42,7 +42,7 @@ const LandingPage = () => {
 
       <section className="LandingPageLogin">
         <div className="LandingPageLogin__title">
-          <img className="LandingPageLogin__arrowsUp" src="./arrows_up.png"></img>
+          <img className="LandingPageLogin__arrowsUp" src="src/pages/landing-page/arrows_up.png"></img>
           <p>Wejdź na wyższy</p>
           <p><span className="text_fat text_highlight">level</span> studiowania</p>
         </div>
