@@ -1,154 +1,158 @@
 main {
     display: flex;
     flex-direction: column;
-    color: #183447;
+    color: light-dark(#183447, white);
 }
 
-.banner_section {
+.LandingPageBanner {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 15vh;
-    background-color: #ECECEC;
+    background-color: light-dark(#ECECEC, #141414);
 }
 
-.login_section {
+.LandingPageLogin{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     width: 100vw;
     height: 85vh;
-    min-width: 1000px;
     min-height: 500px;
-    background-color: #ECECEC;
+    background-color: light-dark(#ECECEC, #141414);
     box-sizing: border-box;
     padding: 40px 100px 40px 100px;
 }
 
-.login_section_half1 {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 30%;
-}
+    .LandingPageLogin__title {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        height: 20%;
+        width: 40%;
+        font-size: 48px;   
+        position: relative;
+        z-index: 1;
+        order: 1;
+    }
 
-.login_section_half2 {
-    display: flex;
-    align-items: start;
-    justify-content: end;
-    height: 100%;
-    width: 60%;
-}
+        .text_highlight {
+            color: light-dark(#183447, #326283);
+        }
 
-.field1 {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    height: 30%;
-    width: 100%;
-    font-size: 48px;
-    position: relative;
-    z-index: 1;
-}
+    .LandingPageLogin__description {
+        display: flex;
+        flex-direction: column;
+        height: 20%;
+        width: 40%;
+        font-size: 28px;
+        position: relative;
+        z-index: 1;
+        order: 2;
+    }
 
-.field2 {
-    display: flex;
-    flex-direction: column;
-    height: 25%;
-    width: 100%;
-    font-size: 28px;
-    position: relative;
-    z-index: 1;
-}
+        .LandingPageLogin__arrowsUp {
+            position: absolute;
+            height: 150px;
+        }
 
-.arrows_up {
-    position: absolute;
-    height: 150px;
-}
+    .LandingPageLogin__description p {
+        color: light-dark(rgba(24, 52, 71, 0.58), white);
+    }
 
-.field2 p {
-    color: rgba(24, 52, 71, 0.58);
-}
+    .LandingPageLogin__description .text_fat {
+        font-weight: 800;
+    }
 
-.field2 .text_fat {
-    font-weight: 800;
-    color: #183447;
-}
+    .LandingPageLogin__login {
+        display: flex;
+        align-items: center;
+        height: 20%;
+        width: 40%;
+        position: relative;
+        z-index: 1;
+        order: 3;
+    }
 
-.field3 {
-    display: flex;
-    align-items: center;
-    height: 20%;
-    width: 400px;
-    position: relative;
-    z-index: 1;
+        .LandingPageLogin__arrowsLeft {
+            position: absolute;
+            height: 80px;
+            left: 300px;
+        }
 
-}
+    .LandingPageLogin__logoPansim {
+        display: flex;
+        align-items: center;
+        color: light-dark(black, white);
+        font-size: 20px;
+        gap: 20px;
+        height: 80px;
+        width: 40%;
+        user-select: none;
+        position: relative;
+        z-index: 1;
+        order: 4;
+    }
 
-.arrows_left {
-    position: absolute;
-    height: 80px;
-    right: 0;
-}
+    .LandingPageLogin__logoPansim--xText{
+        font-size: 36px;
+    }
 
-.field4 {
-    margin-top: 10%;
-    height: auto;
-    width: 380px;
-    -webkit-user-select: none;
-    user-select: none;
-    position: relative;
-    z-index: 1;
-}
+    .LandingPageLogin__campusImage {
+        display: flex;
+        width: 60%;
+        height: 100%;
+        user-select: none;
+        position: relative;
+        z-index: 1;
+        order: 5;
+    }
 
-.field5 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 600px;
-    -webkit-user-select: none;
-    user-select: none;
-    position: relative;
-    z-index: 1;
-}
+    .LandingPageLogin__campusImage_img {
+        height: 650px;
+    }
+    @media (max-height: 850px){
+        .LandingPageLogin__campusImage_img {
+            height: 580px;
+        }
+    }
+    @media (max-height: 750px){
+        .LandingPageLogin__campusImage_img {
+            height: 500px;
+        }
+    }
+        .LandingPageLogin__dots0 {
+            position: absolute;
+            height: 100px;
+            width: auto;
+            left: -70px;
+            top: -30px;
+            z-index: -1;
+        }
 
-.field5_img {
-    height: 600px;
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-}
+        .LandingPageLogin__dots1 {
+            position: absolute;
+            height: 130px;
+            width: auto;
+            left: 30px;
+            bottom: -20px;
+            z-index: -1;
+        }
+        
+        .LandingPageLogin__dots2 {
+            position: absolute;
+            height: 130px;
+            width: auto;
+            left: 84%;
+            bottom: -20px;
+            z-index: -1;
+        }
 
-.dots0 {
-    position: absolute;
-    height: 100px;
-    width: auto;
-    left: -70px;
-    top: -30px;
-    z-index: -1;
-}
-
-.dots1 {
-    position: absolute;
-    height: 130px;
-    width: auto;
-    left: 30px;
-    bottom: -65px;
-    z-index: -1;
-}
-
-.dots2 {
-    position: absolute;
-    height: 130px;
-    width: auto;
-    right: -20px;
-    bottom: -65px;
-    z-index: -1;
-}
-
-.info_section {
+.LandingPageInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -160,170 +164,194 @@ main {
     background-color: #183447;
 }
 
-.info_section_half {
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    margin-top: 40px;
-    width: 100%;
-    max-height: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
+    .LandingPageInfo__half {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        margin-top: 40px;
+        gap: 40px;
+        width: 100%;
+        max-height: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+        &:nth-of-type(1) {
+            gap: 80px;
+        }
 
-    &:nth-of-type(1) {
-        gap: 80px;
     }
 }
 
-.square1 {
-    height: 360px;
-    width: 720px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 50px;
-    text-align: center;
-    color: white;
-    z-index: 2;
-    position: relative;
-    order: 1;
+    .LandingPageInfo__questionSquare {
+        height: 360px;
+        width: 720px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 50px;
+        text-align: center;
+        color: white;
+        z-index: 2;
+        position: relative;
+        order: 1;
 
-}
+    }
 
-.logo_background {
-    position: absolute;
-    height: 320px;
-    min-height: 200px;
-    width: auto;
-    z-index: -1;
-}
+    .logo_background {
+        position: absolute;
+        height: 320px;
+        min-height: 200px;
+        width: auto;
+        z-index: -1;
+    }
 
-.square2 {
-    height: 360px;
-    width: 720px;
-    border-radius: 20px;
-    background-color: #E0E3E5;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 30px;
-    z-index: 2;
-    position: relative;
-    gap: 10px;
-    order: 2;
-}
+    .LandingPageInfo__descriptionSquare {
+        height: 360px;
+        width: 720px;
+        border-radius: 20px;   
+        background-color: light-dark(#ECECEC, #141414);
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 30px;
+        z-index: 2;
+        position: relative;
+        gap: 10px;
+        order: 2;
+    }
 
-.sqtext1 {
-    font-size: 26px;
-    font-weight: 500;
-}
+    .LandingPageInfo__squareText1 {
+        font-size: 26px;
+        font-weight: 500;
+    }
 
-.sqtext2 {
-    font-size: 16px;
-}
+    .LandingPageInfo__squareText2 {
+        font-size: 16px;
+    }
 
-.sqtext3 {
+    .LandingPageInfo__squareText3 {
     font-size: 20px;
     font-weight: 500;
 }
 
-.sq2bottom {
-    margin-top: auto;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-}
+    .LandingPageInfo__descriptionSquare--bottom {
+        margin-top: auto;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
 
-.sq2bottom::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    top: -10px;
-    left: 0;
-}
+    .LandingPageInfo__descriptionSquare--bottom::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        top: -10px;
+        left: 0;
+    }
 
-.sq2bottom_half {
-    width: 50%;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-}
+        .LandingPageInfo__descriptionSquare--bottomHalf {
+            width: 50%;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+        }
 
-.sq2bottom_half2 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 10px;
-    margin-top: 20px;
-}
+        .LandingPageInfo__descriptionSquare--bottomHalf2{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap: 10px;
+            margin-top: 20px;
+        }
 
-.technology_button {
-    background-color: #0D5295;
-    width: 100px;
-    height: 44px;
-    font-size: 18px;
-}
+        .LandingPageInfo__technologyTag {
+            background-color: #0D5295;
+            width: 100px;
+            height: 44px;
+            font-size: 18px;
+        }
 
-.dots3 {
-    position: absolute;
-    right: 30px;
-    height: 100px;
-    min-height: 50px;
-    width: auto;
-}
+        .LandingPageLogin__dots3 {
+            position: absolute;
+            right: 30px;
+            height: 100px;
+            min-height: 50px;
+            width: auto;
+        }
 
-.square3,
-.square5 {
-    height: 360px;
-    width: 360px;
-    border-radius: 20px;
-    gap: 10px;
-    background-color: #E0E3E5;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 20px;
-}
+    .LandingPageInfo__planSquare, .LandingPageInfo__mapSquare {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .LandingPageInfo__square--wrapper {
+        display: flex;
+        justify-content: center;
+        height: 360px;
+        width: 360px;
+        border-radius: 20px;
+        gap: 10px;
+        background-color: light-dark(#ECECEC, #141414); 
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 20px;
+    }
 
-.square3 {
-    order: 1;
-}
+    .LandingPageInfo__planSquare {
+        order: 1;
+    }
 
-.circle {
-    height: 44px;
-    width: 44px;
-    border-radius: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #183447;
-}
+        .LandingPageInfo__circleIcon {
+            height: 44px;
+            width: 44px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #183447;
+        }
+        
+        .LandingPageInfo__square--img {
+            height: auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.lekcja {
-    height: auto;
+        .LandingPageInfo__square--img img {
+            width: 100%;
+        }
 
-}
+    .LandingPageInfo__imageSquare {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 360px;
+        width: 720px;
+        min-height: 200px;
+        min-width: 380px;
+        border-radius: 20px;   
+        order: 2;
+    }
 
-.square4 {
-    height: 360px;
-    width: 720px;
-    min-height: 200px;
-    min-width: 380px;
-    border-radius: 20px;
-    order: 2;
-}
+    .LandingPageInfo__imageSquare img {
+        width: 100%;
+    }
+    
+    .LandingPageInfo__mapSquare { 
+        order: 3;
+    }
 
-.square5 {
-    order: 3;
-}
-
-.numbers_section {
+.LandingPageNumbers {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -333,84 +361,95 @@ main {
     padding-top: 40px;
     min-height: fit-content;
     box-sizing: border-box;
-    background-color: #ECECEC;
+    background-color: light-dark(#ECECEC, #141414);
 }
 
-.numbers_section_title {
-    height: 100px;
-    display: flex;
-    align-items: center;
-    font-size: 44px;
-    font-weight: 600;
-}
+    .LandingPageNumbers--title {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        font-size: 44px;
+        font-weight: 600;
+    }
 
-.numbers_section_bottom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    min-height: fit-content;
-    height: fit-content;
-    gap: 100px;
-}
+    .LandingPageNumbers--bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        min-height: fit-content;
+        height: fit-content;
+        gap: 100px;
+    }
 
-.numbers {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
-    height: 700px;
-    width: 300px;
+    .LandingPageNumbers__block--bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+    }
 
-}
+    .LandingPageNumbers__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        margin-top: 40px;
+        height: 700px;
+        width: 300px;
+        &:nth-of-type(2) {
+        justify-content: end;
+    }
 
-.nr_top {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    height: 75%;
-    width: 100%;
-    background-color: white;
-}
+    }
 
-.nr_bot_txt1 {
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    height: 15%;
-    font-size: 54px;
-    font-weight: 800;
-}
+    .LandingPageNumbers__block--top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        height: 480px;
+        width: 100%;
+        font-size: 100px;
+        background-color: light-dark(white, #172834);
+    }
 
-.nr_bot_txt2 {
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    height: 10%;
-}
+    .LandingPageNumbers__blockBottomText1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 54px;
+        font-weight: 800;
+    }
 
-.nr_modules {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 360px;
-    width: 100%;
-    border-radius: 30px;
-    background-color: #183447;
+    .LandingPageNumbers__blockBottomText2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-}
+    .LandingPageNumbers__blockBottomText1 p, .LandingPageNumbers__blockBottomText2 p{
+        text-align: center;
+    }
 
-.modules_txt_adjust {
-    height: 20%;
-    color: white;
-}
+    .LandingPageNumbers__modulesBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 360px;
+        width: 100%;
+        border-radius: 30px;
+        background-color: #183447;
+    }
 
+    .LandingPageNumbers__modulesBlockTextAdjustment {
+        height: 20%;
+        color: white;
+    }
 
-
-.footer {
+.LandingPageFooter {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -420,153 +459,451 @@ main {
     background-color: #183447;
     box-sizing: border-box;
     padding: 0 40px 0 40px;
+    }
 
-}
+    .LandingPageFooter__part1, .LandingPageFooter__part2, .LandingPageFooter__part3 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        height: 33%;
+        width: 100%;
+        position: relative;
+    }
 
-.footer_part {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-    height: 33%;
-    width: 100%;
-    position: relative;
-}
+    .LandingPageFooter__contact {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 100px;
+    }
 
-.footer_contact {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 100px;
-}
+    .LandingPageFooter_logo_part {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
 
-.footer_logo_part {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
+    .beta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        width: 70px;
+        font-size: 14px;
+        background-color: white;
+        color: #183447;
+        border-radius: 100px;
+    }
 
-.beta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 70px;
-    font-size: 14px;
-    background-color: white;
-    color: #183447;
-    border-radius: 100px;
-}
+    .LandingPageFooter__part3--right {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
 
-.text_flex {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.footer_line::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    background-color: white;
-    height: 2px;
-    width: 100%;
-}
+    .LandingPageFooter__separator::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        background-color: white;
+        height: 2px;
+        width: 100%;
+    }
 
 @media (max-width: 1700px) {
-    .field1 {
-        font-size: 40px;
+    .LandingPageLogin__campusImage {
+        height: 600px;
     }
 
-    .field2 {
-        font-size: 20px;
+    .LandingPageLogin__campusImage_img {
+        height: 600px;
     }
 
-    .field5_img {
+    .LandingPageInfo__questionSquare, .LandingPageInfo__descriptionSquare, .LandingPageInfo__planSquare, .LandingPageInfo__imageSquare, .LandingPageInfo__mapSquare {
+        height: 400px;
+        padding: 20px;
+    }
+
+    .LandingPageInfo__questionSquare {
+        width: 800px;
+    }
+
+    .LandingPageInfo__descriptionSquare {
+        width: 800px;       
+    }
+
+    .LandingPageInfo__planSquare {
+        width: 400px;   
+        order: 1;
+    }
+
+    .LandingPageInfo__imageSquare {
+        width: 800px;  
+        order: 3;
+    }
+
+    .LandingPageInfo__mapSquare {
+        width: 400px;
+        order: 2;  
+    }
+
+    .LandingPageInfo__half {
+        gap: 0px;
+    }
+}
+@media (max-width: 1600px) {
+    .LandingPageLogin__campusImage {
+        height: 550px;
+    }
+
+    .LandingPageLogin__campusImage_img {
         height: 550px;
     }
 }
 
 @media (max-width: 1400px) {
-    .login_section_half1 {
-        width: 40%;
+    .LandingPageLogin__title{
+        font-size: 44px;
     }
 
-    .login_section_half1 {
-        width: 60%;
+    .LandingPageLogin__description {
+        font-size: 26px;
     }
 
-    .field5_img {
-        height: 450px;
+    .LandingPageLogin__campusImage_img {
+        height: 480px;
     }
 }
 
-@media (max-width: 1200px) {
-    .field5_img {
-        height: 350px;
+@media (max-width: 1250px) {
+    .LandingPageLogin {
+        height: fit-content;
+        min-height: fit-content;
+        gap: 40px;
+    }
+
+    .LandingPageLogin__title, .LandingPageLogin__description, .LandingPageLogin__login, .LandingPageLogin__campusImage {
+        width: 500px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .googleButton {
+        height: 80px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .LandingPageLogin__campusImage {
+        height: 400px;
+        width: 600px;
+        order: 1;
+    }
+
+    .LandingPageLogin__campusImage_img {
+        height: 400px;
+    }
+
+    .LandingPageLogin__arrowsLeft {
+        display: none;
+    }
+
+    .LandingPageNumbers--bottom {
+        gap: 50px;
     }
 }
 
 @media (max-width: 1050px) {
-    .footer {
+    .LandingPageLogin {
+        padding: 0 0 20px 0;
+    }
+
+    .LandingPageLogin__title, .LandingPageLogin__description, .LandingPageLogin__login, .LandingPageLogin__logoPansim, .LandingPageLogin__campusImage {
+        width: auto;
+    }
+
+    .LandingPageLogin__login {
+        width: 90%;
+    }
+
+    .LandingPageLogin__campusImage {
+        height: 350px;
+    }
+
+    .LandingPageNumbers--bottom {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .LandingPageNumbers__block--top {
+        width: 200px;
+        height: 140px;
+    }
+
+    .LandingPageNumbers__block--bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 140px;
+        height: 200px;
+    }
+
+    .LandingPageNumbers__modulesBlock {
+        height: 200px;
+    }
+
+    .LandingPageNumbers__block {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 400px;
+        height: 200px;
+        margin: 0;
+    }
+
+    .LandingPageNumbers__block--Empety {
+        display: none;
+    }
+
+    .LandingPageFooter {
         font-size: 14px;
     }
 
-    .footer_contact {
+    .LandingPageFooter__contact{
         gap: 20px;
     }
 }
 
 @media (max-width: 900px) {
+    .LandingPageLogin__campusImage_img {
+        height: 360px;
+    }
 
-    .square2,
-    .square4 {
+    .LandingPageLogin__dots3 {
+        display: none;
+    }
+
+    .LandingPageInfo__questionSquare, .LandingPageInfo__descriptionSquare, .LandingPageInfo__imageSquare, .LandingPageInfo__square--wrapper {
         width: 600px;
     }
 
-    .dots3 {
-        height: 10px;
+    .LandingPageInfo__planSquare, .LandingPageInfo__mapSquare {
+        width: 100%;
+    }
+
+    .LandingPageInfo__square--wrapper img {
+        height: auto;
+        width: 360px;
+    }
+
+    .LandingPageInfo__planSquare {
+        order: 1;
+    }
+
+    .LandingPageInfo__imageSquare {
+        order: 2;
+        height: auto;
+    }
+
+    .LandingPageInfo__mapSquare {
+        order: 3;  
     }
 }
 
 @media (max-width: 800px) {
-
-    .square2,
-    .square4 {
-        width: 450px;
-        height: 300px;
+    .LandingPageInfo__questionSquare, .LandingPageInfo__descriptionSquare, .LandingPageInfo__imageSquare, .LandingPageInfo__square--wrapper {
+        width: 500px;
     }
 
-    .sqtext1 {
-        font-size: 18px;
-    }
-
-    .sqtext2 {
-        font-size: 13px;
-    }
-
-    .sq2bottom p {
+    .LandingPageInfo__descriptionSquare--bottom p{
         font-size: 16px;
     }
 
-    .sq2bottom_half2 {
+    .LandingPageInfo__descriptionSquare--bottomHalf2 {
         margin-top: 10px;
     }
 
-    .technology_button {
+    .LandingPageInfo__technologyTag {
         height: 26px;
         width: 70px;
         font-size: 14px;
     }
 
-    .numbers_section_title {
+    .LandingPageNumbers--title {
         font-size: 30px;
     }
 
-    .numbers:nth-of-type(2) {
-        height: 350px;
+    .LandingPageFooter {
+        height: fit-content;
+        padding: 10px;
+    }
+
+    .LandingPageFooter p {
+        text-align: center;
+    }
+
+     .LandingPageFooter__part2, .LandingPageFooter__part3{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 30px;
+    }
+
+    .LandingPageFooter__part2 {
+        margin-top: 20px;
+    }
+
+    .LandingPageFooter__contact {
+        flex-direction: column;
+    }
+
+    .LandingPageFooter__separator{
+        flex-direction: column;
+        min-height: 180px;
+        margin-top: 20px;
+    }
+
+    .LandingPageFooter__part3--right {
+        flex-direction: column;
+    }
+}
+@media (max-width: 650px) {
+    .LandingPageLogin__campusImage {
+        height: 300px;
+    }
+
+    .LandingPageLogin__campusImage_img {
+        height: 300px;
+    }
+
+    .LandingPageLogin__dots0 {
+        height: 80px;
+    }
+
+    .LandingPageLogin__dots1, .LandingPageLogin__dots2 {
+        height: 100px;
+    }
+
+    .LandingPageInfo__questionSquare, .LandingPageInfo__descriptionSquare, .LandingPageInfo__imageSquare, .LandingPageInfo__square--wrapper {
+        width: 400px;
+    }
+
+    .LandingPageInfo__questionSquare {
+        font-size: 44px;
+        height: 200px;
+    }
+
+    .LandingPageInfo__questionSquare img {
+        height: 260px;
+    }
+}
+
+@media (max-width: 500px) {
+    .LandingPageLogin {
+        gap: 0px;
+    }
+
+    .LandingPageLogin__title {
+        font-size: 30px;
+    }
+
+    .LandingPageLogin__description, .LandingPageLogin__login, .LandingPageLogin__logoPansim {
+        font-size: 18px;
+        width: 300px;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    .LandingPageLogin__login {
+        width: 80%;
+    }
+
+    .LandingPageLogin__logoPansim {
+        font-size: 14px;
+    }
+
+    .LandingPageLogin__logoPansim img {
+        width: 70px;
+    }
+
+    .LandingPageLogin__campusImage {
+        height: 250px;
+        width: 350px;
+    }
+
+    .LandingPageLogin__campusImage_img {
+        height: 220px;
+    }
+
+    .LandingPageInfo__square--wrapper{
+        justify-content: space-between;
+    }
+
+    .LandingPageInfo__squareText1 {
+        font-size: 18px;
+    }
+
+    .LandingPageInfo__squareText2 {
+        font-size: 13px;
+    }
+
+    .LandingPageInfo__half {
+        margin: 0;
+        gap: 0;
+    }
+
+    .LandingPageInfo__questionSquare, .LandingPageInfo__descriptionSquare, .LandingPageInfo__imageSquare, .LandingPageInfo__square--wrapper {
+        width: 320px;
+    }
+
+    .LandingPageInfo__questionSquare {
+        height: 140px;
+        font-size: 36px;
+    }
+
+    .LandingPageInfo__questionSquare img {
+        height: 140px;
+    }
+
+    .LandingPageInfo__imageSquare img {
+        width: 320px;     
+    }
+
+    .LandingPageInfo__square--wrapper img {
+        height: auto;
+        width: 260px;
+    }
+
+    .LandingPageNumbers {
+        height: 180px;
+    }
+
+    .LandingPageNumbers--title {
+        width: 320px;
+        font-size: 24px;
+    }
+
+    .LandingPageNumbers--bottom {
+        width: 320px;
+    }
+    
+    .LandingPageNumbers__block {
+        width: 300px;
+    }
+
+    .LandingPageNumbers__block--top {
+        width: 160px;
+    }
+
+    .LandingPageNumbers__block--bottom {
+        width: 160px;
+    }
+
+    .LandingPageNumbers__modulesBlock {
+        height: 160px;
     }
 }
