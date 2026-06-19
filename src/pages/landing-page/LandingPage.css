@@ -27,7 +27,7 @@ main {
     padding: 40px 100px 40px 100px;
 }
 
-    .LandingLogin__field1 {
+    .LandingLogin__title {
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -44,7 +44,7 @@ main {
             color: light-dark(#183447, #326283);
         }
 
-    .LandingLogin__field2 {
+    .LandingLogin__description {
         display: flex;
         flex-direction: column;
         height: 20%;
@@ -60,15 +60,15 @@ main {
             height: 150px;
         }
 
-    .LandingLogin__field2 p {
+    .LandingLogin__description p {
         color: light-dark(rgba(24, 52, 71, 0.58), white);
     }
 
-    .LandingLogin__field2 .text_fat {
+    .LandingLogin__description .text_fat {
         font-weight: 800;
     }
 
-    .LandingLogin__field3 {
+    .LandingLogin__login {
         display: flex;
         align-items: center;
         height: 20%;
@@ -84,7 +84,7 @@ main {
             left: 300px;
         }
 
-    .LandingLogin__field4 {
+    .LandingLogin__logoPansim {
         display: flex;
         align-items: center;
         color: light-dark(black, white);
@@ -98,11 +98,11 @@ main {
         order: 4;
     }
 
-    .LandingLogin__field4--xText{
+    .LandingLogin__logoPansim--xText{
         font-size: 36px;
     }
 
-    .LandingLogin__field5 {
+    .LandingLogin__campusImage {
         display: flex;
         width: 60%;
         height: 100%;
@@ -112,10 +112,19 @@ main {
         order: 5;
     }
 
-    .LandingLogin__field5_img {
+    .LandingLogin__campusImage_img {
         height: 650px;
     }
-
+    @media (max-height: 850px){
+        .LandingLogin__campusImage_img {
+            height: 580px;
+        }
+    }
+    @media (max-height: 750px){
+        .LandingLogin__campusImage_img {
+            height: 500px;
+        }
+    }
         .LandingLogin__dots0 {
             position: absolute;
             height: 100px;
@@ -174,7 +183,7 @@ main {
 
     }
 
-    .LandingInfo__square1 {
+    .LandingInfo__questionSquare {
         height: 360px;
         width: 720px;
         display: flex;
@@ -198,7 +207,7 @@ main {
         z-index: -1;
     }
 
-    .LandingInfo__square2 {
+    .LandingInfo__descriptionSquare {
         height: 360px;
         width: 720px;
         border-radius: 20px;   
@@ -227,14 +236,14 @@ main {
     font-weight: 500;
     }
 
-    .LandingInfo__square2--bottom {
+    .LandingInfo__descriptionSquare--bottom {
         margin-top: auto;
         position: relative;
         display: flex;
         flex-direction: row;
     }
 
-    .LandingInfo__square2--bottom::after {
+    .LandingInfo__descriptionSquare--bottom::after {
         position: absolute;
         content: "";
         width: 100%;
@@ -244,14 +253,14 @@ main {
         left: 0;
     }
 
-        .LandingInfo__square2--bottomHalf {
+        .LandingInfo__descriptionSquare--bottomHalf {
             width: 50%;
             font-size: 18px;
             display: flex;
             flex-direction: column;
         }
 
-        .LandingInfo__square2--bottomHalf2{
+        .LandingInfo__descriptionSquare--bottomHalf2{
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
@@ -274,14 +283,14 @@ main {
             width: auto;
         }
 
-    .LandingInfo__square3, .LandingInfo__square5 {
+    .LandingInfo__planSquare, .LandingInfo__mapSquare {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
     
-    .LandingInfo__square-wrapper {
+    .LandingInfo__square--wrapper {
         display: flex;
         justify-content: center;
         height: 360px;
@@ -295,7 +304,7 @@ main {
         padding: 20px;
     }
 
-    .LandingInfo__square3 {
+    .LandingInfo__planSquare {
         order: 1;
     }
 
@@ -309,7 +318,7 @@ main {
             background-color: #183447;
         }
         
-        .LandingInfo__square-img {
+        .LandingInfo__square--img {
             height: auto;
             width: 100%;
             display: flex;
@@ -317,11 +326,11 @@ main {
             justify-content: center;
         }
 
-        .LandingInfo__square-img img {
+        .LandingInfo__square--img img {
             width: 100%;
         }
 
-    .LandingInfo__square4 {
+    .LandingInfo__imageSquare {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -333,11 +342,11 @@ main {
         order: 2;
     }
 
-    .LandingInfo__square4 img {
+    .LandingInfo__imageSquare img {
         width: 100%;
     }
     
-    .LandingInfo__square5 { 
+    .LandingInfo__mapSquare { 
         order: 3;
     }
 
@@ -505,38 +514,38 @@ main {
     }
 
 @media (max-width: 1700px) {
-    .LandingLogin__field5 {
+    .LandingLogin__campusImage {
         height: 600px;
     }
 
-    .LandingLogin__field5_img {
+    .LandingLogin__campusImage_img {
         height: 600px;
     }
 
-    .LandingInfo__square1, .LandingInfo__square2, .LandingInfo__square3, .LandingInfo__square4, .LandingInfo__square5 {
+    .LandingInfo__questionSquare, .LandingInfo__descriptionSquare, .LandingInfo__planSquare, .LandingInfo__imageSquare, .LandingInfo__mapSquare {
         height: 400px;
         padding: 20px;
     }
 
-    .LandingInfo__square1 {
+    .LandingInfo__questionSquare {
         width: 800px;
     }
 
-    .LandingInfo__square2 {
+    .LandingInfo__descriptionSquare {
         width: 800px;       
     }
 
-    .LandingInfo__square3 {
+    .LandingInfo__planSquare {
         width: 400px;   
         order: 1;
     }
 
-    .LandingInfo__square4 {
+    .LandingInfo__imageSquare {
         width: 800px;  
         order: 3;
     }
 
-    .LandingInfo__square5 {
+    .LandingInfo__mapSquare {
         width: 400px;
         order: 2;  
     }
@@ -546,25 +555,25 @@ main {
     }
 }
 @media (max-width: 1600px) {
-    .LandingLogin__field5 {
+    .LandingLogin__campusImage {
         height: 550px;
     }
 
-    .LandingLogin__field5_img {
+    .LandingLogin__campusImage_img {
         height: 550px;
     }
 }
 
 @media (max-width: 1400px) {
-    .LandingLogin__field1{
+    .LandingLogin__title{
         font-size: 44px;
     }
 
-    .LandingLogin__field2 {
+    .LandingLogin__description {
         font-size: 26px;
     }
 
-    .LandingLogin__field5_img {
+    .LandingLogin__campusImage_img {
         height: 480px;
     }
 }
@@ -576,7 +585,7 @@ main {
         gap: 40px;
     }
 
-    .LandingLogin__field1, .LandingLogin__field2, .LandingLogin__field3, .LandingLogin__field5 {
+    .LandingLogin__title, .LandingLogin__description, .LandingLogin__login, .LandingLogin__campusImage {
         width: 500px;
         justify-content: center;
         align-items: center;
@@ -588,13 +597,13 @@ main {
         padding: 20px;
     }
 
-    .LandingLogin__field5 {
+    .LandingLogin__campusImage {
         height: 400px;
         width: 600px;
         order: 1;
     }
 
-    .LandingLogin__field5_img {
+    .LandingLogin__campusImage_img {
         height: 400px;
     }
 
@@ -612,15 +621,15 @@ main {
         padding: 0 0 20px 0;
     }
 
-    .LandingLogin__field1, .LandingLogin__field2, .LandingLogin__field3, .LandingLogin__field4, .LandingLogin__field5 {
+    .LandingLogin__title, .LandingLogin__description, .LandingLogin__login, .LandingLogin__logoPansim, .LandingLogin__campusImage {
         width: auto;
     }
 
-    .LandingLogin__field3 {
+    .LandingLogin__login {
         width: 90%;
     }
 
-    .LandingLogin__field5 {
+    .LandingLogin__campusImage {
         height: 350px;
     }
 
@@ -668,7 +677,7 @@ main {
 }
 
 @media (max-width: 900px) {
-    .LandingLogin__field5_img {
+    .LandingLogin__campusImage_img {
         height: 360px;
     }
 
@@ -676,43 +685,43 @@ main {
         display: none;
     }
 
-    .LandingInfo__square1, .LandingInfo__square2, .LandingInfo__square4, .LandingInfo__square-wrapper {
+    .LandingInfo__questionSquare, .LandingInfo__descriptionSquare, .LandingInfo__imageSquare, .LandingInfo__square--wrapper {
         width: 600px;
     }
 
-    .LandingInfo__square3, .LandingInfo__square5 {
+    .LandingInfo__planSquare, .LandingInfo__mapSquare {
         width: 100%;
     }
 
-    .LandingInfo__square-wrapper img {
+    .LandingInfo__square--wrapper img {
         height: auto;
         width: 360px;
     }
 
-    .LandingInfo__square3 {
+    .LandingInfo__planSquare {
         order: 1;
     }
 
-    .LandingInfo__square4 {
+    .LandingInfo__imageSquare {
         order: 2;
         height: auto;
     }
 
-    .LandingInfo__square5 {
+    .LandingInfo__mapSquare {
         order: 3;  
     }
 }
 
 @media (max-width: 800px) {
-    .LandingInfo__square1, .LandingInfo__square2, .LandingInfo__square4, .LandingInfo__square-wrapper {
+    .LandingInfo__questionSquare, .LandingInfo__descriptionSquare, .LandingInfo__imageSquare, .LandingInfo__square--wrapper {
         width: 500px;
     }
 
-    .LandingInfo__square2--bottom p{
+    .LandingInfo__descriptionSquare--bottom p{
         font-size: 16px;
     }
 
-    .LandingInfo__square2--bottomHalf2 {
+    .LandingInfo__descriptionSquare--bottomHalf2 {
         margin-top: 10px;
     }
 
@@ -762,11 +771,11 @@ main {
     }
 }
 @media (max-width: 650px) {
-    .LandingLogin__field5 {
+    .LandingLogin__campusImage {
         height: 300px;
     }
 
-    .LandingLogin__field5_img {
+    .LandingLogin__campusImage_img {
         height: 300px;
     }
 
@@ -778,16 +787,16 @@ main {
         height: 100px;
     }
 
-    .LandingInfo__square1, .LandingInfo__square2, .LandingInfo__square4, .LandingInfo__square-wrapper {
+    .LandingInfo__questionSquare, .LandingInfo__descriptionSquare, .LandingInfo__imageSquare, .LandingInfo__square--wrapper {
         width: 400px;
     }
 
-    .LandingInfo__square1 {
+    .LandingInfo__questionSquare {
         font-size: 44px;
         height: 200px;
     }
 
-    .LandingInfo__square1 img {
+    .LandingInfo__questionSquare img {
         height: 260px;
     }
 }
@@ -797,39 +806,39 @@ main {
         gap: 0px;
     }
 
-    .LandingLogin__field1 {
+    .LandingLogin__title {
         font-size: 30px;
     }
 
-    .LandingLogin__field2, .LandingLogin__field3, .LandingLogin__field4 {
+    .LandingLogin__description, .LandingLogin__login, .LandingLogin__logoPansim {
         font-size: 18px;
         width: 300px;
         align-items: center;
         margin-top: 40px;
     }
 
-    .LandingLogin__field3 {
+    .LandingLogin__login {
         width: 80%;
     }
 
-    .LandingLogin__field4 {
+    .LandingLogin__logoPansim {
         font-size: 14px;
     }
 
-    .LandingLogin__field4 img {
+    .LandingLogin__logoPansim img {
         width: 70px;
     }
 
-    .LandingLogin__field5 {
+    .LandingLogin__campusImage {
         height: 250px;
         width: 350px;
     }
 
-    .LandingLogin__field5_img {
+    .LandingLogin__campusImage_img {
         height: 220px;
     }
 
-    .LandingInfo__square-wrapper{
+    .LandingInfo__square--wrapper{
         justify-content: space-between;
     }
 
@@ -846,24 +855,24 @@ main {
         gap: 0;
     }
 
-    .LandingInfo__square1, .LandingInfo__square2, .LandingInfo__square4, .LandingInfo__square-wrapper {
+    .LandingInfo__questionSquare, .LandingInfo__descriptionSquare, .LandingInfo__imageSquare, .LandingInfo__square--wrapper {
         width: 320px;
     }
 
-    .LandingInfo__square1 {
+    .LandingInfo__questionSquare {
         height: 140px;
         font-size: 36px;
     }
 
-    .LandingInfo__square1 img {
+    .LandingInfo__questionSquare img {
         height: 140px;
     }
 
-    .LandingInfo__square4 img {
+    .LandingInfo__imageSquare img {
         width: 320px;     
     }
 
-    .LandingInfo__square-wrapper img {
+    .LandingInfo__square--wrapper img {
         height: auto;
         width: 260px;
     }

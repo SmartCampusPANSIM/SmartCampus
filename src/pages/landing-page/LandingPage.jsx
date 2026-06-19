@@ -28,31 +28,31 @@ const LandingPage = () => {
       </section>
 
       <section className="LandingLogin">
-        <div className="LandingLogin__field1">
+        <div className="LandingLogin__title">
           <img className="LandingLogin__arrowsUp" src="src/pages/landing-page/arrows_up.png"></img>
           <p>Wejdź na wyższy</p>
           <p><span className="text_fat text_highlight">level</span> studiowania</p>
         </div>
-        <div className="LandingLogin__field2">
+        <div className="LandingLogin__description">
           <p><span className="text_fat text_highlight">Smart Campus</span> to innowacyjna</p>
           <p>platforma usprawniająca życie</p>
           <p>akademickie!</p>
         </div>
 
         {!user ? (
-        <div className="LandingLogin__field3">
+        <div className="LandingLogin__login">
           <img className="LandingLogin__arrowsLeft" src="src\pages\landing-page\arrows_left.png"></img>
           <GoogleButton onClick={() => navigate("/Logowanie")}>
           </GoogleButton>
         </div>
         ) : (
-        <div className="LandingLogin__field3">
+        <div className="LandingLogin__login">
           <img className="LandingLogin__arrowsLeft" src="src\pages\landing-page\LandingLogin__arrowsLeft.png"></img>
           <ContinueButton onClick={() => navigate("/Panel")}>
           </ContinueButton>
         </div>
         )}
-        <div className="LandingLogin__field4">
+        <div className="LandingLogin__logoPansim">
           <img src="src\pages\landing-page\pansim.png"></img>
           <p className="text_x">X</p>
           <div>
@@ -60,8 +60,8 @@ const LandingPage = () => {
             <p>informatyki stosowanej</p>
           </div>
         </div>
-        <div className="LandingLogin__field5">
-          <img className="LandingLogin__field5_img" src="src\pages\landing-page\building.png"></img>
+        <div className="LandingLogin__campusImage">
+          <img className="LandingLogin__campusImage_img" src="src\pages\landing-page\building.png"></img>
           <img className="LandingLogin__dots0" src="src\pages\landing-page\dots.png"></img>
           <img className="LandingLogin__dots1" src="src\pages\landing-page\dots.png"></img>
           <img className="LandingLogin__dots2" src="src\pages\landing-page\dots.png"></img>
@@ -71,13 +71,13 @@ const LandingPage = () => {
       <section className="LandingInfo">
 
         <div className="LandingInfo__half">
-          <div className="LandingInfo__square1">
+          <div className="LandingInfo__questionSquare">
             <span className="fat_text">Czym jest?</span>Smart Campus
             <img className="logo_background" src="src\pages\landing-page\logo.svg"></img>
           </div>
 
 
-          <div className="LandingInfo__square2">
+          <div className="LandingInfo__descriptionSquare">
             <img className="LandingLogin__dots3" src="src\pages\landing-page\dots.png"></img>
             <div className="LandingInfo__squareText1">
               <p>Projekt Koła Naukowego Informatyki</p>
@@ -88,18 +88,18 @@ const LandingPage = () => {
               <p>potrzebuje student - plan zajęć, mapę kampusu i aktualności -</p>
               <p>w jednym, intuicyjnym miejscu.</p>
             </div>
-            <div className="LandingInfo__square2--bottom">
-              <div className="LandingInfo__square2--bottomHalf">
+            <div className="LandingInfo__descriptionSquare--bottom">
+              <div className="LandingInfo__descriptionSquare--bottomHalf">
                 <p>Zespół Smart Campus:</p>
-                <div className="LandingInfo__square2--bottomHalf2">
+                <div className="LandingInfo__descriptionSquare--bottomHalf2">
                   <FontAwesomeIcon icon={Icons.faUser} />
                   <FontAwesomeIcon icon={Icons.faUser} />
                   <FontAwesomeIcon icon={Icons.faUser} />
                 </div>
               </div>
-              <div className="LandingInfo__square2--bottomHalf">
+              <div className="LandingInfo__descriptionSquare--bottomHalf">
                 <p>Technologie:</p>
-                <div className="LandingInfo__square2--bottomHalf2">
+                <div className="LandingInfo__descriptionSquare--bottomHalf2">
                   <MainButton className="LandingInfo__technologyTag" type="primary" text="React" onClick={() => window.open('https://react.dev/', '_blank')}/>
                   <MainButton className="LandingInfo__technologyTag" type="primary" text="Firebase" onClick={() => window.open('https://firebase.google.com/', '_blank')}/>
                 </div>
@@ -108,8 +108,8 @@ const LandingPage = () => {
             </div>
           </div>
         <div className="LandingInfo__half">
-          <div className="LandingInfo__square3">
-            <div className="LandingInfo__square-wrapper">
+          <div className="LandingInfo__planSquare">
+            <div className="LandingInfo__square--wrapper">
               <div><div className="LandingInfo__circleIcon"><FontAwesomeIcon icon={Icons.faCalendarDays} color="white" size="xl"/></div></div>
               <div className="LandingInfo__squareText3">Plan zajęć</div>
               <div className="LandingInfo__squareText2">
@@ -117,12 +117,12 @@ const LandingPage = () => {
                 <p>czytelny terminarz zjazdów. Od teraz</p>
                 <p>niczego nie przegapisz!</p>
               </div>
-              <div className="LandingInfo__square-img"><img src="src\pages\landing-page\lekcja.png"></img></div>
+              <div className="LandingInfo__square--img"><img src="src\pages\landing-page\lekcja.png"></img></div>
             </div>
           </div>
-          <div className="LandingInfo__square4"><img src="src\pages\landing-page\building2.png"></img></div>
-          <div className="LandingInfo__square5">
-            <div className="LandingInfo__square-wrapper">
+          <div className="LandingInfo__imageSquare"><img src="src\pages\landing-page\building2.png"></img></div>
+          <div className="LandingInfo__mapSquare">
+            <div className="LandingInfo__square--wrapper">
               <div><div className="LandingInfo__circleIcon"><FontAwesomeIcon icon={Icons.faMap} color="white" size="xl"/></div></div>
               <div className="LandingInfo__squareText3">Mapa kampusu</div>
               <div className="LandingInfo__squareText2">
@@ -130,7 +130,7 @@ const LandingPage = () => {
                 <p>pomoże Ci poruszać się po kampusie</p>
                 <p> oraz najbliżeszej okolicy.</p>
               </div>
-              <div className="LandingInfo__square-img"><img src="src\pages\landing-page\map.png"></img></div>
+              <div className="LandingInfo__square--img"><img src="src\pages\landing-page\map.png"></img></div>
             </div>
           </div>
         </div>
