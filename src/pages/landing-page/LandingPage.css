@@ -680,11 +680,6 @@ main {
         width: 600px;
     }
 
-    .lekcja {
-        display: flex;
-        justify-content: center;    
-    }
-
     .LandingInfo__square3, .LandingInfo__square5 {
         width: 100%;
     }
