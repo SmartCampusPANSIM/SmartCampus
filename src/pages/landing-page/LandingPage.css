@@ -3,7 +3,7 @@ main {
     flex-direction: column;
     color: light-dark(#183447, white);
 }
-.banner_section {
+.LandingBanner {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,7 +12,7 @@ main {
     background-color: light-dark(#ECECEC, #141414);
 }
 
-.login_section{
+.LandingLogin{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -26,7 +26,7 @@ main {
     padding: 40px 100px 40px 100px;
 }
 
-    .field1 {
+    .LandingLogin__field1 {
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -41,7 +41,7 @@ main {
         .text_highlight {
             color: light-dark(#183447, #326283);
         }
-    .field2 {
+    .LandingLogin__field2 {
         display: flex;
         flex-direction: column;
         height: 20%;
@@ -51,20 +51,20 @@ main {
         z-index: 1;
         order: 2;
     }
-        .arrows_up {
+        .LandingLogin__arrowsUp {
             position: absolute;
             height: 150px;
         }
 
-    .field2 p {
+    .LandingLogin__field2 p {
         color: light-dark(rgba(24, 52, 71, 0.58), white);
     }
 
-    .field2 .text_fat {
+    .LandingLogin__field2 .text_fat {
         font-weight: 800;
     }
 
-    .field3 {
+    .LandingLogin__field3 {
         display: flex;
         align-items: center;
         height: 20%;
@@ -73,13 +73,13 @@ main {
         z-index: 1;
         order: 3;
     }
-        .arrows_left {
+        .LandingLogin__arrowsLeft {
             position: absolute;
             height: 80px;
             left: 300px;
         }
 
-    .field4 {
+    .LandingLogin__field4 {
         display: flex;
         align-items: center;
         color: light-dark(black, white);
@@ -92,11 +92,11 @@ main {
         z-index: 1;
         order: 4;
     }
-    .text_x{
+    .LandingLogin__field4--xText{
         font-size: 36px;
     }
 
-    .field5 {
+    .LandingLogin__field5 {
         display: flex;
         width: 60%;
         height: 100%;
@@ -106,11 +106,11 @@ main {
         order: 5;
     }
 
-    .field5_img {
+    .LandingLogin__field5_img {
         height: 650px;
     }
 
-        .dots0 {
+        .LandingLogin__dots0 {
             position: absolute;
             height: 100px;
             width: auto;
@@ -118,7 +118,7 @@ main {
             top: -30px;
             z-index: -1;
         }
-        .dots1 {
+        .LandingLogin__dots1 {
             position: absolute;
             height: 130px;
             width: auto;
@@ -126,7 +126,7 @@ main {
             bottom: -20px;
             z-index: -1;
         }
-        .dots2 {
+        .LandingLogin__dots2 {
             position: absolute;
             height: 130px;
             width: auto;
@@ -135,7 +135,7 @@ main {
             z-index: -1;
         }
 
-.info_section {
+.LandingInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,7 +147,7 @@ main {
     background-color: #183447;
 }
 
-    .info_section_half {
+    .LandingInfo__half {
         display: flex;
         flex-wrap: wrap;
         box-sizing: border-box;
@@ -165,7 +165,7 @@ main {
         }
     }
 
-    .square1 {
+    .LandingInfo__square1 {
         height: 360px;
         width: 720px;
         display: flex;
@@ -187,7 +187,7 @@ main {
         width: auto;
         z-index: -1;
     }
-    .square2 {
+    .LandingInfo__square2 {
         height: 360px;
         width: 720px;
         border-radius: 20px;   
@@ -201,25 +201,25 @@ main {
         gap: 10px;
         order: 2;
     }
-    .sqtext1 {
+    .LandingInfo__squareText1 {
         font-size: 26px;
         font-weight: 500;
     }
-    .sqtext2 {
+    .LandingInfo__squareText2 {
         font-size: 16px;
     }
-    .sqtext3 {
+    .LandingInfo__squareText3 {
     font-size: 20px;
     font-weight: 500;
     }
 
-    .sq2bottom {
+    .LandingInfo__square2--bottom {
         margin-top: auto;
         position: relative;
         display: flex;
         flex-direction: row;
     }
-    .sq2bottom::after {
+    .LandingInfo__square2--bottom::after {
         position: absolute;
         content: "";
         width: 100%;
@@ -228,40 +228,40 @@ main {
         top: -10px;
         left: 0;
     }
-        .sq2bottom_half {
+        .LandingInfo__square2--bottomHalf {
             width: 50%;
             font-size: 18px;
             display: flex;
             flex-direction: column;
         }
-        .sq2bottom_half2{
+        .LandingInfo__square2--bottomHalf2{
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
             gap: 10px;
             margin-top: 20px;
         }
-        .technology_button {
+        .LandingInfo__technologyTag {
             background-color: #0D5295;
             width: 100px;
             height: 44px;
             font-size: 18px;
         }
-        .dots3 {
+        .LandingLogin__dots3 {
             position: absolute;
             right: 30px;
             height: 100px;
             min-height: 50px;
             width: auto;
         }
-    .square3, .square5 {
+    .LandingInfo__square3, .LandingInfo__square5 {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
     
-    .square_wrapper {
+    .LandingInfo__square-wrapper {
         display: flex;
         justify-content: center;
         height: 360px;
@@ -275,11 +275,11 @@ main {
         padding: 20px;
     }
 
-    .square3 {
+    .LandingInfo__square3 {
         order: 1;
     }
 
-        .circle {
+        .LandingInfo__circleIcon {
             height: 44px;
             width: 44px;
             border-radius: 100px;
@@ -289,14 +289,14 @@ main {
             background-color: #183447;
         }
         
-        .lekcja {
+        .LandingInfo__square-img {
             height: auto;
             width: 100%;
         }
-        .lekcja img {
+        .LandingInfo__square-img img {
             width: 100%;
         }
-    .square4 {
+    .LandingInfo__square4 {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -307,15 +307,15 @@ main {
         border-radius: 20px;   
         order: 2;
     }
-    .square4 img {
+    .LandingInfo__square4 img {
         width: 100%;
     }
     
-    .square5 { 
+    .LandingInfo__square5 { 
         order: 3;
     }
 
-.numbers_section {
+.LandingNumbers {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -327,7 +327,7 @@ main {
     box-sizing: border-box;
     background-color: light-dark(#ECECEC, #141414);
 }
-    .numbers_section_title {
+    .LandingNumbers--title {
         height: 100px;
         display: flex;
         align-items: center;
@@ -335,7 +335,7 @@ main {
         font-weight: 600;
     }
 
-    .numbers_section_bottom {
+    .LandingNumbers--bottom {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -344,14 +344,14 @@ main {
         height: fit-content;
         gap: 100px;
     }
-    .numbers_wrapper {
+    .LandingNumbers__block--bottom {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 200px;
     }
-    .numbers {
+    .LandingNumbers__block {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -363,7 +363,7 @@ main {
         justify-content: end;
     }
     }
-    .nr_top {
+    .LandingNumbers__block--top {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -374,20 +374,20 @@ main {
         background-color: light-dark(white, #172834);
     }
 
-    .nr_bot_txt1 {
+    .LandingNumbers__blockBottomText1 {
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 54px;
         font-weight: 800;
     }
-    .nr_bot_txt2 {
+    .LandingNumbers__blockBottomText2 {
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .nr_bot_txt1 p, .nr_bot_txt2 p{
+    .LandingNumbers__blockBottomText1 p, .LandingNumbers__blockBottomText2 p{
         text-align: center;
     }
 
@@ -403,12 +403,12 @@ main {
 
     }
 
-    .modules_txt_adjust {
+    .LandingNumbers__modulesBlockTextAdjustment {
         height: 20%;
         color: white;
     }
 
-.footer {
+.LandingFooter {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -420,7 +420,7 @@ main {
     padding: 0 40px 0 40px;
     
 }
-    .footer_part1, .footer_part2, .footer_part3 {
+    .LandingFooter__part1, .LandingFooter__part2, .LandingFooter__part3 {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -430,7 +430,7 @@ main {
         width: 100%;
         position: relative;
     }
-    .footer_contact {
+    .LandingFooter__contact {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -438,7 +438,7 @@ main {
         gap: 100px;
     }
 
-    .footer_logo_part {
+    .LandingFooter_logo_part {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -455,13 +455,13 @@ main {
         color: #183447;
         border-radius: 100px;
     }
-    .text_flex {
+    .LandingFooter__part3--right {
         display: flex;
         align-items: center;
         gap: 30px;
     }
 
-    .footer_line::after {
+    .LandingFooter__separator::after {
         content: "";
         position: absolute;
         top: 0;
@@ -471,66 +471,66 @@ main {
     }
 
 @media (max-width: 1700px) {
-    .field5 {
+    .LandingLogin__field5 {
         height: 600px;
     }
-    .field5_img {
+    .LandingLogin__field5_img {
         height: 600px;
     }
-    .square1, .square2, .square3, .square4, .square5 {
+    .LandingInfo__square1, .LandingInfo__square2, .LandingInfo__square3, .LandingInfo__square4, .LandingInfo__square5 {
         height: 400px;
         padding: 20px;
     }
-    .square1 {
+    .LandingInfo__square1 {
         width: 800px;
     }
-    .square2 {
+    .LandingInfo__square2 {
         width: 800px;       
     }
-    .square3 {
+    .LandingInfo__square3 {
         width: 400px;   
         order: 1;
     }
-    .square4 {
+    .LandingInfo__square4 {
         width: 800px;  
         order: 3;
     }
-    .square5 {
+    .LandingInfo__square5 {
         width: 400px;
         order: 2;  
     }
-    .info_section_half {
+    .LandingInfo__half {
         gap: 0px;
     }
 }
 @media (max-width: 1600px) {
-    .field5 {
+    .LandingLogin__field5 {
         height: 550px;
     }
-    .field5_img {
+    .LandingLogin__field5_img {
         height: 550px;
     }
 }
 
 @media (max-width: 1400px) {
-    .field1{
+    .LandingLogin__field1{
         font-size: 44px;
     }
-    .field2 {
+    .LandingLogin__field2 {
         font-size: 26px;
     }
-    .field5_img {
+    .LandingLogin__field5_img {
         height: 480px;
     }
 }
 
 @media (max-width: 1250px) {
-    .login_section {
+    .LandingLogin {
         height: fit-content;
         min-height: fit-content;
         gap: 40px;
     }
-    .field1, .field2, .field3, .field5 {
+    .LandingLogin__field1, .LandingLogin__field2, .LandingLogin__field3, .LandingLogin__field5 {
         width: 500px;
         justify-content: center;
         align-items: center;
@@ -540,46 +540,46 @@ main {
         width: 100%;
         padding: 20px;
     }
-    .field5 {
+    .LandingLogin__field5 {
         height: 400px;
         width: 600px;
         order: 1;
     }
-    .field5_img {
+    .LandingLogin__field5_img {
         height: 400px;
     }
-    .arrows_left {
+    .LandingLogin__arrowsLeft {
         display: none;
     }
-    .numbers_section_bottom {
+    .LandingNumbers--bottom {
         gap: 50px;
     }
 }
 
 @media (max-width: 1050px) {
-    .login_section {
+    .LandingLogin {
         padding: 0 0 20px 0;
     }
-    .field1, .field2, .field3, .field4, .field5 {
+    .LandingLogin__field1, .LandingLogin__field2, .LandingLogin__field3, .LandingLogin__field4, .LandingLogin__field5 {
         width: auto;
     }
-    .field3 {
+    .LandingLogin__field3 {
         width: 90%;
     }
-    .field5 {
+    .LandingLogin__field5 {
         height: 350px;
     }
 
-    .numbers_section_bottom {
+    .LandingNumbers--bottom {
         flex-direction: column;
         gap: 0;
     }
 
-    .nr_top {
+    .LandingNumbers__block--top {
         width: 200px;
         height: 140px;
     }
-    .numbers_wrapper {
+    .LandingNumbers__block--bottom {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -589,200 +589,200 @@ main {
     .nr_modules {
         height: 200px;
     }
-    .numbers {
+    .LandingNumbers__block {
         flex-direction: row;
         justify-content: space-between;
         width: 400px;
         height: 200px;
         margin: 0;
     }
-    .empety_wrapper {
+    .LandingNumbers__block--Empety {
         display: none;
     }
-    .footer {
+    .LandingFooter {
         font-size: 14px;
     }
-    .footer_contact{
+    .LandingFooter__contact{
         gap: 20px;
     }
 }
 
 @media (max-width: 900px) {
-    .field5_img {
+    .LandingLogin__field5_img {
         height: 360px;
     }
-    .dots3 {
+    .LandingLogin__dots3 {
         display: none;
     }
-    .square1, .square2, .square4, .square_wrapper {
+    .LandingInfo__square1, .LandingInfo__square2, .LandingInfo__square4, .LandingInfo__square-wrapper {
         width: 600px;
     }
     .lekcja {
         display: flex;
         justify-content: center;    
     }
-    .square3, .square5 {
+    .LandingInfo__square3, .LandingInfo__square5 {
         width: 100%;
     }
-    .square_wrapper img {
+    .LandingInfo__square-wrapper img {
         height: auto;
         width: 360px;
     }
-    .square3 {
+    .LandingInfo__square3 {
         order: 1;
     }
-    .square4 {
+    .LandingInfo__square4 {
         order: 2;
         height: auto;
     }
-    .square5 {
+    .LandingInfo__square5 {
         order: 3;  
     }
 }
 
 @media (max-width: 800px) {
-    .square1, .square2, .square4, .square_wrapper {
+    .LandingInfo__square1, .LandingInfo__square2, .LandingInfo__square4, .LandingInfo__square-wrapper {
         width: 500px;
     }
-    .sq2bottom p{
+    .LandingInfo__square2--bottom p{
         font-size: 16px;
     }
-    .sq2bottom_half2 {
+    .LandingInfo__square2--bottomHalf2 {
         margin-top: 10px;
     }
-    .technology_button {
+    .LandingInfo__technologyTag {
         height: 26px;
         width: 70px;
         font-size: 14px;
     }
-    .numbers_section_title {
+    .LandingNumbers--title {
         font-size: 30px;
     }
-    .footer {
+    .LandingFooter {
         height: fit-content;
         padding: 10px;
     }
-    .footer p {
+    .LandingFooter p {
         text-align: center;
     }
-     .footer_part2, .footer_part3{
+     .LandingFooter__part2, .LandingFooter__part3{
         flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 100%;
         gap: 30px;
     }
-    .footer_part2 {
+    .LandingFooter__part2 {
         margin-top: 20px;
     }
-    .footer_contact {
+    .LandingFooter__contact {
         flex-direction: column;
     }
-    .footer_line{
+    .LandingFooter__separator{
         flex-direction: column;
         min-height: 180px;
         margin-top: 20px;
     }
-    .text_flex {
+    .LandingFooter__part3--right {
         flex-direction: column;
     }
 }
 @media (max-width: 650px) {
-    .field5 {
+    .LandingLogin__field5 {
         height: 300px;
     }
-    .field5_img {
+    .LandingLogin__field5_img {
         height: 300px;
     }
-    .dots0 {
+    .LandingLogin__dots0 {
         height: 80px;
     }
-    .dots1, .dots2 {
+    .LandingLogin__dots1, .LandingLogin__dots2 {
         height: 100px;
     }
-    .square1, .square2, .square4, .square_wrapper {
+    .LandingInfo__square1, .LandingInfo__square2, .LandingInfo__square4, .LandingInfo__square-wrapper {
         width: 400px;
     }
-    .square1 {
+    .LandingInfo__square1 {
         font-size: 44px;
         height: 200px;
     }
-    .square1 img {
+    .LandingInfo__square1 img {
         height: 260px;
     }
 }
 
 @media (max-width: 500px) {
-    .login_section {
+    .LandingLogin {
         gap: 0px;
     }
-    .field1 {
+    .LandingLogin__field1 {
         font-size: 30px;
     }
-    .field2, .field3, .field4 {
+    .LandingLogin__field2, .LandingLogin__field3, .LandingLogin__field4 {
         font-size: 18px;
         width: 300px;
         align-items: center;
         margin-top: 40px;
     }
-    .field3 {
+    .LandingLogin__field3 {
         width: 80%;
     }
-    .field4 {
+    .LandingLogin__field4 {
         font-size: 14px;
     }
-    .field4 img {
+    .LandingLogin__field4 img {
         width: 70px;
     }
-    .field5 {
+    .LandingLogin__field5 {
         height: 250px;
         width: 350px;
     }
-    .field5_img {
+    .LandingLogin__field5_img {
         height: 220px;
     }
-    .square_wrapper{
+    .LandingInfo__square-wrapper{
         justify-content: space-between;
     }
-    .sqtext1 {
+    .LandingInfo__squareText1 {
         font-size: 18px;
     }
-    .sqtext2 {
+    .LandingInfo__squareText2 {
         font-size: 13px;
     }
-    .info_section_half {
+    .LandingInfo__half {
         margin: 0;
         gap: 0;
     }
-    .square1, .square2, .square4, .square_wrapper {
+    .LandingInfo__square1, .LandingInfo__square2, .LandingInfo__square4, .LandingInfo__square-wrapper {
         width: 320px;
     }
-    .square1 {
+    .LandingInfo__square1 {
         height: 140px;
         font-size: 36px;
     }
-    .square1 img {
+    .LandingInfo__square1 img {
         height: 140px;
     }
-    .square4 img {
+    .LandingInfo__square4 img {
         width: 320px;     
     }
-    .square_wrapper img {
+    .LandingInfo__square-wrapper img {
         height: auto;
         width: 260px;
     }
-    .numbers_section_title {
+    .LandingNumbers--title {
         width: 320px;
         font-size: 24px;
     }
-    .numbers_section_bottom {
+    .LandingNumbers--bottom {
         width: 320px;
     }
     .numbers {
         width: 320px;
         height: 180px;
     }
-    .numbers_wrapper {
+    .LandingNumbers__block--bottom {
         width: 160px;
     }
     .nr_modules {
