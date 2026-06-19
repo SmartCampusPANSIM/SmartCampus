@@ -23,36 +23,36 @@ const LandingPage = () => {
 
   return (
     <main>
-      <section className="LandingBanner">
+      <section className="LandingPageBanner">
         <LandingNavBar />
       </section>
 
-      <section className="LandingLogin">
-        <div className="LandingLogin__title">
-          <img className="LandingLogin__arrowsUp" src="src/pages/landing-page/arrows_up.png"></img>
+      <section className="LandingPageLogin">
+        <div className="LandingPageLogin__title">
+          <img className="LandingPageLogin__arrowsUp" src="src/pages/landing-page/arrows_up.png"></img>
           <p>Wejdź na wyższy</p>
           <p><span className="text_fat text_highlight">level</span> studiowania</p>
         </div>
-        <div className="LandingLogin__description">
+        <div className="LandingPageLogin__description">
           <p><span className="text_fat text_highlight">Smart Campus</span> to innowacyjna</p>
           <p>platforma usprawniająca życie</p>
           <p>akademickie!</p>
         </div>
 
         {!user ? (
-        <div className="LandingLogin__login">
-          <img className="LandingLogin__arrowsLeft" src="src\pages\landing-page\arrows_left.png"></img>
+        <div className="LandingPageLogin__login">
+          <img className="LandingPageLogin__arrowsLeft" src="src\pages\landing-page\arrows_left.png"></img>
           <GoogleButton onClick={() => navigate("/Logowanie")}>
           </GoogleButton>
         </div>
         ) : (
-        <div className="LandingLogin__login">
-          <img className="LandingLogin__arrowsLeft" src="src\pages\landing-page\LandingLogin__arrowsLeft.png"></img>
+        <div className="LandingPageLogin__login">
+          <img className="LandingPageLogin__arrowsLeft" src="src\pages\landing-page\LandingPageLogin__arrowsLeft.png"></img>
           <ContinueButton onClick={() => navigate("/Panel")}>
           </ContinueButton>
         </div>
         )}
-        <div className="LandingLogin__logoPansim">
+        <div className="LandingPageLogin__logoPansim">
           <img src="src\pages\landing-page\pansim.png"></img>
           <p className="text_x">X</p>
           <div>
@@ -60,121 +60,121 @@ const LandingPage = () => {
             <p>informatyki stosowanej</p>
           </div>
         </div>
-        <div className="LandingLogin__campusImage">
-          <img className="LandingLogin__campusImage_img" src="src\pages\landing-page\building.png"></img>
-          <img className="LandingLogin__dots0" src="src\pages\landing-page\dots.png"></img>
-          <img className="LandingLogin__dots1" src="src\pages\landing-page\dots.png"></img>
-          <img className="LandingLogin__dots2" src="src\pages\landing-page\dots.png"></img>
+        <div className="LandingPageLogin__campusImage">
+          <img className="LandingPageLogin__campusImage_img" src="src\pages\landing-page\building.png"></img>
+          <img className="LandingPageLogin__dots0" src="src\pages\landing-page\dots.png"></img>
+          <img className="LandingPageLogin__dots1" src="src\pages\landing-page\dots.png"></img>
+          <img className="LandingPageLogin__dots2" src="src\pages\landing-page\dots.png"></img>
         </div>
       </section>
 
-      <section className="LandingInfo">
+      <section className="LandingPageInfo">
 
-        <div className="LandingInfo__half">
-          <div className="LandingInfo__questionSquare">
+        <div className="LandingPageInfo__half">
+          <div className="LandingPageInfo__questionSquare">
             <span className="fat_text">Czym jest?</span>Smart Campus
             <img className="logo_background" src="src\pages\landing-page\logo.svg"></img>
           </div>
 
 
-          <div className="LandingInfo__descriptionSquare">
-            <img className="LandingLogin__dots3" src="src\pages\landing-page\dots.png"></img>
-            <div className="LandingInfo__squareText1">
+          <div className="LandingPageInfo__descriptionSquare">
+            <img className="LandingPageLogin__dots3" src="src\pages\landing-page\dots.png"></img>
+            <div className="LandingPageInfo__squareText1">
               <p>Projekt Koła Naukowego Informatyki</p>
               <p>Stosowanej</p>
             </div>
-            <div className="LandingInfo__squareText2">
+            <div className="LandingPageInfo__squareText2">
               <p>Smart Campus to platforma, która łączy wszystko, czego</p>
               <p>potrzebuje student - plan zajęć, mapę kampusu i aktualności -</p>
               <p>w jednym, intuicyjnym miejscu.</p>
             </div>
-            <div className="LandingInfo__descriptionSquare--bottom">
-              <div className="LandingInfo__descriptionSquare--bottomHalf">
+            <div className="LandingPageInfo__descriptionSquare--bottom">
+              <div className="LandingPageInfo__descriptionSquare--bottomHalf">
                 <p>Zespół Smart Campus:</p>
-                <div className="LandingInfo__descriptionSquare--bottomHalf2">
+                <div className="LandingPageInfo__descriptionSquare--bottomHalf2">
                   <FontAwesomeIcon icon={Icons.faUser} />
                   <FontAwesomeIcon icon={Icons.faUser} />
                   <FontAwesomeIcon icon={Icons.faUser} />
                 </div>
               </div>
-              <div className="LandingInfo__descriptionSquare--bottomHalf">
+              <div className="LandingPageInfo__descriptionSquare--bottomHalf">
                 <p>Technologie:</p>
-                <div className="LandingInfo__descriptionSquare--bottomHalf2">
-                  <MainButton className="LandingInfo__technologyTag" type="primary" text="React" onClick={() => window.open('https://react.dev/', '_blank')}/>
-                  <MainButton className="LandingInfo__technologyTag" type="primary" text="Firebase" onClick={() => window.open('https://firebase.google.com/', '_blank')}/>
+                <div className="LandingPageInfo__descriptionSquare--bottomHalf2">
+                  <MainButton className="LandingPageInfo__technologyTag" type="primary" text="React" onClick={() => window.open('https://react.dev/', '_blank')}/>
+                  <MainButton className="LandingPageInfo__technologyTag" type="primary" text="Firebase" onClick={() => window.open('https://firebase.google.com/', '_blank')}/>
                 </div>
                 </div>
               </div>
             </div>
           </div>
-        <div className="LandingInfo__half">
-          <div className="LandingInfo__planSquare">
-            <div className="LandingInfo__square--wrapper">
-              <div><div className="LandingInfo__circleIcon"><FontAwesomeIcon icon={Icons.faCalendarDays} color="white" size="xl"/></div></div>
-              <div className="LandingInfo__squareText3">Plan zajęć</div>
-              <div className="LandingInfo__squareText2">
+        <div className="LandingPageInfo__half">
+          <div className="LandingPageInfo__planSquare">
+            <div className="LandingPageInfo__square--wrapper">
+              <div><div className="LandingPageInfo__circleIcon"><FontAwesomeIcon icon={Icons.faCalendarDays} color="white" size="xl"/></div></div>
+              <div className="LandingPageInfo__squareText3">Plan zajęć</div>
+              <div className="LandingPageInfo__squareText2">
                 <p>Wygodny, dynamiczny plan zajęć oraz</p>
                 <p>czytelny terminarz zjazdów. Od teraz</p>
                 <p>niczego nie przegapisz!</p>
               </div>
-              <div className="LandingInfo__square--img"><img src="src\pages\landing-page\lekcja.png"></img></div>
+              <div className="LandingPageInfo__square--img"><img src="src\pages\landing-page\lekcja.png"></img></div>
             </div>
           </div>
-          <div className="LandingInfo__imageSquare"><img src="src\pages\landing-page\building2.png"></img></div>
-          <div className="LandingInfo__mapSquare">
-            <div className="LandingInfo__square--wrapper">
-              <div><div className="LandingInfo__circleIcon"><FontAwesomeIcon icon={Icons.faMap} color="white" size="xl"/></div></div>
-              <div className="LandingInfo__squareText3">Mapa kampusu</div>
-              <div className="LandingInfo__squareText2">
+          <div className="LandingPageInfo__imageSquare"><img src="src\pages\landing-page\building2.png"></img></div>
+          <div className="LandingPageInfo__mapSquare">
+            <div className="LandingPageInfo__square--wrapper">
+              <div><div className="LandingPageInfo__circleIcon"><FontAwesomeIcon icon={Icons.faMap} color="white" size="xl"/></div></div>
+              <div className="LandingPageInfo__squareText3">Mapa kampusu</div>
+              <div className="LandingPageInfo__squareText2">
                 <p>Łatwa, przejrzysta i wygodna, </p>
                 <p>pomoże Ci poruszać się po kampusie</p>
                 <p> oraz najbliżeszej okolicy.</p>
               </div>
-              <div className="LandingInfo__square--img"><img src="src\pages\landing-page\map.png"></img></div>
+              <div className="LandingPageInfo__square--img"><img src="src\pages\landing-page\map.png"></img></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="LandingNumbers">
-        <div className="LandingNumbers--title"><p>Smart Campus w liczbach</p></div>
-        <div className="LandingNumbers--bottom">
+      <section className="LandingPageNumbers">
+        <div className="LandingPageNumbers--title"><p>Smart Campus w liczbach</p></div>
+        <div className="LandingPageNumbers--bottom">
 
-          <div className="LandingNumbers__block">
-            <div className="LandingNumbers__block--top"><FontAwesomeIcon icon={Icons.faUser}/></div>
-            <div className="LandingNumbers__block--bottom">
-              <div className="LandingNumbers__blockBottomText1"><p>2</p></div>
-              <div className="LandingNumbers__blockBottomText2"><p>Użytkowników platformy</p></div>
+          <div className="LandingPageNumbers__block">
+            <div className="LandingPageNumbers__block--top"><FontAwesomeIcon icon={Icons.faUser}/></div>
+            <div className="LandingPageNumbers__block--bottom">
+              <div className="LandingPageNumbers__blockBottomText1"><p>2</p></div>
+              <div className="LandingPageNumbers__blockBottomText2"><p>Użytkowników platformy</p></div>
             </div>
           </div>
 
-          <div className="LandingNumbers__block">
-            <div className="LandingNumbers__modulesBlock">
-              <div className="LandingNumbers__block--bottom">
-                <div className="LandingNumbers__blockBottomText1 LandingNumbers__modulesBlockTextAdjustment"><p>5</p></div>
-                <div className="LandingNumbers__blockBottomText2 LandingNumbers__modulesBlockTextAdjustment"><p>Smart modułów</p></div>
+          <div className="LandingPageNumbers__block">
+            <div className="LandingPageNumbers__modulesBlock">
+              <div className="LandingPageNumbers__block--bottom">
+                <div className="LandingPageNumbers__blockBottomText1 LandingPageNumbers__modulesBlockTextAdjustment"><p>5</p></div>
+                <div className="LandingPageNumbers__blockBottomText2 LandingPageNumbers__modulesBlockTextAdjustment"><p>Smart modułów</p></div>
               </div>
             </div>
-            <div className="LandingNumbers__block--bottom LandingNumbers__block--Empety"></div>
+            <div className="LandingPageNumbers__block--bottom LandingPageNumbers__block--Empety"></div>
           </div>
 
-          <div className="LandingNumbers__block">
-            <img className="LandingNumbers__block--top" src="src\pages\landing-page\building3.png"></img>
-            <div className="LandingNumbers__block--bottom">
-              <div className="LandingNumbers__blockBottomText1"><p>2</p></div>
-              <div className="LandingNumbers__blockBottomText2"><p>Budynki objęte projektem</p></div>
+          <div className="LandingPageNumbers__block">
+            <img className="LandingPageNumbers__block--top" src="src\pages\Landing-page\building3.png"></img>
+            <div className="LandingPageNumbers__block--bottom">
+              <div className="LandingPageNumbers__blockBottomText1"><p>2</p></div>
+              <div className="LandingPageNumbers__blockBottomText2"><p>Budynki objęte projektem</p></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="LandingFooter">
-        <div className="LandingFooter__part1">
-          <div className="LandingFooter_logo_part"><LogoFull colorReverse="reverse" /><p className="beta">BETA</p></div><p>Wersja 1.0</p>
+      <section className="LandingPageFooter">
+        <div className="LandingPageFooter__part1">
+          <div className="LandingPageFooter_logo_part"><LogoFull colorReverse="reverse" /><p className="beta">BETA</p></div><p>Wersja 1.0</p>
         </div>
-        <div className="LandingFooter__part2">
+        <div className="LandingPageFooter__part2">
           <div><p>Skontaktuj się z nami po więcej</p><p>informacji.</p></div>
-          <div className="LandingFooter__contact">
+          <div className="LandingPageFooter__contact">
             <div>
               <p><span className="text_fat">Kontakt</span></p>
               <p><span className="text_underline">smartcampuspansim@gmail.com</span></p></div>
@@ -184,11 +184,11 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="LandingFooter__part3 LandingFooter__separator">
+        <div className="LandingPageFooter__part3 LandingPageFooter__separator">
           <div>
             <p>KNIS 2025-2026 Wszelkie prawa zastrzeżone</p>
           </div>
-          <div className="LandingFooter__part3--right">
+          <div className="LandingPageFooter__part3--right">
             <p>Informacje o plikach cookie</p>
             <p>Polityka prywatności</p>
           </div>
