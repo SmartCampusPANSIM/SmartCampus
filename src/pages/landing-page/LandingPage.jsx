@@ -42,7 +42,7 @@ const LandingPage = () => {
 
       <section className="LandingPageLogin">
         <div className="LandingPageLogin__title">
-          <img className="LandingPageLogin__arrowsUp" src="src/pages/landing-page/arrows_up.png"></img>
+          <img className="LandingPageLogin__arrowsUp" src="./src/pages/landing-page/arrows_up.png"></img>
           <p>Wejdź na wyższy</p>
           <p><span className="text_fat text_highlight">level</span> studiowania</p>
         </div>
@@ -54,13 +54,13 @@ const LandingPage = () => {
 
         {!user ? (
         <div className="LandingPageLogin__login">
-          <img className="LandingPageLogin__arrowsLeft" src="src\pages\landing-page\arrows_left.png"></img>
+          <img className="LandingPageLogin__arrowsLeft" src=".\src\pages\landing-page\arrows_left.png"></img>
           <GoogleButton onClick={() => navigate("/Logowanie")}>
           </GoogleButton>
         </div>
         ) : (
         <div className="LandingPageLogin__login">
-          <img className="LandingPageLogin__arrowsLeft" src="src\pages\landing-page\LandingPageLogin__arrowsLeft.png"></img>
+          <img className="LandingPageLogin__arrowsLeft" src=".\src\pages\landing-page\LandingPageLogin__arrowsLeft.png"></img>
           <ContinueButton onClick={() => navigate("/Panel")}>
           </ContinueButton>
         </div>
@@ -74,10 +74,10 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="LandingPageLogin__campusImage">
-          <img className="LandingPageLogin__campusImage_img" src="src\pages\landing-page\building.png"></img>
-          <img className="LandingPageLogin__dots0" src="src\pages\landing-page\dots.png"></img>
-          <img className="LandingPageLogin__dots1" src="src\pages\landing-page\dots.png"></img>
-          <img className="LandingPageLogin__dots2" src="src\pages\landing-page\dots.png"></img>
+          <img className="LandingPageLogin__campusImage_img" src=".\src\pages\landing-page\building.png"></img>
+          <img className="LandingPageLogin__dots0" src=".\src\pages\landing-page\dots.png"></img>
+          <img className="LandingPageLogin__dots1" src=".\src\pages\landing-page\dots.png"></img>
+          <img className="LandingPageLogin__dots2" src=".\src\pages\landing-page\dots.png"></img>
         </div>
       </section>
 
