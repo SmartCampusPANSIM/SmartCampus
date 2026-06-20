@@ -54,19 +54,19 @@ const LandingPage = () => {
 
         {!user ? (
         <div className="LandingPageLogin__login">
-          <img className="LandingPageLogin__arrowsLeft" src=".\src\pages\landing-page\arrows_left.png"></img>
+          <img className="LandingPageLogin__arrowsLeft" src={arrowsLeft}></img>
           <GoogleButton onClick={() => navigate("/Logowanie")}>
           </GoogleButton>
         </div>
         ) : (
         <div className="LandingPageLogin__login">
-          <img className="LandingPageLogin__arrowsLeft" src=".\src\pages\landing-page\LandingPageLogin__arrowsLeft.png"></img>
+          <img className="LandingPageLogin__arrowsLeft" src={arrowsLeft}></img>
           <ContinueButton onClick={() => navigate("/Panel")}>
           </ContinueButton>
         </div>
         )}
         <div className="LandingPageLogin__logoPansim">
-          <img src="src\pages\landing-page\pansim.png"></img>
+          <img src={pansim}></img>
           <p className="text_x">X</p>
           <div>
             <p>Koło naukowe</p>
@@ -74,10 +74,10 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="LandingPageLogin__campusImage">
-          <img className="LandingPageLogin__campusImage_img" src=".\src\pages\landing-page\building.png"></img>
-          <img className="LandingPageLogin__dots0" src=".\src\pages\landing-page\dots.png"></img>
-          <img className="LandingPageLogin__dots1" src=".\src\pages\landing-page\dots.png"></img>
-          <img className="LandingPageLogin__dots2" src=".\src\pages\landing-page\dots.png"></img>
+          <img className="LandingPageLogin__campusImage_img" src={building}></img>
+          <img className="LandingPageLogin__dots0" src={dots}></img>
+          <img className="LandingPageLogin__dots1" src={dots}></img>
+          <img className="LandingPageLogin__dots2" src={dots}></img>
         </div>
       </section>
 
@@ -91,7 +91,7 @@ const LandingPage = () => {
 
 
           <div className="LandingPageInfo__descriptionSquare">
-            <img className="LandingPageLogin__dots3" src="src\pages\landing-page\dots.png"></img>
+            <img className="LandingPageLogin__dots3" src={dots}></img>
             <div className="LandingPageInfo__squareText1">
               <p>Projekt Koła Naukowego Informatyki</p>
               <p>Stosowanej</p>
@@ -130,10 +130,10 @@ const LandingPage = () => {
                 <p>czytelny terminarz zjazdów. Od teraz</p>
                 <p>niczego nie przegapisz!</p>
               </div>
-              <div className="LandingPageInfo__square--img"><img src="src\pages\landing-page\lekcja.png"></img></div>
+              <div className="LandingPageInfo__square--img"><img src={lekcja}></img></div>
             </div>
           </div>
-          <div className="LandingPageInfo__imageSquare"><img src="src\pages\landing-page\building2.png"></img></div>
+          <div className="LandingPageInfo__imageSquare"><img src={building2}></img></div>
           <div className="LandingPageInfo__mapSquare">
             <div className="LandingPageInfo__square--wrapper">
               <div><div className="LandingPageInfo__circleIcon"><FontAwesomeIcon icon={Icons.faMap} color="white" size="xl"/></div></div>
@@ -143,7 +143,7 @@ const LandingPage = () => {
                 <p>pomoże Ci poruszać się po kampusie</p>
                 <p> oraz najbliżeszej okolicy.</p>
               </div>
-              <div className="LandingPageInfo__square--img"><img src="src\pages\landing-page\map.png"></img></div>
+              <div className="LandingPageInfo__square--img"><img src={mapImg}></img></div>
             </div>
           </div>
         </div>
@@ -172,7 +172,7 @@ const LandingPage = () => {
           </div>
 
           <div className="LandingPageNumbers__block">
-            <img className="LandingPageNumbers__block--top" src="src\pages\Landing-page\building3.png"></img>
+            <img className="LandingPageNumbers__block--top" src={building3}></img>
             <div className="LandingPageNumbers__block--bottom">
               <div className="LandingPageNumbers__blockBottomText1"><p>2</p></div>
               <div className="LandingPageNumbers__blockBottomText2"><p>Budynki objęte projektem</p></div>
