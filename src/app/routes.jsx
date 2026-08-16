@@ -1,17 +1,20 @@
+import { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Panel from '@pages/panel/Panel.jsx';
-import LandingPage from '@pages/landing-page/LandingPage.jsx';
-import LoginPage from '@pages/login-page/LoginPage.jsx';
-import Elearning from '@pages/elearning/Elearning.jsx';
-import PlanLekcji from '@pages/plan-lekcji/PlanLekcji.jsx';
-import MapaKampusu from '@pages/mapa-kampusu/MapaKampusu.jsx';
-import Feed from '@pages/feed/Feed.jsx';
-import Ustawienia from '@pages/ustawienia/Ustawienia.jsx';
-import OProjekcie from '@pages/o-projekcie/OProjekcie.jsx';
-import ListaZmian from '@pages/lista-zmian/ListaZmian.jsx';
-import NaszZespol from '@pages/nasz-zespol/NaszZespol.jsx';
-import ProtectedRoute from '@components/ProtectedRoute.jsx';
+import ProtectedRoute from '@/routes/ProtectedRoute.jsx';
 import { useAuth } from '@/context/AuthContext.jsx';
+import LoadingSpinner from '@components/LoadingSpinner/LoadingSpinner.jsx';
+
+const Panel = lazy(() => import('@pages/panel/Panel.jsx'));
+const LandingPage = lazy(() => import('@pages/landing-page/LandingPage.jsx'));
+const LoginPage = lazy(() => import('@pages/login-page/LoginPage.jsx'));
+const Elearning = lazy(() => import('@pages/elearning/Elearning.jsx'));
+const PlanLekcji = lazy(() => import('@pages/plan-lekcji/PlanLekcji.jsx'));
+const MapaKampusu = lazy(() => import('@pages/mapa-kampusu/MapaKampusu.jsx'));
+const Feed = lazy(() => import('@pages/feed/Feed.jsx'));
+const Ustawienia = lazy(() => import('@pages/ustawienia/Ustawienia.jsx'));
+const OProjekcie = lazy(() => import('@pages/o-projekcie/OProjekcie.jsx'));
+const ListaZmian = lazy(() => import('@pages/lista-zmian/ListaZmian.jsx'));
+const NaszZespol = lazy(() => import('@pages/nasz-zespol/NaszZespol.jsx'));
 
 const RootRedirect = () => {
   const { user, isAuthLoading } = useAuth();
@@ -21,20 +24,22 @@ const RootRedirect = () => {
 
 const AppRoutes = () => {
   return (
-    <Routes>
-      <Route path="/" element={<RootRedirect />} />
-      <Route path="/LandingPage" element={<LandingPage />} />
-      <Route path="/Logowanie" element={<LoginPage />} />
-      <Route path="/OProjekcie" element={<OProjekcie />} />
-      <Route path="/ListaZmian" element={<ListaZmian />} />
-      <Route path="/NaszZespol" element={<NaszZespol />} />
-      <Route path="/Panel" element={<ProtectedRoute><Panel /></ProtectedRoute>} />
-      <Route path="/MapaKampusu" element={<ProtectedRoute><MapaKampusu /></ProtectedRoute>} />
-      <Route path="/Elearning" element={<ProtectedRoute><Elearning /></ProtectedRoute>} />
-      <Route path="/Feed" element={<ProtectedRoute><Feed /></ProtectedRoute>} />
-      <Route path="/PlanLekcji" element={<ProtectedRoute><PlanLekcji /></ProtectedRoute>} />
-      <Route path="/Ustawienia" element={<ProtectedRoute><Ustawienia /></ProtectedRoute>} />
-    </Routes>
+    <Suspense fallback={<LoadingSpinner />}>
+      <Routes>
+        <Route path="/" element={<RootRedirect />} />
+        <Route path="/LandingPage" element={<LandingPage />} />
+        <Route path="/Logowanie" element={<LoginPage />} />
+        <Route path="/OProjekcie" element={<OProjekcie />} />
+        <Route path="/ListaZmian" element={<ListaZmian />} />
+        <Route path="/NaszZespol" element={<NaszZespol />} />
+        <Route path="/Panel" element={<ProtectedRoute><Panel /></ProtectedRoute>} />
+        <Route path="/MapaKampusu" element={<ProtectedRoute><MapaKampusu /></ProtectedRoute>} />
+        <Route path="/Elearning" element={<ProtectedRoute><Elearning /></ProtectedRoute>} />
+        <Route path="/Feed" element={<ProtectedRoute><Feed /></ProtectedRoute>} />
+        <Route path="/PlanLekcji" element={<ProtectedRoute><PlanLekcji /></ProtectedRoute>} />
+        <Route path="/Ustawienia" element={<ProtectedRoute><Ustawienia /></ProtectedRoute>} />
+      </Routes>
+    </Suspense>
   );
 };
 

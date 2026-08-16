@@ -11,12 +11,12 @@ import './LandingPage.css';
 import arrowsUp from './arrows_up.png';
 import arrowsLeft from './arrows_left.png';
 import pansim from './pansim.png';
-import building from './building.png';
+import building from './building.webp';
 import dots from './dots.png';
 import logoBackground from './logo.svg';
 import lekcja from './lekcja.png';
-import building2 from './building2.png';
-import building3 from './building3.png';
+import building2 from './building2.webp';
+import building3 from './building3.webp';
 import mapImg from './map.png';
 import Lekcja from "../plan-lekcji/Lekcja";
 import { color, scale } from "framer-motion";
@@ -141,7 +141,7 @@ const LandingPage = () => {
               <div className="LandingPageInfo__squareText2">
                 <p>Łatwa, przejrzysta i wygodna, </p>
                 <p>pomoże Ci poruszać się po kampusie</p>
-                <p> oraz najbliżeszej okolicy.</p>
+                <p> oraz najbliższej okolicy.</p>
               </div>
               <div className="LandingPageInfo__square--img"><img src={mapImg}></img></div>
             </div>
