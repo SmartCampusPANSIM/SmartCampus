@@ -119,6 +119,18 @@ function MobileNavBar() {
         <span className="navbar_mobileLabel">Feed</span>
       </NavLink>
 
+      <div className="navbar_mobileSearchDivider"></div>
+      
+      <button 
+        className="navbar_mobileSearchButton"
+        onClick={() => {
+          handleVibration();
+          window.dispatchEvent(new CustomEvent('open-search-mobile'));
+        }}
+      >
+        <FontAwesomeIcon icon={Icons.faMagnifyingGlass} />
+      </button>
+
       <motion.div
         className="navbar_activeMobileIndicator"
         animate={{

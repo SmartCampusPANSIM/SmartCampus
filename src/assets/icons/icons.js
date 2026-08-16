@@ -10,7 +10,19 @@ import {
   faBell,
   faGear,
   faRightFromBracket,
-  faIdCard
+  faIdCard,
+  faMagnifyingGlass,
+  faSun,
+  faGlobe,
+  faGraduationCap,
+  faLaptopCode,
+  faCloud,
+  faCloudRain,
+  faSnowflake,
+  faBolt,
+  faSmog,
+  faCloudSun,
+  faCheckCircle
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faTwitter, faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -33,5 +45,17 @@ export {
   faBell,
   faGear,
   faRightFromBracket,
-  faIdCard
+  faIdCard,
+  faMagnifyingGlass,
+  faSun,
+  faGlobe,
+  faGraduationCap,
+  faLaptopCode,
+  faCloud,
+  faCloudRain,
+  faSnowflake,
+  faBolt,
+  faSmog,
+  faCloudSun,
+  faCheckCircle
 }
