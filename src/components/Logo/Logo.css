@@ -41,10 +41,11 @@
     height: 20px;
 }
 
-.reverse {
-    color: light-dark(#ffffff, #183447);
+.navbar_logo_wrapper_topText.reverse,
+.navbar_logo_wrapper_bottomText.reverse {
+    color: #ffffff;
 }
 
 .navbar_logo_icon.reverse {
-    background-color: light-dark(#ffffff, #183447);
+    background-color: #ffffff;
 }

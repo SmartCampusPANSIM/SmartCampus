@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext.jsx";
-import { version } from "../../../package.json";
+import Version from '@components/Version/Version';
 import GoogleButton from '@components/Buttons/GoogleButton/GoogleButton';
 import ContinueButton from '@components/Buttons/ContinueButton/ContinueButton';
 import MainButton from '@components/Buttons/MainButton/MainButton';
@@ -11,12 +11,12 @@ import './LandingPage.css';
 import arrowsUp from './arrows_up.png';
 import arrowsLeft from './arrows_left.png';
 import pansim from './pansim.png';
-import building from './building.png';
+import building from './building.webp';
 import dots from './dots.png';
 import logoBackground from './logo.svg';
 import lekcja from './lekcja.png';
-import building2 from './building2.png';
-import building3 from './building3.png';
+import building2 from './building2.webp';
+import building3 from './building3.webp';
 import mapImg from './map.png';
 import Lekcja from "../plan-lekcji/Lekcja";
 import { color, scale } from "framer-motion";
@@ -141,7 +141,7 @@ const LandingPage = () => {
               <div className="LandingPageInfo__squareText2">
                 <p>Łatwa, przejrzysta i wygodna, </p>
                 <p>pomoże Ci poruszać się po kampusie</p>
-                <p> oraz najbliżeszej okolicy.</p>
+                <p> oraz najbliższej okolicy.</p>
               </div>
               <div className="LandingPageInfo__square--img"><img src={mapImg}></img></div>
             </div>
@@ -183,7 +183,7 @@ const LandingPage = () => {
 
       <section className="LandingPageFooter">
         <div className="LandingPageFooter__part1">
-          <div className="LandingPageFooter_logo_part"><LogoFull colorReverse="reverse" /><p className="beta">BETA</p></div><p>Wersja 1.0</p>
+          <div className="LandingPageFooter_logo_part"><LogoFull colorReverse="reverse" /><p className="beta">BETA</p></div><p><Version /></p>
         </div>
         <div className="LandingPageFooter__part2">
           <div><p>Skontaktuj się z nami po więcej</p><p>informacji.</p></div>

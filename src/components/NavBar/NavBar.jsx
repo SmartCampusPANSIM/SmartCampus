@@ -8,10 +8,21 @@ import { useAuth } from "@/context/AuthContext.jsx";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icons from '@icons/icons'
+import './NavBar.css';
+import GlobalSearch from '@features/GlobalSearch/index.jsx';
+
+
+const NavMountListener = ({ onMount }) => {
+  useLayoutEffect(() => {
+    onMount();
+  });
+  return null;
+};
 
 function NavBar() {
   const { user, isAuthLoading, login, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const menuRef = useRef(null);   // ref do menu
   const buttonRef = useRef(null); // ref do przycisku
   const { theme, toggleTheme } = useTheme(); // Nowy hook motywu
@@ -19,14 +30,54 @@ function NavBar() {
   const location = useLocation();
   const navigate = useNavigate();
   const navRefs = useRef({});
-  const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
-  const [scale, setScale] = useState({ x: 1, y: 1 });
-  const [blur, setBlur] = useState(0);
-  const [isInitialRender, setIsInitialRender] = useState(true);
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0, opacity: 0 });
   const [activeView, setActiveView] = useState('profile'); // 'profile' lub 'notifications'
-  const animationTimeoutRef = useRef(null);
-  const blurTimeoutRef = useRef(null);
-  const prevLeftRef = useRef(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen && windowWidth <= 1050) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [isMenuOpen, windowWidth]);
+
+  const updateIndicator = () => {
+    const activeElement = navRefs.current[location.pathname];
+    if (activeElement) {
+      setIndicatorStyle(prev => {
+        if (prev.left === activeElement.offsetLeft && prev.width === activeElement.offsetWidth && prev.opacity === 1) return prev;
+        return {
+          left: activeElement.offsetLeft,
+          width: activeElement.offsetWidth,
+          opacity: 1,
+        };
+      });
+    } else {
+      setIndicatorStyle(prev => {
+        if (prev.opacity === 0) return prev;
+        return { ...prev, opacity: 0 };
+      });
+    }
+  };
+
+  useLayoutEffect(() => {
+    updateIndicator();
+    window.addEventListener('resize', updateIndicator);
+    return () => window.removeEventListener('resize', updateIndicator);
+  }, [location.pathname]);
 
   const handleLogin = async () => {
     try {
@@ -46,65 +97,29 @@ function NavBar() {
     }
   };
 
-  // Mark initial render as complete after auth loads and first effect
+  // Obsługa skrótu klawiszowego Ctrl+K oraz zdarzenia z mobilnego navbara
   useEffect(() => {
-    if (!isAuthLoading) {
-      setIsInitialRender(false);
-    }
-  }, [isAuthLoading]);
-
-  useLayoutEffect(() => {
-    const activeElement = navRefs.current[location.pathname];
-    if (activeElement) {
-      const newLeft = activeElement.offsetLeft;
-
-      // Trigger scale and blur animation when position changes (but not on initial mount)
-      if (!isInitialRender && prevLeftRef.current !== newLeft) {
-        setScale({ x: 1.08, y: 1.2 });
-
-
-        // Clear previous timeouts
-        if (animationTimeoutRef.current) {
-          clearTimeout(animationTimeoutRef.current);
-        }
-        if (blurTimeoutRef.current) {
-          clearTimeout(blurTimeoutRef.current);
-        }
-
-        // Return to normal scale after animation completes
-        animationTimeoutRef.current = setTimeout(() => {
-          setScale({ x: 1, y: 1 });
-        }, 450);
-
-        // Reduce blur smoothly during the animation
-        blurTimeoutRef.current = setTimeout(() => {
-          setBlur(0);
-        }, 450);
-      }
-
-      prevLeftRef.current = newLeft;
-
-      setUnderlineStyle({
-        left: newLeft,
-        width: activeElement.offsetWidth,
-      });
-    } else {
-      // Hide underline if no active element is found (e.g., on Settings page)
-      setUnderlineStyle((prev) => ({
-        ...prev,
-        width: 0,
-      }));
-    }
-
-    return () => {
-      if (animationTimeoutRef.current) {
-        clearTimeout(animationTimeoutRef.current);
-      }
-      if (blurTimeoutRef.current) {
-        clearTimeout(blurTimeoutRef.current);
+    const handleGlobalKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(prev => !prev);
       }
     };
-  }, [location.pathname, isInitialRender]);
+    
+    const handleOpenSearchMobile = () => {
+      setIsSearchOpen(true);
+    };
+
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    window.addEventListener('open-search-mobile', handleOpenSearchMobile);
+    
+    return () => {
+      window.removeEventListener('keydown', handleGlobalKeyDown);
+      window.removeEventListener('open-search-mobile', handleOpenSearchMobile);
+    };
+  }, []);
+
+  // usunięto stary useLayoutEffect, ponieważ przenieśliśmy logikę do updateIndicator
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -136,6 +151,7 @@ function NavBar() {
 
   return (
     <section className="navbar_section">
+
       <div className="navbar_logo">
         <div className="navbar_logo_icon" />
         <div className="navbar_logo_wrapper">
@@ -144,75 +160,91 @@ function NavBar() {
         </div>
       </div>
 
-      <nav className="navbar_navigationBar">
-        <NavLink
-          ref={el => navRefs.current["/Panel"] = el}
-          to="/Panel"
-          className={({ isActive }) => isActive ? "navbar_button--active" : "navbar_button"}
-        >
-          <div className="navbar_buttonContent">
-            <FontAwesomeIcon icon={Icons.faSolarPanel} className="navbar_buttonContent_icon" />
-            <div className="navbar_buttonContent_text">Panel</div>
-          </div>
-        </NavLink>
-        <NavLink
-          ref={el => navRefs.current["/PlanLekcji"] = el}
-          to="/PlanLekcji"
-          className={({ isActive }) => isActive ? "navbar_button--active" : "navbar_button"}
-        >
-          <div className="navbar_buttonContent">
-            <FontAwesomeIcon icon={Icons.faCalendarDays} className="navbar_buttonContent_icon" />
-            <div className="navbar_buttonContent_text">Plan lekcji</div>
-          </div>
-        </NavLink>
-        <NavLink
-          ref={el => navRefs.current["/MapaKampusu"] = el}
-          to="/MapaKampusu"
-          className={({ isActive }) => isActive ? "navbar_button--active" : "navbar_button"}
-        >
-          <div className="navbar_buttonContent">
-            <FontAwesomeIcon icon={Icons.faMap} className="navbar_buttonContent_icon" />
-            <div className="navbar_buttonContent_text">Mapa kampusu</div>
-          </div>
-        </NavLink>
-        <NavLink
-          ref={el => navRefs.current["/Elearning"] = el}
-          to="/Elearning"
-          className={({ isActive }) => isActive ? "navbar_button--active" : "navbar_button"}
-        >
-          <div className="navbar_buttonContent">
-            <FontAwesomeIcon icon={Icons.faPhotoFilm} className="navbar_buttonContent_icon" />
-            <div className="navbar_buttonContent_text">E-learning</div>
-          </div>
-        </NavLink>
-        <NavLink
-          ref={el => navRefs.current["/Feed"] = el}
-          to="/Feed"
-          className={({ isActive }) => isActive ? "navbar_button--active" : "navbar_button"}
-        >
-          <div className="navbar_buttonContent">
-            <FontAwesomeIcon icon={Icons.faLaptop} className="navbar_buttonContent_icon" />
-            <div className="navbar_buttonContent_text">Feed</div>
-          </div>
-        </NavLink>
-        <motion.div
-          className="navbar_activeIndicator"
-          animate={{
-            left: underlineStyle.left,
-            width: underlineStyle.width,
-            scaleX: scale.x,
-            scaleY: scale.y,
-            filter: `blur(${blur}px)`,
-          }}
-          transition={{
-            left: isInitialRender ? { duration: 0 } : { type: "spring", stiffness: 380, damping: 40 },
-            width: isInitialRender ? { duration: 0 } : { type: "spring", stiffness: 380, damping: 40 },
-            scaleX: { type: "spring", stiffness: 200, damping: 20 },
-            scaleY: { type: "spring", stiffness: 200, damping: 20 },
-            filter: { duration: 0.2 },
-          }}
-        />
-      </nav>
+      <div className="navbar_centerGroup">
+        <AnimatePresence mode="wait">
+            {!isSearchOpen ? (
+              <motion.div key="nav" style={{ display: 'flex', gap: '8px', alignItems: 'center' }}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.15 }}
+              >
+                <nav className="navbar_navigationBar">
+                  <NavLink
+                    ref={el => navRefs.current["/Panel"] = el}
+                    to="/Panel"
+                    className={({ isActive }) => isActive ? "navbar_button--active" : "navbar_button"}
+                  >
+                    <div className="navbar_buttonContent">
+                      <FontAwesomeIcon icon={Icons.faSolarPanel} className="navbar_buttonContent_icon" />
+                      <div className="navbar_buttonContent_text">Panel</div>
+                    </div>
+                  </NavLink>
+                  <NavLink
+                    ref={el => navRefs.current["/PlanLekcji"] = el}
+                    to="/PlanLekcji"
+                    className={({ isActive }) => isActive ? "navbar_button--active" : "navbar_button"}
+                  >
+                    <div className="navbar_buttonContent">
+                      <FontAwesomeIcon icon={Icons.faCalendarDays} className="navbar_buttonContent_icon" />
+                      <div className="navbar_buttonContent_text">Plan lekcji</div>
+                    </div>
+                  </NavLink>
+                  <NavLink
+                    ref={el => navRefs.current["/MapaKampusu"] = el}
+                    to="/MapaKampusu"
+                    className={({ isActive }) => isActive ? "navbar_button--active" : "navbar_button"}
+                  >
+                    <div className="navbar_buttonContent">
+                      <FontAwesomeIcon icon={Icons.faMap} className="navbar_buttonContent_icon" />
+                      <div className="navbar_buttonContent_text">Mapa Kampusu</div>
+                    </div>
+                  </NavLink>
+                  <NavLink
+                    ref={el => navRefs.current["/Elearning"] = el}
+                    to="/Elearning"
+                    className={({ isActive }) => isActive ? "navbar_button--active" : "navbar_button"}
+                  >
+                    <div className="navbar_buttonContent">
+                      <FontAwesomeIcon icon={Icons.faPhotoFilm} className="navbar_buttonContent_icon" />
+                      <div className="navbar_buttonContent_text">E-learning</div>
+                    </div>
+                  </NavLink>
+                  <NavLink
+                    ref={el => navRefs.current["/Feed"] = el}
+                    to="/Feed"
+                    className={({ isActive }) => isActive ? "navbar_button--active" : "navbar_button"}
+                  >
+                    <div className="navbar_buttonContent">
+                      <FontAwesomeIcon icon={Icons.faLaptop} className="navbar_buttonContent_icon" />
+                      <div className="navbar_buttonContent_text">Feed</div>
+                    </div>
+                  </NavLink>
+                  <motion.div
+                    className="navbar_activeIndicator"
+                    initial={false}
+                    animate={{
+                      left: indicatorStyle.left,
+                      width: indicatorStyle.width,
+                      opacity: indicatorStyle.opacity,
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 35,
+                    }}
+                  />
+                  <NavMountListener onMount={updateIndicator} />
+                </nav>
+                <button className="navbar_searchButton" onClick={() => setIsSearchOpen(true)} title="Szukaj (Ctrl+K)">
+                  <FontAwesomeIcon icon={Icons.faMagnifyingGlass} />
+                </button>
+              </motion.div>
+            ) : (
+              <GlobalSearch isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+            )}
+        </AnimatePresence>
+      </div>
 
       {!user ? (
         <button className="defaultButton" onClick={handleLogin} style={{ opacity: isAuthLoading ? 0 : 1 }}>Zaloguj</button>
@@ -233,19 +265,18 @@ function NavBar() {
           <motion.div
             ref={buttonRef}
             layout
-            transition={{ layout: { duration: 0.65, ease: [0.34, 1.2, 0.64, 1] } }}
+            transition={{ layout: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } }}
             className={`navbar_userBar ${isMenuOpen ? "navbar_userBar--onFocus" : ""}`}
             onClick={toggleMenu}
-            style={{ display: isAuthLoading ? 'none' : 'flex', overflow: 'hidden', justifyContent: 'center' }}
+            style={{ display: isAuthLoading ? 'none' : 'flex', overflow: 'hidden', justifyContent: 'center', position: 'relative' }}
           >
-            <AnimatePresence mode="wait" initial={false}>
+            <AnimatePresence mode="popLayout" initial={false}>
               {!isMenuOpen ? (
                 <motion.div
                   key="user-info"
-                  initial={{ opacity: 0, filter: "blur(5px)", scale: 0.98 }}
-                  animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
-                  exit={{ opacity: 0, filter: "blur(5px)", scale: 0.98 }}
-                  transition={{ duration: 0.15 }}
+                  initial={{ opacity: 0, filter: "blur(8px)", scale: 0.7 }}
+                  animate={{ opacity: 1, filter: "blur(0px)", scale: 1, transition: { duration: 0.15, delay: 0.15 } }}
+                  exit={{ opacity: 0, filter: "blur(8px)", scale: 0.1, transition: { duration: 0.4 } }}
                   style={{ display: 'flex', alignItems: 'center', whiteSpace: 'nowrap' }}
                 >
                   <div className="navbar_userBar_wrapper">
@@ -267,10 +298,9 @@ function NavBar() {
               ) : (
                 <motion.div
                   key="close-text"
-                  initial={{ opacity: 0, filter: "blur(5px)", scale: 0.98 }}
-                  animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
-                  exit={{ opacity: 0, filter: "blur(5px)", scale: 0.98 }}
-                  transition={{ duration: 0.15 }}
+                  initial={{ opacity: 0, filter: "blur(8px)", scale: 0.7 }}
+                  animate={{ opacity: 1, filter: "blur(0px)", scale: 1, transition: { duration: 0.15, delay: 0.15 } }}
+                  exit={{ opacity: 0, filter: "blur(8px)", scale: 0.7, transition: { duration: 0.15 } }}
                   style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0 20px', height: '50px', whiteSpace: 'nowrap' }}
                 >
                   <span style={{ fontWeight: 600, fontSize: '15px' }}>Zamknij</span>
@@ -279,26 +309,41 @@ function NavBar() {
             </AnimatePresence>
           </motion.div>
 
-          {isMenuOpen &&
-            createPortal(
-              <motion.div
-                ref={menuRef}
-                layout
-                initial={{ opacity: 0, scale: 0.95, y: -20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                transition={{
-                  layout: { type: "spring", stiffness: 500, damping: 40, mass: 1 },
-                  opacity: { duration: 0.2 },
-                  scale: { duration: 0.2 },
-                  y: { duration: 0.2 }
-                }}
-                className="navbar_userMenu"
-              >
-                <motion.section className="navbar_userMenu_topSection" layout>
-                  <div className="navbar_userMenu_topSection_left">
-                    <div className="navbar_userMenu_logo">
-                      <div className="navbar_userMenu_logo_icon" />
+          {typeof document !== 'undefined' && document.getElementById("dropdown-root") && createPortal(
+            <AnimatePresence>
+              {isMenuOpen && (
+                <>
+                {windowWidth <= 1050 && (
+                  <motion.div
+                    key="menu-backdrop"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    style={{ position: 'fixed', inset: 0, zIndex: 999 }}
+                    onClick={() => setIsMenuOpen(false)}
+                  />
+                )}
+                <motion.div
+                  ref={menuRef}
+                  layout
+                  key="user-menu-dropdown"
+                  initial={{ opacity: 0, scale: 0.95, y: -20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: -20 }}
+                  transition={{
+                    layout: { type: "spring", stiffness: 500, damping: 40, mass: 1 },
+                    opacity: { duration: 0.2 },
+                    scale: { duration: 0.2 },
+                    y: { duration: 0.2 }
+                  }}
+                  className="navbar_userMenu"
+                >
+                  <motion.section className="navbar_userMenu_topSection" layout>
+                    <div className="navbar_userMenu_topSection_left">
+
+                      <div className="navbar_userMenu_logo">
+                        <div className="navbar_userMenu_logo_icon" />
                       <div className="navbar_userMenulogo_wrapper">
                         <div className="navbar_userMenulogo_wrapper_topText">Smart</div>
                         <div className="navbar_userMenulogo_wrapper_bottomText">Campus</div>
@@ -386,11 +431,15 @@ function NavBar() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>,
-              document.getElementById("dropdown-root")
-            )}
+              </motion.div>
+                </>
+              )}
+            </AnimatePresence>,
+            document.getElementById("dropdown-root")
+          )}
         </>
       )}
+
     </section>
   );
 }

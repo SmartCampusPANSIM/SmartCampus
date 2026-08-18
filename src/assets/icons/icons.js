@@ -1,6 +1,5 @@
 import {
   faUser,
-  faDog,
   faSolarPanel,
   faCalendarDays,
   faMap,
@@ -10,18 +9,26 @@ import {
   faBell,
   faGear,
   faRightFromBracket,
-  faIdCard
+  faIdCard,
+  faMagnifyingGlass,
+  faSun,
+  faGlobe,
+  faGraduationCap,
+  faLaptopCode,
+  faCloud,
+  faCloudRain,
+  faSnowflake,
+  faBolt,
+  faSmog,
+  faCloudSun,
+  faXmark
 } from '@fortawesome/free-solid-svg-icons'
 
-import { faTwitter, faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons'
-
-import SmartCampusLogo from './SmartCampusLogo.svg'
+import { faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 export {
-  SmartCampusLogo,
+  faXmark,
   faUser,
-  faDog,
-  faTwitter,
   faSolarPanel,
   faCalendarDays,
   faMap,
@@ -33,5 +40,16 @@ export {
   faBell,
   faGear,
   faRightFromBracket,
-  faIdCard
+  faIdCard,
+  faMagnifyingGlass,
+  faSun,
+  faGlobe,
+  faGraduationCap,
+  faLaptopCode,
+  faCloud,
+  faCloudRain,
+  faSnowflake,
+  faBolt,
+  faSmog,
+  faCloudSun
 }

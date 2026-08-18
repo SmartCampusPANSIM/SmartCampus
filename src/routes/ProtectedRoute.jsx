@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext.jsx";
-import LoadingSpinner from "./LoadingSpinner/LoadingSpinner";
+import LoadingSpinner from "@components/LoadingSpinner/LoadingSpinner";
 
 export function ProtectedRoute({ children }) {
   const { user, isAuthLoading } = useAuth();
@@ -12,7 +12,7 @@ export function ProtectedRoute({ children }) {
   }
 
   if (!user) {
-    return <Navigate to="/Logowanie" state={{ from: location }} replace />;
+    return <Navigate to="/LandingPage" state={{ from: location }} replace />;
   }
 
   return children;

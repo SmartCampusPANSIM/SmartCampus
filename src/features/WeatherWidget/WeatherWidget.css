@@ -1,0 +1,64 @@
+.weatherWidget_container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: light-dark(rgba(255, 255, 255, 0.6), rgba(24, 52, 71, 0.5));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.1));
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  color: light-dark(#183447, #ffffff);
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.weatherWidget_container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.weatherWidget_icon {
+  font-size: 24px;
+  color: light-dark(#183447, #D5DEE7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weatherWidget_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.weatherWidget_temp {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.weatherWidget_location {
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.7;
+  margin-top: 2px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.weatherWidget_loading, .weatherWidget_error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  padding: 0 20px;
+  background: light-dark(rgba(255, 255, 255, 0.6), rgba(24, 52, 71, 0.5));
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  font-size: 13px;
+  color: light-dark(#183447, #ffffff);
+  opacity: 0.7;
+}
