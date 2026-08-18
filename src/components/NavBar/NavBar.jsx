@@ -40,19 +40,7 @@ function NavBar() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    if (isMenuOpen && windowWidth <= 1050) {
-      document.body.style.overflow = 'hidden';
-      document.body.style.touchAction = 'none';
-    } else {
-      document.body.style.overflow = '';
-      document.body.style.touchAction = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-      document.body.style.touchAction = '';
-    };
-  }, [isMenuOpen, windowWidth]);
+  // Odblokowano przewijanie tła podczas otwartego menu zgodnie z prośbą.
 
   const updateIndicator = () => {
     const activeElement = navRefs.current[location.pathname];

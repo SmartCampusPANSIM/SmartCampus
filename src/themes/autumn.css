@@ -1,0 +1,119 @@
+/* Autumn Theme Overrides */
+
+[data-theme="autumn"] body {
+    background: linear-gradient(to bottom, #d9a05b 0%, #b85a30 50%, #682c16 100%) !important;
+    background-attachment: fixed !important;
+}
+
+[data-theme="autumn"] .app {
+    background: transparent !important;
+}
+
+[data-theme="autumn"] .navbar_navigationMobileBar {
+    background: rgba(104, 44, 22, 0.6) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: none !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+    border-radius: 20px !important;
+}
+
+[data-theme="autumn"] .navbar_button--active {
+    background: #e67e22 !important;
+    color: #fff !important;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2) !important;
+    border-radius: 12px !important;
+}
+
+[data-theme="autumn"] .navbar_activeIndicator {
+    display: none !important;
+}
+
+[data-theme="autumn"] .settings_section,
+[data-theme="autumn"] .custom_select_trigger,
+[data-theme="autumn"] .custom_select_native,
+[data-theme="autumn"] .release_card,
+[data-theme="autumn"] .progress_card,
+[data-theme="autumn"] .navbar_expandedSearchBar {
+    background: rgba(255, 243, 224, 0.85) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(104, 44, 22, 0.2) !important;
+    border-radius: 16px !important;
+    color: #5d2906 !important;
+}
+
+[data-theme="autumn"] .custom_select_dropdown {
+    background: rgba(255, 243, 224, 0.95) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: none !important;
+    box-shadow: 0 8px 30px rgba(104, 44, 22, 0.4) !important;
+    border-radius: 16px !important;
+    z-index: 9999 !important;
+}
+
+[data-theme="autumn"] .custom_select_option {
+    color: #5d2906 !important;
+}
+
+[data-theme="autumn"] .custom_select_option:hover,
+[data-theme="autumn"] .custom_select_option.selected {
+    background: rgba(217, 160, 91, 0.3) !important;
+    color: #682c16 !important;
+}
+
+[data-theme="autumn"] .progress_bar_container {
+    background-color: rgba(255, 243, 224, 0.5) !important;
+}
+
+[data-theme="autumn"] .progress_bar_fill {
+    background: linear-gradient(180deg, #d35400 0%, #a04000 100%) !important;
+}
+
+[data-theme="autumn"] .default,
+[data-theme="autumn"] .primary,
+[data-theme="autumn"] .github,
+[data-theme="autumn"] .bug_btn,
+[data-theme="autumn"] .email_btn,
+[data-theme="autumn"] .mobile_back_button {
+    background: linear-gradient(180deg, #d35400 0%, #a04000 100%) !important;
+    border: 1px solid #873600 !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3) !important;
+    color: #fdf2e9 !important;
+    border-radius: 8px !important;
+}
+
+[data-theme="autumn"] .toggle_switch {
+    background: #e59866 !important;
+    border: 1px solid #ba4a00 !important;
+}
+
+[data-theme="autumn"] .toggle_switch.active {
+    background: #d35400 !important;
+    border: 1px solid #873600 !important;
+    box-shadow: 0 0 8px rgba(211, 84, 0, 0.6) !important;
+}
+
+[data-theme="autumn"] .toggle_switch::before {
+    background: #fdf2e9 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+}
+
+[data-theme="autumn"] h1,
+[data-theme="autumn"] h3,
+[data-theme="autumn"] h4,
+[data-theme="autumn"] p,
+[data-theme="autumn"] .section_title,
+[data-theme="autumn"] .contact_link_text h4,
+[data-theme="autumn"] .contact_link_text p {
+    color: #5d2906 !important;
+}
+
+[data-theme="autumn"] input,
+[data-theme="autumn"] .navbar_expandedSearchInput {
+    background: transparent !important;
+    border: none !important;
+    color: #5d2906 !important;
+}

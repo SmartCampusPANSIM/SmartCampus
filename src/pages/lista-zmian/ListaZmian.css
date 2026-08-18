@@ -1,1 +1,99 @@
-/* ListaZmian */
+.lista_zmian_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: light-dark(#f1f5f9, #121c25);
+}
+
+.lista_zmian_back_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid light-dark(#183447, #2F2F2F);
+    color: light-dark(#183447, #ffffff);
+    background-color: light-dark(#ffffff, #2F2F2F);
+    height: 44px;
+    border-radius: 100px;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    gap: 8px; /* Odstęp między ikoną a tekstem */
+}
+
+.lista_zmian_back_button:hover {
+    cursor: pointer;
+    background-color: light-dark(#F3F3F3, #24465e);
+}
+
+.lista_zmian_content {
+    width: 100%;
+    max-width: 900px;
+    background-color: light-dark(#ffffff, #182531);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 20px 30px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .lista_zmian_content {
+        padding: 15px;
+        margin-top: 0;
+        border-radius: 0;
+    }
+}
+
+.releases_list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.release_card {
+    background-color: light-dark(#f8fafd, #183447);
+    border: 1px solid light-dark(#e1e8ed, #2a4155);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.release_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid light-dark(#e1e8ed, #2a4155);
+    padding-bottom: 12px;
+}
+
+.release_header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: light-dark(var(--brand, #183447), #ffffff);
+}
+
+.release_date {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b8fa3;
+}
+
+.release_body {
+    font-size: 14px;
+    line-height: 1.6;
+    color: light-dark(#3a4f61, #cbd3da);
+    white-space: pre-wrap; /* to support markdown line breaks from GitHub */
+}
+
+.loading_state, .empty_state {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+    font-size: 14px;
+}

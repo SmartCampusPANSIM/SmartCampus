@@ -13,6 +13,9 @@ function Panel() {
   const { theme, toggleTheme } = useTheme();
   const userName = user?.displayName ? user.displayName.split(" ")[0] : "Student";
 
+  const isExperimentalEnabled = localStorage.getItem('isExperimentalEnabled') === 'true';
+  const showWeather = isExperimentalEnabled && localStorage.getItem('expWeatherWidget') === 'true';
+
   return (
     <div className="panel_dashboard">
       
@@ -31,14 +34,16 @@ function Panel() {
         {/* Kolumna 1: Pogoda + Motyw */}
         <div className="panel_widget_column">
           
-          <div className="panel_widget">
-            <div className="panel_widget_title">
-              <FontAwesomeIcon icon={Icons.faCloudSun} style={{ opacity: 0.7 }} /> Pogoda lokalna
+          {showWeather && (
+            <div className="panel_widget">
+              <div className="panel_widget_title">
+                <FontAwesomeIcon icon={Icons.faCloudSun} style={{ opacity: 0.7 }} /> Pogoda lokalna
+              </div>
+              <div className="panel_widget_content" style={{ display: 'flex', minHeight: '64px' }}>
+                <WeatherWidget />
+              </div>
             </div>
-            <div className="panel_widget_content" style={{ display: 'flex', minHeight: '64px' }}>
-              <WeatherWidget />
-            </div>
-          </div>
+          )}
 
           <div className="panel_widget">
             <div className="panel_widget_title">

@@ -185,7 +185,9 @@
     position: fixed;
     top: 90px;
     right: 20px;
-    background-color: rgba(24, 52, 71, 0.6);
+    background-color: light-dark(rgba(24, 52, 71, 0.6), rgba(18, 28, 37, 0.95));
+    border: 1px solid light-dark(transparent, rgba(255, 255, 255, 0.15));
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(20px);
     border-radius: 26px;
     padding: 10px;
@@ -193,7 +195,9 @@
     flex-direction: column;
     width: 300px;
     height: fit-content;
-    overflow: hidden;
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+    overflow-x: hidden;
     z-index: 1000;
     animation: expandList 0.2s ease-in-out;
 }
@@ -348,9 +352,15 @@
 
 .navbar_userMenu_bottomSection {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
     padding: 5px 0 10px 0;
     user-select: none;
+}
+
+.navbar_userMenu_bottomSection > a {
+    flex: 1;
+    display: flex;
 }
 
 .navbar_userMenu_bottomSection_WUbutton {
@@ -361,7 +371,7 @@
     border-radius: 100px;
     color: white;
     padding: 0 20px;
-    width: 200px;
+    width: 100%;
 }
 
 .navbar_userMenu_bottomSection_WUbutton:hover {
@@ -378,6 +388,7 @@
     color: white;
     padding: 0 20px;
     width: 80px;
+    flex-shrink: 0;
 }
 
 .navbar_userMenu_bottomSection_Legitymacja:hover {
@@ -431,7 +442,9 @@
         padding: 10px 15px;
         margin: 5px;
     }
+}
 
+@media screen and (max-width: 768px) {
     .navbar_userMenu {
         right: 0;
         left: 0;

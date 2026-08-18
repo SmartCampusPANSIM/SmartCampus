@@ -19,6 +19,7 @@ export const getSearchConfig = (isDark) => [
       { id: "mod_3", title: "Mapa Kampusu", path: "/MapaKampusu", icon: Icons.faMap, type: "Moduł" },
       { id: "mod_4", title: "E-learning", path: "/Elearning", icon: Icons.faPhotoFilm, type: "Platforma edukacyjna" },
       { id: "mod_5", title: "Feed", path: "/Feed", icon: Icons.faLaptop, type: "Aktualności" },
+      { id: "mod_6", title: "Ustawienia", path: "/Ustawienia", icon: Icons.faGear, type: "Konto i preferencje", keywords: "ustawienia opcje konfiguracja profil" }
     ]
   },
   {

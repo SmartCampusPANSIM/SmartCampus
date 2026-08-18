@@ -30,9 +30,9 @@ const AppRoutes = () => {
         <Route path="/LandingPage" element={<LandingPage />} />
         <Route path="/Logowanie" element={<LoginPage />} />
         <Route path="/OProjekcie" element={<OProjekcie />} />
-        <Route path="/ListaZmian" element={<ListaZmian />} />
         <Route path="/NaszZespol" element={<NaszZespol />} />
         <Route path="/Panel" element={<ProtectedRoute><Panel /></ProtectedRoute>} />
+        <Route path="/ListaZmian" element={<ProtectedRoute><ListaZmian /></ProtectedRoute>} />
         <Route path="/MapaKampusu" element={<ProtectedRoute><MapaKampusu /></ProtectedRoute>} />
         <Route path="/Elearning" element={<ProtectedRoute><Elearning /></ProtectedRoute>} />
         <Route path="/Feed" element={<ProtectedRoute><Feed /></ProtectedRoute>} />

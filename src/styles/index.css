@@ -1,3 +1,9 @@
+@import './smartCampusUI.css';
+@import '../themes/frutiger.css';
+@import '../themes/halloween.css';
+@import '../themes/autumn.css';
+@import '../themes/christmas.css';
+
 :root {
   scroll-behavior: smooth;
   color: rgba(255, 255, 255, 0.87);
@@ -25,4 +31,35 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
+}
+
+/* Animacje View Transitions (iOS style push) */
+::view-transition-old(root) {
+  animation: 0.3s cubic-bezier(0.4, 0, 0.2, 1) both slide-out-left;
+}
+
+::view-transition-new(root) {
+  animation: 0.3s cubic-bezier(0.4, 0, 0.2, 1) both slide-in-right;
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
 }

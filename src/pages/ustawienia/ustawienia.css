@@ -1,6 +1,21 @@
 .ustawienia_container {
-    padding: 20px;
-    padding-top: calc(80px + env(safe-area-inset-top, 0px));
+    display: flex;
+    justify-content: center;
+}
+
+.settings_content {
+    width: 100%;
+    max-width: 1200px;
+    height: max-content;
+    /* Zwiększony dolny padding z 20px na 100px, aby pływająca nawigacja (NavBar) nie zasłaniała zawartości na samym dole */
+    padding: 0 20px 100px 20px;
+    box-sizing: border-box;
+}
+
+.setting_topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .mobile_back_button {
@@ -11,14 +26,481 @@
     .mobile_back_button {
         display: flex;
         align-items: center;
-        gap: 10px;
-        background-color: transparent;
+        justify-content: center;
+        border: 1px solid light-dark(#183447, #2F2F2F);
         color: light-dark(#183447, #ffffff);
-        border: none;
+        background-color: light-dark(#ffffff, #2F2F2F);
+        height: 44px;
+        border-radius: 100px;
+        padding: 0 20px;
         font-size: 16px;
         font-weight: 600;
-        padding: 10px 0;
-        margin-bottom: 20px;
-        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            cursor: pointer;
+            background-color: light-dark(#F3F3F3, #24465e);
+        }
     }
+}
+
+.profilePictureAndBaner {
+    background-color: aqua;
+    background-image: url('../landing-page/building.webp');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    margin-bottom: clamp(46px, calc(10vw + 18px), 78px);
+    height: clamp(75px, 20vw, 150px);
+    position: relative;
+}
+
+
+.profilePictureWrapper {
+    width: clamp(64px, calc(20vw + 4px), 128px);
+    height: clamp(64px, calc(20vw + 4px), 128px);
+    border-radius: 1000px;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    transform: translateY(50%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: light-dark(rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.4));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}
+
+.profilePicture {
+    width: 100%;
+    height: 100%;
+    border-radius: 1000px;
+    object-fit: cover;
+    background-color: gray;
+}
+
+.user_summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.user_summary_left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.user_summary_left h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: light-dark(#1c2d3a, #ffffff);
+}
+
+.user_summary_emailBadge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: light-dark(#dce3eb, #2a3c4a);
+    padding: 4px 6px 4px 12px; /* Lekko asymetryczny padding dla przycisku */
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    color: light-dark(#3a4f61, #e0e5eb);
+    width: fit-content;
+}
+
+.user_summary_logoutBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    border-radius: 50%;
+    margin-left: 4px;
+    background-color: light-dark(#c8d5e0, #405260);
+    transition: all 0.2s ease;
+}
+
+.user_summary_logoutBtn:hover {
+    background-color: light-dark(#b6c6d3, #506675);
+}
+
+.user_summary_right {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.user_summary_stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.stat_value {
+    font-size: 20px;
+    font-weight: 700;
+    color: light-dark(#1c2d3a, #ffffff);
+}
+
+.stat_label {
+    font-size: 15px;
+    color: light-dark(#4a6274, #9caebf);
+}
+
+/* Responsywność dla małych telefonów */
+@media (max-width: 600px) {
+    .user_summary {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .user_summary_left {
+        align-items: center;
+    }
+    .user_summary_right {
+        width: 100%;
+        justify-content: space-around;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
+
+/* Nowa sekcja formularzy "Konto" */
+.settings_section {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+/* Wymuszamy, by wyższe sekcje przykrywały niższe (np. rozwijane menu CustomSelect) */
+.settings_section:nth-of-type(1) { z-index: 20; }
+.settings_section:nth-of-type(2) { z-index: 19; }
+.settings_section:nth-of-type(3) { z-index: 18; }
+.settings_section:nth-of-type(4) { z-index: 17; }
+.settings_section:nth-of-type(5) { z-index: 16; }
+.settings_section:nth-of-type(6) { z-index: 15; }
+.settings_section:nth-of-type(7) { z-index: 14; }
+.settings_section:nth-of-type(8) { z-index: 13; }
+.settings_section:nth-of-type(9) { z-index: 12; }
+.settings_section:nth-of-type(10) { z-index: 11; }
+
+.section_title {
+    font-size: 16px;
+    font-weight: 700;
+    color: light-dark(#1c2d3a, #ffffff);
+    margin: 0;
+    padding-left: 10px;
+}
+
+.settings_card {
+    background-color: light-dark(#e8ebef, #24313d);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form_row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.input_group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.input_group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: light-dark(#3a4f61, #9caebf);
+    padding-left: 5px;
+}
+
+.input_group input {
+    background-color: light-dark(#d0d9e2, #2a3c4a);
+    border: none;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 15px;
+    color: light-dark(#1c2d3a, #ffffff);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.input_group input:focus {
+    box-shadow: 0 0 0 2px light-dark(#a1b5c7, #4a6274);
+}
+
+.dropdowns_row {
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.select_wrapper {
+    position: relative;
+    flex: 2; /* Wydział, Kierunek, Grupa zabierają więcej miejsca */
+    min-width: 140px;
+}
+
+.select_wrapper.small_select {
+    flex: 1; /* Rok, Semestr są krótsze */
+    min-width: 100px;
+}
+
+@media (max-width: 768px) {
+    .form_row {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Nowe sekcje ustawień (Prywatność, Powiadomienia, Wersja) */
+.settings_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box; /* Rozwiązuje problem wypychania sliderów za ekran */
+}
+
+.settings_row_info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-right: 20px;
+}
+
+.settings_row_info h4 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: light-dark(#1c2d3a, #ffffff);
+}
+
+.settings_row_info p {
+    margin: 0;
+    font-size: 13px;
+    color: light-dark(#4a6274, #9caebf);
+    line-height: 1.4;
+    word-break: break-all; /* Zapobiega wypychaniu przycisków przez długie e-maile */
+}
+
+/* Przełącznik (Toggle Switch) */
+.toggle_switch {
+    position: relative;
+    width: 52px;
+    height: 30px;
+    background-color: light-dark(#cbd3da, #3a4f61);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.toggle_switch.active {
+    background-color: #0b508f; /* Głęboki niebieski po włączeniu */
+}
+
+.toggle_switch::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.toggle_switch.active::after {
+    transform: translateX(22px);
+}
+
+/* Wersja aplikacji / dropdown z motywem */
+.theme_selector {
+    position: relative;
+    width: max-content;
+    min-width: 150px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .theme_selector {
+        min-width: 130px;
+    }
+}
+
+/* Sekcja wersji aplikacji */
+.version_row {
+    margin-top: 5px;
+    padding: 15px;
+}
+
+.version_info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.version_number {
+    font-size: 20px;
+    font-weight: 600;
+    color: light-dark(#1c2d3a, #ffffff);
+}
+
+/* Przycisk historii zmian */
+.changelog_button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: light-dark(#cbd3da, #3a4f61);
+    color: light-dark(#183447, #ffffff);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+.changelog_button:hover {
+    background-color: light-dark(#b9c3cb, #4a6274);
+    transform: scale(1.05);
+}
+
+.changelog_button:active {
+    transform: scale(0.95);
+}
+
+/* Karta postępu prac */
+.progress_card {
+    background-color: #114e8c; 
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(17, 78, 140, 0.2);
+}
+
+.progress_title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.progress_info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.progress_bar_container {
+    width: 100%;
+    height: 8px;
+    background-color: #dce3eb;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.progress_bar_fill {
+    height: 100%;
+    background-color: #1c2d3a;
+    border-radius: 100px;
+    transition: width 1s ease-out;
+}
+
+.progress_footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Karta z Patch Notes */
+.patch_notes_card {
+    padding: 16px 20px;
+    background-color: light-dark(#f8fafd, #183447);
+    border: 1px solid light-dark(#e1e8ed, #2a4155);
+    border-radius: 16px;
+}
+
+/* Style dla treści Markdown */
+.markdown_body p {
+    margin: 0 0 10px 0;
+}
+
+.markdown_body p:last-child {
+    margin-bottom: 0;
+}
+
+.markdown_body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.markdown_body ul, .markdown_body ol {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.markdown_body h1, .markdown_body h2, .markdown_body h3 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: light-dark(var(--brand, #183447), #ffffff);
+}
+
+/* Sekcja Kontakt i linki - Style dla przycisków */
+.contact_link_btn {
+    width: 150px !important;
+    justify-content: flex-start !important;
+    padding-left: 24px !important;
+    gap: 12px !important;
+}
+
+.bug_btn svg, .email_btn svg {
+    height: 22px !important;
+    width: 22px !important;
+}
+
+/* Animacja pełzającego robaka */
+@keyframes crawl {
+    0% { transform: translateX(0) scaleY(1); }
+    25% { transform: translateX(2px) scaleY(0.8) scaleX(1.1); }
+    50% { transform: translateX(4px) scaleY(1) scaleX(1); }
+    75% { transform: translateX(6px) scaleY(0.8) scaleX(1.1); }
+    100% { transform: translateX(8px) scaleY(1) scaleX(1); }
+}
+
+.bug_btn:hover svg {
+    animation: crawl 0.8s infinite alternate ease-in-out;
 }
