@@ -1,0 +1,59 @@
+﻿- Kompleksowa naprawa i optymalizacja efektu bluru (rozmycia) w oknie wyszukiwarki:
+  - UporzÄ…dkowano i zoptymalizowano style CSS (usuniÄ™to konflikty i zastosowano obejĹ›cia dla znanych bĹ‚Ä™dĂłw silnika Chromium).
+  - Zmieniono architekturÄ™ renderowania okna - przeniesiono je do React Portalu na poziom gĹ‚Ăłwnego dokumentu. DziÄ™ki temu blur poprawnie i natychmiastowo rozmywa caĹ‚e tĹ‚o aplikacji (w tym mapÄ™ kampusu).
+  - Wyeliminowano "lag" (opĂłĹşnienie) w pojawianiu siÄ™ efektu bluru poprzez optymalizacjÄ™ czasu trwania animacji otwierania okna.
+  - Dostosowano efekt wizualny do trybu ciemnego (usuniÄ™to sztuczne nasycenie kolorĂłw, tzw. saturate).
+- Poprawiono interfejs okna wyszukiwarki - pasek przewijania (scrollbar) zostaĹ‚ odpowiednio odsuniÄ™ty i nie wychodzi juĹĽ poza zaokrÄ…glone rogi kontenera.
+- Zaimplementowano obsĹ‚ugÄ™ nawigacji klawiaturÄ… (strzaĹ‚ki i enter) w podpowiedziach wyszukiwarki. Zoptymalizowano autouzupeĹ‚nianie i dziaĹ‚anie klawisza tab (ghost text).
+- Przebudowa GĹ‚Ăłwnego Panelu Dashboardu:
+  - WdroĹĽono nowoczesny, moduĹ‚owy ukĹ‚ad oparty o CSS Grid.
+  - Dodano graficzny baner powitalny z efektem glassmorphism.
+  - Zaimplementowano widget lokalnej pogody pobierajÄ…cy dane z Open-Meteo.
+  - Dodano wygodny przeĹ‚Ä…cznik jasnego/ciemnego motywu bezpoĹ›rednio na panelu gĹ‚Ăłwnym.
+  - Oczyszczono i uproszczono ukĹ‚ad ogĹ‚oszeĹ„ (komunikat o wersji Beta).
+- Naprawy wizualne:
+  - PrzywrĂłcono widocznoĹ›Ä‡ ikony logo Smart Campus w rozwijanym menu profilu (poprawiono bĹ‚Ä™dnÄ… Ĺ›cieĹĽkÄ™ do pliku maski).
+  - Poprawiono widocznoĹ›Ä‡ logo w stopce na Landing Page (wymuszono staĹ‚y jasny kolor na ciemnym tle, aby ikona nie znikaĹ‚a w trybie ciemnym).
+
+- OgĂłlne poprawki techniczne:
+  - PrzywrĂłcono polskie znaki w tekstach na stronie gĹ‚Ăłwnej (Landing Page), ktĂłre ulegĹ‚y uszkodzeniu z powodu problemĂłw z kodowaniem znakĂłw.
+  - Odtworzono plik z dziennikiem zmian, wprowadzajÄ…c rygorystyczne kodowanie UTF-8, aby zapobiec ponownemu psuciu siÄ™ znakĂłw (tzw. krzaczkĂłw).
+- Stylizacja i interfejs:
+  - Poprawiono widocznoĹ›Ä‡ paska nawigacji na Landing Page w trybie ciemnym. Dodano subtelne, pĂłĹ‚przezroczyste obramowanie oraz delikatny cieĹ„ (drop-shadow), co pozwala fizycznie oddzieliÄ‡ pasek od tĹ‚a o identycznym kolorze, eliminujÄ…c efekt zlewajÄ…cych siÄ™ elementĂłw.
+
+- Optymalizacja wydajnoĹ›ci (WydajnoĹ›Ä‡ i Ĺadowanie):
+  - WdroĹĽono Code Splitting (Lazy Loading) w gĹ‚Ăłwnym routerze (routes.jsx). Od teraz kaĹĽda podstrona aplikacji Ĺ‚aduje siÄ™ na ĹĽÄ…danie dopiero w momencie wejĹ›cia, co drastycznie odciÄ…ĹĽa poczÄ…tkowe Ĺ‚adowanie strony.
+  - Skonfigurowano automatycznÄ… kompresjÄ™ Brotli w Vite (vite-plugin-compression). Finalne pliki .js i .css sÄ… zgniatane do absolutnego minimum (zmniejszenie wagi gĹ‚Ăłwnego skryptu o ~70%), co przyspiesza dziaĹ‚anie aplikacji na sĹ‚abszych poĹ‚Ä…czeniach internetowych.
+  - Przekonwertowano gigantyczne grafiki z formatu PNG na nowoczesny, bezstratny format WebP (m.in. tĹ‚o logowania i zdjÄ™cia budynkĂłw). ZaoszczÄ™dzono tym samym prawie 5 MegabajtĂłw danych pobieranych przy kaĹĽdym wejĹ›ciu przez uĹĽytkownika.
+- PorzÄ…dki w projekcie:
+  - Odinstalowano nieuĹĽywane paczki deweloperskie i zdezaktualizowane zaleĹĽnoĹ›ci, w tym axios oraz biblioteki TypeScriptu.
+
+- Poprawki Architektury i Stanu Aplikacji (Motywy):
+  - Wdrożono architekturę Global State (React Context) dla obsługi motywu (ThemeContext). Rozwiązano problem rozsynchronizowania suwaków zmiany motywu pomiędzy Paskiem Nawigacji (User Menu), Wyszukiwarką i głównym Panelem. Teraz przełączenie motywu w dowolnym miejscu natychmiast aktualizuje całą aplikację.
+- Poprawki UI / UX i Responsywności (Pasek Nawigacji):
+  - Naprawiono błąd znikającej, "przezroczystej" pastylki (zaznaczenia aktywnej strony) w pasku nawigacji na komputerach po powrocie z mniejszego rozmiaru okna. Dodano nasłuchiwanie zdarzenia 
+esize.
+  - Przebudowano nawigację mobilną (dolny pasek) na wzór interfejsów Apple (iOS / tvOS). Pasek teraz automatycznie otula i centruje przyciski, nie rozciągając się niepotrzebnie na całą szerokość. Wyrównano marginesy, naprawiając nienaturalne, asymetryczne przesunięcie aktywnego tła przycisków.
+  - Dodano nową ikonkę wyszukiwarki na skrajnej, prawej krawędzi mobilnego paska nawigacji oddzieloną pionowym separatorem.
+- Przebudowa okna Wyszukiwarki dla Smartfonów:
+  - Wykryto i naprawiono problemy z wyszukiwarką na urządzeniach mobilnych (gdzie wysuwająca się z dołu klawiatura systemowa zasłaniała wyniki).
+  - Skonstruowano oddzielny, pełnoekranowy widok mobilny wyszukiwarki wykorzystujący jednostkę wysokości 100dvh. Pasek wyszukiwania przykleja się do góry ekranu, a lista wyników płynnie skaluje się nad klawiaturą systemową.
+- Rozbudowa zawartości podstron:
+  - Zastosowano spójny design wizualny na podstronach "E-learning" oraz "Feed".
+  - Wygenerowano dedykowane, nowoczesne grafiki powitalne (banery) w układzie panoramicznym z przyciemnionymi tytułami.
+  - Dodano eleganckie kafelki ("zapychacze") informujące o braku nowych kursów czy postów.
+
+# Dziennik Zmian (Changelog)
+
+## 2026-08-16
+- Uruchomiono serwer deweloperski projektu w tle (Vite).
+- Przeprowadzono analizę wykorzystania paczek npm (zidentyfikowano nieużywane pakiety).
+- Uporządkowano import ikon - usunięto stary, zbędny link FontAwesome CDN (<script>) z pliku `index.html`.
+- Usunięto nieużywaną w projekcie paczkę `sharp`.
+- Podjęto decyzję o pozostawieniu paczki `@fortawesome/free-regular-svg-icons` w projekcie do wykorzystania w przyszłości.
+- Utworzono plik `dziennik_zmian.txt` do rejestrowania wprowadzanych zmian.
+- Zrestartowano serwer deweloperski Vite z flagą `--host` (`npx vite --host`), aby umożliwić testowanie na urządzeniach w sieci lokalnej (np. na smartfonie).
+
+
+Naprawiono globlany skrypt wpisywania i wyświetlania wersji aplikacji
+

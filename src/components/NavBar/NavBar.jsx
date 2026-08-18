@@ -32,6 +32,27 @@ function NavBar() {
   const navRefs = useRef({});
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0, opacity: 0 });
   const [activeView, setActiveView] = useState('profile'); // 'profile' lub 'notifications'
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen && windowWidth <= 1050) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [isMenuOpen, windowWidth]);
 
   const updateIndicator = () => {
     const activeElement = navRefs.current[location.pathname];
@@ -288,26 +309,41 @@ function NavBar() {
             </AnimatePresence>
           </motion.div>
 
-          {isMenuOpen &&
-            createPortal(
-              <motion.div
-                ref={menuRef}
-                layout
-                initial={{ opacity: 0, scale: 0.95, y: -20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                transition={{
-                  layout: { type: "spring", stiffness: 500, damping: 40, mass: 1 },
-                  opacity: { duration: 0.2 },
-                  scale: { duration: 0.2 },
-                  y: { duration: 0.2 }
-                }}
-                className="navbar_userMenu"
-              >
-                <motion.section className="navbar_userMenu_topSection" layout>
-                  <div className="navbar_userMenu_topSection_left">
-                    <div className="navbar_userMenu_logo">
-                      <div className="navbar_userMenu_logo_icon" />
+          {typeof document !== 'undefined' && document.getElementById("dropdown-root") && createPortal(
+            <AnimatePresence>
+              {isMenuOpen && (
+                <>
+                {windowWidth <= 1050 && (
+                  <motion.div
+                    key="menu-backdrop"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    style={{ position: 'fixed', inset: 0, zIndex: 999 }}
+                    onClick={() => setIsMenuOpen(false)}
+                  />
+                )}
+                <motion.div
+                  ref={menuRef}
+                  layout
+                  key="user-menu-dropdown"
+                  initial={{ opacity: 0, scale: 0.95, y: -20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: -20 }}
+                  transition={{
+                    layout: { type: "spring", stiffness: 500, damping: 40, mass: 1 },
+                    opacity: { duration: 0.2 },
+                    scale: { duration: 0.2 },
+                    y: { duration: 0.2 }
+                  }}
+                  className="navbar_userMenu"
+                >
+                  <motion.section className="navbar_userMenu_topSection" layout>
+                    <div className="navbar_userMenu_topSection_left">
+
+                      <div className="navbar_userMenu_logo">
+                        <div className="navbar_userMenu_logo_icon" />
                       <div className="navbar_userMenulogo_wrapper">
                         <div className="navbar_userMenulogo_wrapper_topText">Smart</div>
                         <div className="navbar_userMenulogo_wrapper_bottomText">Campus</div>
@@ -395,9 +431,12 @@ function NavBar() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>,
-              document.getElementById("dropdown-root")
-            )}
+              </motion.div>
+                </>
+              )}
+            </AnimatePresence>,
+            document.getElementById("dropdown-root")
+          )}
         </>
       )}
 

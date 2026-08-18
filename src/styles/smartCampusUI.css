@@ -4,6 +4,14 @@
     scroll-behavior: smooth;
 }
 
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus, a:focus, input:focus {
+    outline: none;
+}
+
 ::-webkit-scrollbar { width: 6px;}
 ::-webkit-scrollbar-thumb {
   background: #183447;

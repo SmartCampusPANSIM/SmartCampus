@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext.jsx";
-import { version } from "../../../package.json";
+import Version from '@components/Version/Version';
 import GoogleButton from '@components/Buttons/GoogleButton/GoogleButton';
 import ContinueButton from '@components/Buttons/ContinueButton/ContinueButton';
 import MainButton from '@components/Buttons/MainButton/MainButton';
@@ -183,7 +183,7 @@ const LandingPage = () => {
 
       <section className="LandingPageFooter">
         <div className="LandingPageFooter__part1">
-          <div className="LandingPageFooter_logo_part"><LogoFull colorReverse="reverse" /><p className="beta">BETA</p></div><p>Wersja 1.0</p>
+          <div className="LandingPageFooter_logo_part"><LogoFull colorReverse="reverse" /><p className="beta">BETA</p></div><p><Version /></p>
         </div>
         <div className="LandingPageFooter__part2">
           <div><p>Skontaktuj się z nami po więcej</p><p>informacji.</p></div>

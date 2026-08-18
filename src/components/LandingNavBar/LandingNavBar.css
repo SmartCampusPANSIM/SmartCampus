@@ -6,7 +6,8 @@
     color: light-dark(#183447, #fff);
     border-radius: 100px;
     position: fixed;
-    margin: 20px;
+    top: calc(20px + env(safe-area-inset-top, 0px));
+    left: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;

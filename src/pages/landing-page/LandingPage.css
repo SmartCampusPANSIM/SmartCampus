@@ -9,7 +9,7 @@ main {
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 15vh;
+    height: 15dvh;
     background-color: light-dark(#ECECEC, #141414);
 }
 
@@ -20,7 +20,7 @@ main {
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    height: 85vh;
+    height: 85dvh;
     min-height: 500px;
     background-color: light-dark(#ECECEC, #141414);
     box-sizing: border-box;
@@ -812,9 +812,11 @@ main {
 
     .LandingPageLogin__description, .LandingPageLogin__login, .LandingPageLogin__logoPansim {
         font-size: 18px;
-        width: 300px;
+        width: 100%;
+        max-width: 300px;
         align-items: center;
         margin-top: 40px;
+        word-break: break-word;
     }
 
     .LandingPageLogin__login {
@@ -856,7 +858,10 @@ main {
     }
 
     .LandingPageInfo__questionSquare, .LandingPageInfo__descriptionSquare, .LandingPageInfo__imageSquare, .LandingPageInfo__square--wrapper {
-        width: 320px;
+        width: 100%;
+        max-width: 360px;
+        box-sizing: border-box;
+        word-break: break-word;
     }
 
     .LandingPageInfo__questionSquare {
@@ -869,29 +874,35 @@ main {
     }
 
     .LandingPageInfo__imageSquare img {
-        width: 320px;     
+        width: 100%;
     }
 
     .LandingPageInfo__square--wrapper img {
         height: auto;
-        width: 260px;
+        width: 100%;
     }
 
     .LandingPageNumbers {
-        height: 180px;
+        height: auto;
+        padding-bottom: 20px;
     }
 
     .LandingPageNumbers--title {
-        width: 320px;
+        width: 100%;
+        max-width: 360px;
         font-size: 24px;
+        text-align: center;
+        word-break: break-word;
     }
 
     .LandingPageNumbers--bottom {
-        width: 320px;
+        width: 100%;
+        max-width: 360px;
     }
     
     .LandingPageNumbers__block {
-        width: 300px;
+        width: 100%;
+        max-width: 300px;
     }
 
     .LandingPageNumbers__block--top {

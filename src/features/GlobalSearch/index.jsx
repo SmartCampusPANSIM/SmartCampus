@@ -41,6 +41,17 @@ export default function GlobalSearch({ isOpen, onClose }) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen, handleClose]);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   return (
     <>
       <motion.div key="search" ref={searchContainerRef} className="navbar_expandedSearchContainer">
@@ -69,7 +80,7 @@ export default function GlobalSearch({ isOpen, onClose }) {
             <span>ctrl</span><span>k</span>
           </div>
           <button className="navbar_expandedSearchIconBtn" onClick={handleClose}>
-            <FontAwesomeIcon icon={Icons.faMagnifyingGlass} />
+            <FontAwesomeIcon icon={Icons.faXmark} />
           </button>
         </motion.div>
       </motion.div>
