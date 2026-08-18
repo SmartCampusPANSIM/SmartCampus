@@ -5,8 +5,8 @@ body {
 }
 
 .LoginPage {
-    overflow: hidden;
-    height: 100dvh;
+    overflow-y: auto;
+    min-height: 100dvh;
     width: 100%;
     display: flex;
     box-sizing: border-box;
@@ -14,7 +14,7 @@ body {
 
 .LoginPage_leftSection {
     box-sizing: border-box;
-    height: 100dvh;
+    min-height: 100dvh;
     width: 700px;
     display: flex;
     flex-direction: column;
@@ -102,7 +102,7 @@ body {
 
 .LoginPage_rightSection {
     box-sizing: border-box;
-    height: 100dvh;
+    min-height: 100dvh;
     width: 100%;
     padding: 20px;
 }
@@ -123,7 +123,8 @@ body {
     }
 
     .LoginPage_leftSection-wrapperContent {
-        height: 300px;
+        min-height: 300px;
+        height: auto;
     }
 
     .LoginPage_leftSection {
@@ -132,5 +133,21 @@ body {
 
     .LoginPage_rightSection {
         display: none;
+    }
+}
+
+@media (max-height: 500px) {
+    .LoginPage_leftSection-wrapperContent {
+        min-height: auto;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .LoginPage_loginError {
+        margin: 10px 0;
+    }
+    
+    .LoginPage_leftSection-titleText {
+        margin-bottom: 5px;
     }
 }

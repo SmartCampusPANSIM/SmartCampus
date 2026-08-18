@@ -1,24 +1,29 @@
+.LandingNavBar_container {
+    position: fixed;
+    top: calc(10px + env(safe-area-inset-top, 0px));
+    left: 20px;
+    width: calc(100% - 40px);
+    z-index: 100;
+    transition: left 0.3s ease, width 0.3s ease;
+}
+
 .titleBar{
     box-sizing: border-box;
     height: 80px;
-    width: calc(100% - 40px);
+    width: 100%;
     background-color: light-dark(rgba(255, 255, 255, 0.60), rgba(24, 52, 71, 0.60));
     color: light-dark(#183447, #fff);
     border-radius: 100px;
-    position: fixed;
-    top: calc(20px + env(safe-area-inset-top, 0px));
-    left: 20px;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    -webkit-backdrop-filter: blur(15px);
+    padding: 0 30px;
     backdrop-filter: blur(15px);
-    transform: translateZ(0);
-    will-change: transform, backdrop-filter;
     border: 1px solid light-dark(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+    z-index: 2;
+    transition: height 0.3s ease, padding 0.3s ease;
 }
 
 .LandingPageNavBar-links{
@@ -53,6 +58,15 @@
 }
 
 @media (max-width: 750px) {
+    .LandingNavBar_container {
+        left: 10px;
+        width: calc(100% - 20px);
+    }
+
+    .titleBar {
+        height: 60px;
+        padding: 0 10px;
+    }
     .titleBar-RightSection_linkWrapper{
         display: none;
     }
@@ -83,13 +97,12 @@
 }
 
 .titleBar_mobileMenu {
-    position: fixed;
-    top: 110px;
-    left: 20px;
-    width: calc(100% - 40px);
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
     box-sizing: border-box;
     background-color: light-dark(rgba(255, 255, 255, 0.60), rgba(24, 52, 71, 0.60));
-    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     transform: translateZ(0);
     will-change: transform, backdrop-filter;

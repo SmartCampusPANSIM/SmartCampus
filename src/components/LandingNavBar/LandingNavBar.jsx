@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './LandingNavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icons from '@icons/icons'
@@ -12,9 +12,28 @@ function LandingNavBar() {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === 'dark';
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    }
+
+    if (isMobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
-    <>
+    <div className="LandingNavBar_container" ref={menuRef}>
       <div className="titleBar">
         <Link to="/LandingPage">
           <LogoFull/>
@@ -67,7 +86,7 @@ function LandingNavBar() {
           />
         </div>
       )}
-    </>
+    </div>
   );
 }
 export default LandingNavBar;
