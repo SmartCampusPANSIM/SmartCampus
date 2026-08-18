@@ -12,8 +12,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     transform: translateZ(0);
     will-change: transform, backdrop-filter;
     border: 1px solid light-dark(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
@@ -89,8 +89,8 @@
     width: calc(100% - 40px);
     box-sizing: border-box;
     background-color: light-dark(rgba(255, 255, 255, 0.60), rgba(24, 52, 71, 0.60));
-    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     transform: translateZ(0);
     will-change: transform, backdrop-filter;
     border: 1px solid light-dark(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
