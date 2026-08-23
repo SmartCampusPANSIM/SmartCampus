@@ -59,14 +59,14 @@ function Ustawienia() {
       .catch(err => console.error("Błąd pobierania postępów z GitHuba:", err))
       .finally(() => setIsLoadingMilestones(false));
 
-    // Latest Release (automatycznie pobierane najnowsze wydanie)
-    fetch('https://api.github.com/repos/SmartCampusOrg/SmartCampus/releases/latest', { headers })
+    // Latest Release (pobieranie z listy, ponieważ wszystkie to prerelease)
+    fetch('https://api.github.com/repos/SmartCampusOrg/SmartCampus/releases', { headers })
       .then(res => {
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         return res.json();
       })
       .then(data => {
-        if (data && data.tag_name) setLatestRelease(data);
+        if (data && data.length > 0) setLatestRelease(data[0]);
       })
       .catch(err => console.error("Błąd pobierania patch notes z GitHuba:", err))
       .finally(() => setIsLoadingRelease(false));

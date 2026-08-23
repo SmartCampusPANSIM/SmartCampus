@@ -124,6 +124,16 @@
     box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     border: 1px solid light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.15));
     z-index: 1001; /* Above backdrop */
+    background-color: transparent;
+    isolation: isolate; /* Create a stacking context to fix backdrop-filter */
+}
+
+.navbar_searchResultsWindow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
     background-color: light-dark(rgba(255, 255, 255, 0.65), rgba(24, 52, 71, 0.6));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -343,6 +353,10 @@
         transform: none !important;
         margin-top: 0;
         padding: 10px;
+    }
+
+    .navbar_searchResultsWindow::before {
+        content: none;
     }
 
     .navbar_searchShortcutKeys {
