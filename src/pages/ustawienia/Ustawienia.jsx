@@ -10,7 +10,7 @@ import LogoFull from "@/components/Logo/LogoFull.jsx";
 import CustomSelect from "@/components/CustomSelect/CustomSelect.jsx";
 import MainButton from "@/components/Buttons/MainButton/MainButton.jsx";
 import ReactMarkdown from 'react-markdown';
-import packageJson from '../../../../package.json';
+import packageJson from '../../../package.json';
 import './ustawienia.css';
 
 function Ustawienia() {

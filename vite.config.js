@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import viteCompression from 'vite-plugin-compression'
 import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
-import packageJson from './package.json'
+import packageJson from './package.json' with { type: 'json' }
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -122,17 +122,17 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@app': path.resolve(__dirname, './src/app'),
-      '@pages': path.resolve(__dirname, './src/pages'),
-      '@components': path.resolve(__dirname, './src/components'),
-      '@features': path.resolve(__dirname, './src/features'),
-      '@assets': path.resolve(__dirname, './src/assets'),
-      '@hooks': path.resolve(__dirname, './src/hooks'),
-      '@services': path.resolve(__dirname, './src/services'),
-      '@utils': path.resolve(__dirname, './src/utils'),
-      '@styles': path.resolve(__dirname, './src/styles'),
-      '@icons': path.resolve(__dirname, './src/assets/icons'),
+      '@': path.resolve(import.meta.dirname, './src'),
+      '@app': path.resolve(import.meta.dirname, './src/app'),
+      '@pages': path.resolve(import.meta.dirname, './src/pages'),
+      '@components': path.resolve(import.meta.dirname, './src/components'),
+      '@features': path.resolve(import.meta.dirname, './src/features'),
+      '@assets': path.resolve(import.meta.dirname, './src/assets'),
+      '@hooks': path.resolve(import.meta.dirname, './src/hooks'),
+      '@services': path.resolve(import.meta.dirname, './src/services'),
+      '@utils': path.resolve(import.meta.dirname, './src/utils'),
+      '@styles': path.resolve(import.meta.dirname, './src/styles'),
+      '@icons': path.resolve(import.meta.dirname, './src/assets/icons'),
     },
   },
   build: {
