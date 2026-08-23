@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import ProtectedRoute from '@/routes/ProtectedRoute.jsx';
 import { useAuth } from '@/context/AuthContext.jsx';
 import LoadingSpinner from '@components/LoadingSpinner/LoadingSpinner.jsx';
+import ErrorBoundary from '@components/ErrorBoundary/ErrorBoundary.jsx';
 
 const Panel = lazy(() => import('@pages/panel/Panel.jsx'));
 const LandingPage = lazy(() => import('@pages/landing-page/LandingPage.jsx'));
@@ -24,22 +25,24 @@ const RootRedirect = () => {
 
 const AppRoutes = () => {
   return (
-    <Suspense fallback={<LoadingSpinner />}>
-      <Routes>
-        <Route path="/" element={<RootRedirect />} />
-        <Route path="/LandingPage" element={<LandingPage />} />
-        <Route path="/Logowanie" element={<LoginPage />} />
-        <Route path="/OProjekcie" element={<OProjekcie />} />
-        <Route path="/NaszZespol" element={<NaszZespol />} />
-        <Route path="/Panel" element={<ProtectedRoute><Panel /></ProtectedRoute>} />
-        <Route path="/ListaZmian" element={<ProtectedRoute><ListaZmian /></ProtectedRoute>} />
-        <Route path="/MapaKampusu" element={<ProtectedRoute><MapaKampusu /></ProtectedRoute>} />
-        <Route path="/Elearning" element={<ProtectedRoute><Elearning /></ProtectedRoute>} />
-        <Route path="/Feed" element={<ProtectedRoute><Feed /></ProtectedRoute>} />
-        <Route path="/PlanLekcji" element={<ProtectedRoute><PlanLekcji /></ProtectedRoute>} />
-        <Route path="/Ustawienia" element={<ProtectedRoute><Ustawienia /></ProtectedRoute>} />
-      </Routes>
-    </Suspense>
+    <ErrorBoundary>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Routes>
+          <Route path="/" element={<RootRedirect />} />
+          <Route path="/LandingPage" element={<LandingPage />} />
+          <Route path="/Logowanie" element={<LoginPage />} />
+          <Route path="/OProjekcie" element={<OProjekcie />} />
+          <Route path="/NaszZespol" element={<NaszZespol />} />
+          <Route path="/Panel" element={<ProtectedRoute><Panel /></ProtectedRoute>} />
+          <Route path="/ListaZmian" element={<ProtectedRoute><ListaZmian /></ProtectedRoute>} />
+          <Route path="/MapaKampusu" element={<ProtectedRoute><MapaKampusu /></ProtectedRoute>} />
+          <Route path="/Elearning" element={<ProtectedRoute><Elearning /></ProtectedRoute>} />
+          <Route path="/Feed" element={<ProtectedRoute><Feed /></ProtectedRoute>} />
+          <Route path="/PlanLekcji" element={<ProtectedRoute><PlanLekcji /></ProtectedRoute>} />
+          <Route path="/Ustawienia" element={<ProtectedRoute><Ustawienia /></ProtectedRoute>} />
+        </Routes>
+      </Suspense>
+    </ErrorBoundary>
   );
 };
 
