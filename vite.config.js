@@ -26,6 +26,13 @@ export default defineConfig({
         categories: ["education", "productivity"],
         shortcuts: [
           {
+            name: "Panel Główny",
+            short_name: "Panel",
+            description: "Otwórz panel główny",
+            url: "/Panel",
+            icons: [{ src: "/shortcut-panel.png", sizes: "96x96", type: "image/png" }]
+          },
+          {
             name: "Plan Lekcji",
             short_name: "Plan",
             description: "Otwórz plan lekcji",
@@ -38,6 +45,27 @@ export default defineConfig({
             description: "Otwórz mapę kampusu",
             url: "/MapaKampusu",
             icons: [{ src: "/shortcut-map.png", sizes: "96x96", type: "image/png" }]
+          },
+          {
+            name: "E-learning",
+            short_name: "E-learn",
+            description: "Otwórz platformę edukacyjną",
+            url: "/Elearning",
+            icons: [{ src: "/shortcut-elearning.png", sizes: "96x96", type: "image/png" }]
+          },
+          {
+            name: "Feed",
+            short_name: "Feed",
+            description: "Otwórz aktualności",
+            url: "/Feed",
+            icons: [{ src: "/shortcut-feed.png", sizes: "96x96", type: "image/png" }]
+          },
+          {
+            name: "Ustawienia",
+            short_name: "Opcje",
+            description: "Otwórz ustawienia konta",
+            url: "/Ustawienia",
+            icons: [{ src: "/shortcut-ustawienia.png", sizes: "96x96", type: "image/png" }]
           }
         ],
         share_target: {
