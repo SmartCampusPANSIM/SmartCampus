@@ -10,6 +10,7 @@ import LogoFull from "@/components/Logo/LogoFull.jsx";
 import CustomSelect from "@/components/CustomSelect/CustomSelect.jsx";
 import MainButton from "@/components/Buttons/MainButton/MainButton.jsx";
 import ReactMarkdown from 'react-markdown';
+import packageJson from '../../../../package.json';
 import './ustawienia.css';
 
 function Ustawienia() {
@@ -58,8 +59,8 @@ function Ustawienia() {
       .catch(err => console.error("Błąd pobierania postępów z GitHuba:", err))
       .finally(() => setIsLoadingMilestones(false));
 
-    // Latest Release (dopasowane do wersji 0.5)
-    fetch('https://api.github.com/repos/SmartCampusOrg/SmartCampus/releases/tags/v0.5', { headers })
+    // Latest Release (automatycznie pobierane najnowsze wydanie)
+    fetch('https://api.github.com/repos/SmartCampusOrg/SmartCampus/releases/latest', { headers })
       .then(res => {
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         return res.json();
@@ -325,7 +326,7 @@ function Ustawienia() {
             <div className="version_info">
               <LogoFull />
             </div>
-            <div className="version_number">0.5</div>
+            <div className="version_number">{packageJson.version}</div>
           </div>
         </div>
 

@@ -127,7 +127,6 @@
     background-color: light-dark(rgba(255, 255, 255, 0.65), rgba(24, 52, 71, 0.6));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    transform: translateZ(0); /* Wymuszenie sprzętowej akceleracji dla PWA */
 }
 
 .navbar_search_resultsWrapper {
