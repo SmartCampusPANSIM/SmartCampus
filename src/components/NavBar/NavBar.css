@@ -8,14 +8,16 @@
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    height: calc(80px + env(safe-area-inset-top, 0px));
+    height: calc(80px + env(safe-area-inset-top, 0px) + env(titlebar-area-height, 0px));
     width: 100%;
-    padding: env(safe-area-inset-top, 0px) 20px 0 20px;
+    padding: calc(env(safe-area-inset-top, 0px) + env(titlebar-area-height, 0px)) 20px 0 20px;
     background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.8));
     backdrop-filter: blur(40px);
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
+    -webkit-app-region: drag;
+    app-region: drag;
 }
 
 .navbar_navigationBar {
@@ -30,6 +32,8 @@
     border-radius: 1000px;
     padding: 11px;
     gap: 8px;
+    -webkit-app-region: no-drag;
+    app-region: no-drag;
 }
 
 .navbar_centerGroup {
@@ -136,6 +140,8 @@
     border: 1px solid transparent;
     transition: background-color 0.2s ease, border 0.2s ease;
     user-select: none;
+    -webkit-app-region: no-drag;
+    app-region: no-drag;
 }
 
 .navbar_userBar:hover {

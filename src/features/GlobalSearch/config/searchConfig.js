@@ -28,7 +28,7 @@ export const getSearchConfig = (isDark) => [
     items: [
       { 
         id: "set_1", 
-        title: isDark ? "Jasny motyw" : "Ciemny motyw", 
+        title: "Ciemny motyw",
         path: "", 
         icon: isDark ? Icons.faSun : Icons.faMoon, 
         type: "Ustawienie", 

@@ -33,6 +33,16 @@ function NavBar() {
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0, opacity: 0 });
   const [activeView, setActiveView] = useState('profile'); // 'profile' lub 'notifications'
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [showGreeting, setShowGreeting] = useState(true);
+
+  useEffect(() => {
+    if (user && showGreeting) {
+      const timer = setTimeout(() => {
+        setShowGreeting(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [user, showGreeting]);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -267,9 +277,44 @@ function NavBar() {
                   exit={{ opacity: 0, filter: "blur(8px)", scale: 0.1, transition: { duration: 0.4 } }}
                   style={{ display: 'flex', alignItems: 'center', whiteSpace: 'nowrap' }}
                 >
-                  <div className="navbar_userBar_wrapper">
-                    <div className="navbar_userBar_name">{trimUsername(user)}</div>
-                    <div className="navbar_userBar_mail">{getEmailPrefix(user)}</div>
+                  <div className="navbar_userBar_wrapper" style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
+                    <AnimatePresence mode="popLayout">
+                      {showGreeting ? (
+                        <motion.div
+                          key="greeting-text"
+                          layout
+                          initial={{ opacity: 0, y: 5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10, filter: "blur(5px)" }}
+                          transition={{ duration: 0.3 }}
+                          className="navbar_userBar_name"
+                        >
+                          Witaj,
+                        </motion.div>
+                      ) : null}
+                    </AnimatePresence>
+                    <motion.div
+                      layout
+                      key="username-text"
+                      transition={{ layout: { type: "spring", stiffness: 400, damping: 30 } }}
+                      className={showGreeting ? "navbar_userBar_mail" : "navbar_userBar_name"}
+                    >
+                      {trimUsername(user)}
+                    </motion.div>
+                    <AnimatePresence mode="popLayout">
+                      {!showGreeting ? (
+                        <motion.div
+                          key="email-text"
+                          layout
+                          initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+                          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                          transition={{ duration: 0.3, delay: 0.05 }}
+                          className="navbar_userBar_mail"
+                        >
+                          {getEmailPrefix(user)}
+                        </motion.div>
+                      ) : null}
+                    </AnimatePresence>
                   </div>
                   <img
                     className="navbar_userBar_profilePicture"
